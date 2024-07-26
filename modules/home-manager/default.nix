@@ -12,6 +12,12 @@
     homeDirectory = "/Users/jonathan";
     packages = with pkgs; [
       ripgrep
+      tree
+      lazygit
+      jump
+      fzf
+      git
+      duckdb
       # fd
       # curl
       # less
@@ -100,7 +106,6 @@
       # terraform
       # texinfo
       # thefuck
-      # tree
       # tree-sitter
       # unbound
       # vim

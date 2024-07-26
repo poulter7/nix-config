@@ -12,4 +12,4 @@ nix build .#darwinConfigurations.personal.system
 ./result/sw/bin/darwin-rebuild switch --flake .#mac
 
 ## Build and Reactivate
-nix build .#darwinConfigurations.mac.system && ./result/sw/bin/darwin-rebuild switch --flake .#mac
+darwin-rebuild switch --flake ~/Code/projects/mac-setup/.#mac

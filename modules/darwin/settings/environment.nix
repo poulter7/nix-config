@@ -6,4 +6,5 @@
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
   };
+ 
 }

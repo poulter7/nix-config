@@ -12,9 +12,20 @@
 
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+    
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
-outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, ... }: {
+outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }: {
     darwinConfigurations.mac = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       pkgs = import nixpkgs { 
@@ -23,8 +34,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, ... }: {
       };
       modules = [
         ./modules/darwin
-        home-manager.darwinModules.home-manager
-        {
+        home-manager.darwinModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
@@ -33,6 +43,16 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, ... }: {
               nixvim.homeManagerModules.nixvim 
               ./modules/home-manager 
             ];
+          };
+        }
+        nix-homebrew.darwinModules.nix-homebrew {
+          nix-homebrew = {
+            user = "jonathan";
+            enable = true;
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+            };
           };
         }
       ];
