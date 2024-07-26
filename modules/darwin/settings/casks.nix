@@ -1,26 +1,24 @@
-{ pkgs, ... }: {
+{ ... }: {
   homebrew = {
     enable = true;
     casks = [
       "iterm2"
       "visual-studio-code"
-      # "google-chrome"
+      "spotify"
+      "docker"
+      "postman"
+      "zoom"
+      "whatsapp"
+      "karabiner-elements"
+      "amethyst"
       # "firefox"
       # "slack"
       # "zoom"
-      # "spotify"
       # "discord"
       # "1password"
       # "rectangle"
-      # "docker"
-      # "postman"
-      # "figma"
       # "notion"
-      # "whatsapp"
       # "telegram"
-      # "slack"
-      # "zoom"
-      # "spotify"
       # "discord"
     ];
   };
