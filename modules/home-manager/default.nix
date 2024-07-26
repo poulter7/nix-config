@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   # specify my home-manager configs
   imports = [
-    # ./settings/zsh.nix
+    ./settings/zsh.nix
     # ./settings/kitty.nix
     # ./settings/tmux.nix
 #    ./settings/neovim.nix
