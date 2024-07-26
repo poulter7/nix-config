@@ -15,26 +15,26 @@
   };
 
 outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, ... }: {
-    darwinConfigurations."Jonathans-Macbook-Pro-2" = darwin.lib.darwinSystem {
+    darwinConfigurations.personal = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       pkgs = import nixpkgs { 
         system = "x86_64-darwin";
         config.allowUnfree = true; 
       };
       modules = [
-        ./modules/darwin
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.jonathan.imports = [ 
-	            # NixVim module
-              nixvim.homeManagerModules.nixvim 
-              ./modules/home-manager 
-            ];
-          };
-        }
+        # ./modules/darwin
+        # home-manager.darwinModules.home-manager
+        # {
+        #   home-manager = {
+        #     useGlobalPkgs = true;
+        #     useUserPackages = true;
+        #     users.jonathan.imports = [ 
+	      #       # NixVim module
+        #       nixvim.homeManagerModules.nixvim 
+        #       ./modules/home-manager 
+        #     ];
+        #   };
+        # }
       ];
     };
   };
