@@ -6,5 +6,5 @@ git clone git@github.com:poulter7/mac-setup.git
 ./init.sh
 
 ## Activate this nix configuration
-nix run nix-darwin -- switch --flake .
+nix build .#darwinConfigurations.personal.system
 

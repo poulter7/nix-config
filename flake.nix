@@ -15,14 +15,14 @@
   };
 
 outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, ... }: {
-    darwinConfigurations.personal = darwin.lib.darwinSystem {
+    darwinConfigurations.mac = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       pkgs = import nixpkgs { 
         system = "x86_64-darwin";
         config.allowUnfree = true; 
       };
       modules = [
-        # ./modules/darwin
+        ./modules/darwin
         # home-manager.darwinModules.home-manager
         # {
         #   home-manager = {
