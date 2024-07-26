@@ -7,7 +7,7 @@
   '';
 
   imports = [
-  #   ./settings/system.nix
+    ./settings/system.nix
     # ./settings/environment.nix
   #   ./settings/yabai.nix
   #   ./settings/skhd.nix
