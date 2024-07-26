@@ -5,6 +5,11 @@ This repo is a place for me to hopefully solve a perpetual problem: make every m
 git clone git@github.com:poulter7/mac-setup.git
 ./init.sh
 
-## Activate this nix configuration
+## Build the nix configuration
 nix build .#darwinConfigurations.personal.system
 
+## Activate the nix configuration
+./result/sw/bin/darwin-rebuild switch --flake .#mac
+
+## Build and Reactivate
+nix build .#darwinConfigurations.mac.system && ./result/sw/bin/darwin-rebuild switch --flake .#mac

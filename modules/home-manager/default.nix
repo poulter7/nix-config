@@ -9,7 +9,7 @@
 
   home = {
     username = "jonathan";
-    homeDirectory = "/Users/jpoulter";
+    homeDirectory = "/Users/jonathan";
     packages = with pkgs; [
       ripgrep
       # fd

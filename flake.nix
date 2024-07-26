@@ -23,18 +23,18 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, ... }: {
       };
       modules = [
         ./modules/darwin
-        # home-manager.darwinModules.home-manager
-        # {
-        #   home-manager = {
-        #     useGlobalPkgs = true;
-        #     useUserPackages = true;
-        #     users.jonathan.imports = [ 
-	      #       # NixVim module
-        #       nixvim.homeManagerModules.nixvim 
-        #       ./modules/home-manager 
-        #     ];
-        #   };
-        # }
+        home-manager.darwinModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.jonathan.imports = [ 
+	            # NixVim module
+              nixvim.homeManagerModules.nixvim 
+              ./modules/home-manager 
+            ];
+          };
+        }
       ];
     };
   };
