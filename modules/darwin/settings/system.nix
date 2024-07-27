@@ -2,7 +2,7 @@
 
   system = {
     keyboard.enableKeyMapping = true;
-    keyboard.remapCapsLockToEscape = true;
+    keyboard.remapCapsLockToEscape = false;
 
     defaults = {  
       NSGlobalDomain = {
@@ -33,6 +33,8 @@
   };
 
   services.nix-daemon.enable = true;
+
+  
   
   # backwards compat; don't change
   system.stateVersion = 4;

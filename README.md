@@ -13,3 +13,12 @@ nix build .#darwinConfigurations.personal.system
 
 ## Build and Reactivate
 darwin-rebuild switch --flake ~/Code/projects/mac-setup/.#mac
+
+## Todo
+[ ] Add Darwin Keyboard Shortcuts
+[ ] Fix vscode vim
+
+
+## Other items
+
+Install Karabiner manually

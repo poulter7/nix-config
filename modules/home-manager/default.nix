@@ -18,6 +18,7 @@
       fzf
       git
       duckdb
+      shfmt
       # fd
       # curl
       # less
@@ -155,6 +156,9 @@
     ".config/karabiner" = {
       source=./karabiner;
       recursive=true;
+    };
+    ".config/amethyst/amethyst.yml" = {
+      source=./amethyst/amethyst.yml;
     };
   };
 }

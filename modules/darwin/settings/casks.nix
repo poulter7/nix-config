@@ -9,7 +9,6 @@
       "postman"
       "zoom"
       "whatsapp"
-      "karabiner-elements"
       "amethyst"
       # "firefox"
       # "slack"
