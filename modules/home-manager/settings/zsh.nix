@@ -48,8 +48,7 @@
       # theme = "spaceship";
       plugins = [ 
         "aws"
-        "git" 
-        # "docker" 
+        "git"  
         "terraform" 
         "history" 
         "history-substring-search" 
