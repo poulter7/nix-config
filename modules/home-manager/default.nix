@@ -20,6 +20,7 @@
       git
       duckdb
       shfmt
+      tmux
       # fd
       # curl
       # less
