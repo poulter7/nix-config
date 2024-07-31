@@ -10,15 +10,7 @@
       "zoom"
       "whatsapp"
       "amethyst"
-      # "firefox"
-      # "slack"
-      # "zoom"
-      # "discord"
-      # "1password"
-      # "rectangle"
-      # "notion"
-      # "telegram"
-      # "discord"
+      "dash"
     ];
   };
 }
