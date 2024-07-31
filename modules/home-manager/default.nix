@@ -10,6 +10,7 @@
   home = {
     username = "jonathan";
     homeDirectory = "/Users/jonathan";
+    
     packages = with pkgs; [
       ripgrep
       tree
@@ -153,12 +154,15 @@
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "24.05"; # 23.11
   home.file = {
-    ".config/karabiner/karabiner.json" = {
+     karabiner = {
       source=./karabiner/karabiner.json;
+      target=".config/karabiner/karabiner.json";
       recursive=true;
     };
-    ".config/amethyst/amethyst.yml" = {
+    amethyst = {
       source=./amethyst/amethyst.yml;
+      target=".config/amethyst/amethyst.yml";
+      onChange="/usr/bin/pkill Amethyst; /usr/bin/open -a Amethyst";
     };
   };
 }

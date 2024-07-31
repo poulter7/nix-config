@@ -1,8 +1,8 @@
 { pkgs, ... }: {
 
   system = {
-    keyboard.enableKeyMapping = true;
-    keyboard.remapCapsLockToEscape = false;
+    # keyboard.enableKeyMapping = true;
+    # keyboard.remapCapsLockToEscape = false;
 
     defaults = {  
       NSGlobalDomain = {
