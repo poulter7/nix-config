@@ -47,6 +47,7 @@
       export EDITOR=vi
       export TERM=xterm-256color
       export LANG=en_US.UTF-8
+      export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
       # And enable this
       # if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
