@@ -15,7 +15,8 @@
     };
 
     shellAliases = {
-      nix-switch = "darwin-rebuild switch --flake ~/Code/projects/mac-setup/.#mac";
+      ns = "darwin-rebuild switch --flake ~/Code/projects/mac-setup/.#mac";
+      nb = "darwin-rebuild build --flake ~/Code/projects/mac-setup/.#mac";
       nix-up = "pushd ~/.config/snowflake; nix flake update; nixswitch; popd";
       ls = "ls --color=auto";
       ll = "ls -lahrts";
@@ -37,9 +38,10 @@
       export TERM=xterm-256color
       export LANG=en_US.UTF-8
       export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-      
+
       # set up shell integrations
       source <(fzf --zsh)
+      
       # gitgone
       git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
 
@@ -70,6 +72,7 @@
         "terraform" 
         "history" 
         "history-substring-search" 
+        "tmux"
       ];
     };
   };
