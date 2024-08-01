@@ -50,7 +50,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
         }
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
-            user = "jonathan";
+            user = "${user}";
             enable = true;
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
