@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   # specify my home-manager configs
   imports = [
-    ./settings/zsh.nix
+    ./zsh/zsh.nix
     # ./settings/kitty.nix
     # ./settings/tmux.nix
 #    ./settings/neovim.nix
@@ -158,12 +158,15 @@
      karabiner = {
       source=./karabiner/karabiner.json;
       target=".config/karabiner/karabiner.json";
-      recursive=true;
     };
     amethyst = {
       source=./amethyst/amethyst.yml;
       target=".config/amethyst/amethyst.yml";
       onChange="/usr/bin/pkill Amethyst; /usr/bin/open -a Amethyst";
+    };
+    p10k = {
+      source=./zsh/p10k.zsh;
+      target=".p10k.zsh";
     };
   };
 }
