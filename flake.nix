@@ -25,7 +25,10 @@
     };
   };
 
-outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }: {
+outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }: 
+    let
+      user = "jonathan";
+    in {
     darwinConfigurations.mac = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       pkgs = import nixpkgs { 
