@@ -26,7 +26,7 @@
       tmux
       jump
       neovim
-      # vscode
+      vscode
     ];
 
     sessionVariables = {
