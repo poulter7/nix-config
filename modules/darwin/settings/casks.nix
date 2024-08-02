@@ -10,6 +10,7 @@
       "whatsapp"
       "amethyst"
       "dash"
+      "texshop"
     ];
   };
 }
