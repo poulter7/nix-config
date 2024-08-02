@@ -3,7 +3,6 @@
   system = {
     # keyboard.enableKeyMapping = true;
     # keyboard.remapCapsLockToEscape = false;
-
     defaults = {  
       NSGlobalDomain = {
         # Dark mode
@@ -27,6 +26,7 @@
 
       finder = {
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         _FXShowPosixPathInTitle = true;
       };
     };
