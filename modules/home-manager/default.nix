@@ -65,5 +65,10 @@
       target=".config/nvim-nixos";
       recursive = true;
     };
+    vimac = {
+      source=../darwin/apps/Vimac.app;
+      target="./Applications/Vimac.app";
+      recursive = true;
+    };
   };
 }
