@@ -33,6 +33,11 @@
     };
 
     initExtra = ''
+      # shell integration for fzf
+      source <(fzf --zsh)
+      # shell integration for jump
+      eval "$(jump shell zsh)"
+
       export ZSH="/Users/jpoulter/.oh-my-zsh"
       # from: https://github.com/NixOS/nixpkgs/issues/154696
       source ~/.p10k.zsh
@@ -41,10 +46,6 @@
       export LANG=en_US.UTF-8
       export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
-      # shell integration for fzf
-      source <(fzf --zsh)
-      # shell integration for jump
-      eval "$(jump shell zsh)"
       
       # gitgone
       git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
