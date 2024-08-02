@@ -62,7 +62,7 @@
     };
     astronvim = {
       source=./astronvim;
-      target=".config/nvim/";
+      target=".config/nvim-nixos";
       recursive = true;
     };
   };
