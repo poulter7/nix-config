@@ -19,6 +19,7 @@
       nb = "darwin-rebuild build --flake ~/Code/projects/mac-setup/.#mac";
       nix-up = "pushd ~/.config/snowflake; nix flake update; nixswitch; popd";
       nix-lint = "nix run --extra-experimental-features 'nix-command flakes' nixpkgs#statix -- check .";
+      j = "jump";
       ls = "ls --color=auto";
       ll = "ls -lahrts";
       l = "ls -l";
