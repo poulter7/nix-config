@@ -5,9 +5,7 @@
   # specify my home-manager configs
   imports = [
     ./zsh.nix
-    # ./settings/kitty.nix
-    # ./settings/tmux.nix
-#    ./settings/neovim.nix
+    ./vscode.nix
   ];
 
   home = {
@@ -34,7 +32,6 @@
       CLICLOLOR = 1;
       EDITOR = "va";
     };
-    
   };
 
   # home.file.".inputrc".source = ./settings/inputrc;
