@@ -25,6 +25,8 @@
     };
 
     mac-app-util.url = "github:hraban/mac-app-util";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
 outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, mac-app-util, ... }: 

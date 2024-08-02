@@ -50,5 +50,5 @@
     "git.autofetch": true,
     "git.enableSmartCommit": true,
     "cmake.configureOnOpen": true,
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "Catppuccin Mocha"
 }
