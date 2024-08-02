@@ -28,11 +28,12 @@
 outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }: 
     let
       user = "jonathan";
+      system = "x86_64-darwin";
     in {
     darwinConfigurations.mac = darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
+      inherit system;
       pkgs = import nixpkgs { 
-        system = "x86_64-darwin";
+        inherit system;
         config.allowUnfree = true; 
       };
       modules = [
@@ -41,7 +42,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.jonathan.imports = [ 
+            users."${user}".imports = [ 
 	            # NixVim module
               nixvim.homeManagerModules.nixvim 
               ./modules/home-manager 
@@ -50,7 +51,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
         }
         nix-homebrew.darwinModules.nix-homebrew {
           nix-homebrew = {
-            user = "${user}";
+            inherit user;
             enable = true;
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
