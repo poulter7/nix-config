@@ -1,8 +1,6 @@
 { pkgs, ... }: {
 
   system = {
-    # keyboard.enableKeyMapping = true;
-    # keyboard.remapCapsLockToEscape = false;
     defaults = {  
       NSGlobalDomain = {
         # Dark mode
