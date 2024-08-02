@@ -56,7 +56,7 @@
     };
     tmux = {
       source=./tmux;
-      target="./.config/tmux/";
+      target=".config/tmux/";
       recursive = true;
       onChange="echo 'Refreshing tmux configuration' && ${pkgs.tmux}/bin/tmux source ~/.config/tmux/tmux.conf.local";
     };
