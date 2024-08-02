@@ -67,5 +67,13 @@
       target="./Applications/Vimac.app";
       recursive = true;
     };
+    vscode-settings = {
+      source=./vscode/settings.json;
+      target="./Library/Application Support/Code/User/settings.json";
+    };
+    vscode-keybindings = {
+      source=./vscode/keybindings.json;
+      target="./Library/Application Support/Code/User/keybindings.json";
+    };
   };
 }
