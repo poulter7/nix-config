@@ -23,9 +23,11 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }: 
+outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, mac-app-util, ... }: 
     let
       user = "jonathan";
       system = "x86_64-darwin";
@@ -37,6 +39,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
         config.allowUnfree = true; 
       };
       modules = [
+        mac-app-util.darwinModules.default
         ./modules/darwin
         home-manager.darwinModules.home-manager {
           home-manager = {
@@ -46,6 +49,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
 	            # NixVim module
               nixvim.homeManagerModules.nixvim 
               ./modules/home-manager 
+              mac-app-util.homeManagerModules.default
             ];
           };
         }
