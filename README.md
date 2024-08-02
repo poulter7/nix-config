@@ -17,7 +17,6 @@ darwin-rebuild switch --flake ~/Code/projects/mac-setup/.#mac
 ## Todo
 [ ] Add Darwin Keyboard Shortcuts
 [ ] Fix vscode vim
-[ ] Set up tmux
 
 
 ## Other items

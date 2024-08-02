@@ -24,6 +24,9 @@
       duckdb
       shfmt
       tmux
+      jump
+      neovim
+      # vscode
     ];
 
     sessionVariables = {
@@ -56,6 +59,11 @@
       target="./.config/tmux/";
       recursive = true;
       onChange="echo 'Refreshing tmux configuration' && ${pkgs.tmux}/bin/tmux source ~/.config/tmux/tmux.conf.local";
+    };
+    astronvim = {
+      source=./astronvim;
+      target=".config/nvim/";
+      recursive = true;
     };
   };
 }
