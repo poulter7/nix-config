@@ -25,6 +25,8 @@
       jump
       neovim
       vscode
+      terraform
+      oh-my-zsh
     ];
 
     sessionVariables = {
