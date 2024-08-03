@@ -31,6 +31,10 @@
       resource = ". ~/.zshrc";
       va = "NVIM_APPNAME=nvim-nixos nvim $@";
     };
+    
+    localVariables = {
+      ZSH_TMUX_AUTOSTART=true;
+    };
 
     initExtra = ''
       # shell integration for fzf
@@ -38,7 +42,6 @@
       # shell integration for jump
       eval "$(jump shell zsh)"
 
-      export ZSH="/Users/jpoulter/.oh-my-zsh"
       # from: https://github.com/NixOS/nixpkgs/issues/154696
       source ~/.p10k.zsh
       export EDITOR=vi
@@ -49,7 +52,6 @@
       
       # gitgone
       git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
-
 
       # And enable this
       # if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -78,7 +80,6 @@
     ];
     oh-my-zsh = {
       enable = true;
-      # theme = "spaceship";
       plugins = [ 
         "aws"
         "git"  
