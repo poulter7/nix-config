@@ -15,8 +15,8 @@
     };
 
     shellAliases = {
-      ns = "darwin-rebuild switch --flake ~/Code/projects/mac-setup/.#mac";
-      nb = "darwin-rebuild build --flake ~/Code/projects/mac-setup/.#mac";
+      ns = "darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac";
+      nb = "darwin-rebuild build --flake ~/Code/projects/nix-config/.#mac";
       nix-up = "pushd ~/.config/snowflake; nix flake update; nixswitch; popd";
       nix-lint = "nix run --extra-experimental-features 'nix-command flakes' nixpkgs#statix -- check .";
       ls = "ls --color=auto";
