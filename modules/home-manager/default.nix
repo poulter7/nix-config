@@ -27,6 +27,7 @@
       vscode
       terraform
       oh-my-zsh
+      texliveFull
     ];
 
     sessionVariables = {
@@ -62,6 +63,11 @@
     astronvim = {
       source=./astronvim;
       target=".config/nvim-nixos";
+      recursive = true;
+    };
+    astronvim-vscode = {
+      source=./astronvim-vscode;
+      target=".config/nvim-nixos-vscode";
       recursive = true;
     };
     vimac = {

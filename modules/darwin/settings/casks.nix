@@ -11,6 +11,8 @@
       "amethyst"
       "dash"
       "texshop"
+      "trader-workstation"
+      "ibkr"
     ];
   };
 }
