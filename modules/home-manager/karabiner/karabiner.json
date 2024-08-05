@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change Left Ctrl+hjkl to arrow keys",
+                        "description": "For HHKB - Change Left Option+hjkl to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
@@ -99,7 +99,7 @@
                         ]
                     },
                     {
-                        "description": "Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone.",
+                        "description": "For Darwin - Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone",
                         "manipulators": [
                             {
                                 "from": {
