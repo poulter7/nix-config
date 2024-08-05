@@ -85,5 +85,9 @@
       target="./Library/Application Support/Code/User/keybindings.json";
       force=true;
     };
+    authorized-keys = {
+      source=./ssh/authorized_keys;
+      target=".ssh/authorized_keys";
+    };
   };
 }
