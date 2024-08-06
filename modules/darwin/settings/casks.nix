@@ -14,6 +14,7 @@
       "trader-workstation"
       "ibkr"
       "raycast"
+      "visual-studio-code"
     ];
   };
 }
