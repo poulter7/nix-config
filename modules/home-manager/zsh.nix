@@ -88,8 +88,7 @@
         "history" 
         "history-substring-search" 
         "tmux"
-        "vscode"
-      ];
+    ];
     };
   };
 }

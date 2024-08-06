@@ -24,7 +24,6 @@
       tmux
       jump
       neovim
-      vscode
       terraform
       oh-my-zsh
       texliveFull

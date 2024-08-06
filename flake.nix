@@ -41,10 +41,13 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
         config.allowUnfree = true; 
       };
       modules = [
-        mac-app-util.darwinModules.default
         ./modules/darwin
+        mac-app-util.darwinModules.default
         home-manager.darwinModules.home-manager {
           home-manager = {
+            sharedModules = [
+              mac-app-util.homeManagerModules.default
+            ];
             useGlobalPkgs = true;
             useUserPackages = true;
             users."${user}".imports = [ 

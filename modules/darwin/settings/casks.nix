@@ -13,6 +13,7 @@
       "texshop"
       "trader-workstation"
       "ibkr"
+      "raycast"
     ];
   };
 }
