@@ -15,6 +15,7 @@
       "ibkr"
       "raycast"
       "visual-studio-code"
+      "skim"
     ];
   };
 }

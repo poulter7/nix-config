@@ -2,9 +2,11 @@
   environment = {
     shells = with pkgs; [ bash zsh ];
     loginShell = pkgs.zsh;
-    systemPackages = [ pkgs.coreutils ];
+    systemPackages = [ 
+      pkgs.coreutils
+      pkgs.poetry
+    ];
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
   };
- 
 }
