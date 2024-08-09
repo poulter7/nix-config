@@ -43,6 +43,10 @@
       source <(fzf --zsh)
       # shell integration for jump
       eval "$(jump shell zsh)"
+      
+      export PYENV_ROOT="$HOME/.pyenv"
+      [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+      eval "$(pyenv init -)"
 
       # from: https://github.com/NixOS/nixpkgs/issues/154696
       source ~/.p10k.zsh
