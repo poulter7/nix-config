@@ -4,7 +4,7 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
+  -- "AstroNvim/astrocommunity",
   -- { import = "astrocommunity.color.modes-nvim" },
   -- { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   -- { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },

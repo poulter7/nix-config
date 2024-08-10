@@ -88,5 +88,9 @@
       source=./ssh/authorized_keys;
       target=".ssh/authorized_keys";
     };
+    ideavimrc = {
+      source=./idea/.ideavimrc;
+      target=".ideavimrc";
+    };
   };
 }

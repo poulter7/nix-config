@@ -43,6 +43,8 @@
       source <(fzf --zsh)
       # shell integration for jump
       eval "$(jump shell zsh)"
+      # don't write __pycache__ files
+      export PYTHONDONTWRITEBYTECODE=1
       
       export PYENV_ROOT="$HOME/.pyenv"
       [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"

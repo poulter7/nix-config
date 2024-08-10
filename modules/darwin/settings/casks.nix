@@ -16,6 +16,7 @@
       "raycast"
       "visual-studio-code"
       "skim"
+      "bruno"
     ];
   };
 }
