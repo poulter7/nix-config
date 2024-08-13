@@ -46,7 +46,7 @@
     "viceroy.config.internal.lastUpdateTime": "2023-04-17T21:18:15.246Z",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "vscode-neovim.neovimExecutablePaths.darwin": "/etc/profiles/per-user/jonathan/bin/nvim",
-    "vscode-neovim.NVIM_APPNAME": "nvim-nixos-vscode",
+    "vscode-neovim.NVIM_APPNAME": "nvim-nixos",
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "git.autofetch": true,
     "git.enableSmartCommit": true,

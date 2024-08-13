@@ -26,6 +26,7 @@
       vi = "nvim";
       python = "python3";
       k = "kubectl";
+      tf = "terraform";
       tmux = "TERM=screen-256color-bce tmux";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       resource = ". ~/.zshrc";
@@ -33,7 +34,7 @@
     };
     
     initExtraFirst = ''
-      if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+      if [[ "$TERM_PROGRAM" != "vscode" ]] && [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]]; then
         export ZSH_TMUX_AUTOSTART=true
       fi
     '';

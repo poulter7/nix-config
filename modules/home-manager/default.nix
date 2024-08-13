@@ -64,11 +64,6 @@
       target=".config/nvim-nixos";
       recursive = true;
     };
-    astronvim-vscode = {
-      source=./astronvim-vscode;
-      target=".config/nvim-nixos-vscode";
-      recursive = true;
-    };
     vimac = {
       source=../darwin/apps/Vimac.app;
       target="./Applications/Vimac.app";
