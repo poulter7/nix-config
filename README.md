@@ -3,6 +3,7 @@ This repo is a place for me to hopefully solve a perpetual problem: make every m
 
 ## Getting started
 git clone git@github.com:poulter7/nix-config.git
+
 ./init.sh
 
 ## Build the nix configuration
