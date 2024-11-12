@@ -17,6 +17,10 @@
       "visual-studio-code"
       "skim"
       "bruno"
+      "google-chrome"
+      "todoist"
+      "karabiner-elements"
+      "steam"
     ];
   };
 }

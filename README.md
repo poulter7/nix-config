@@ -6,11 +6,8 @@ git clone git@github.com:poulter7/nix-config.git
 
 ./init.sh
 
-## Build the nix configuration
-nix build .#darwinConfigurations.personal.system
-
 ## Activate the nix configuration
-./result/sw/bin/darwin-rebuild switch --flake .#mac
+nix run nix-darwin -- switch --flake .#mac
 
 ## Build and Reactivate
 darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac

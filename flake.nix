@@ -32,7 +32,7 @@
 outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, mac-app-util, ... }: 
     let
       user = "jonathan";
-      system = "x86_64-darwin";
+      system = "aarch64-darwin";
     in {
     darwinConfigurations.mac = darwin.lib.darwinSystem {
       inherit system;
@@ -42,12 +42,8 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
       };
       modules = [
         ./modules/darwin
-        mac-app-util.darwinModules.default
         home-manager.darwinModules.home-manager {
           home-manager = {
-            sharedModules = [
-              mac-app-util.homeManagerModules.default
-            ];
             useGlobalPkgs = true;
             useUserPackages = true;
             users."${user}".imports = [ 
