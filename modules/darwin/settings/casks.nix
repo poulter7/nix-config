@@ -21,6 +21,7 @@
       "todoist"
       "karabiner-elements"
       "steam"
+      "sublime-text"
     ];
   };
 }
