@@ -25,7 +25,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.note-taking.neorg" },
   { import = "astrocommunity.project.projectmgr-nvim" },
-  { import = "astrocommunity.project.nvim-spectre" },
+  -- { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.code-runner.compiler-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.git.neogit" },
