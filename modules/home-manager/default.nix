@@ -27,6 +27,7 @@
       terraform
       oh-my-zsh
       texliveFull
+      uv
     ];
 
     sessionVariables = {
