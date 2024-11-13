@@ -27,6 +27,7 @@
       terraform
       oh-my-zsh
       texliveFull
+      nodejs_20
       uv
     ];
 
