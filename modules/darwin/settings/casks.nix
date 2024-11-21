@@ -22,6 +22,10 @@
       "karabiner-elements"
       "steam"
       "sublime-text"
+      "logi-options+"
+      "readdle-spark"
+      "cursor"
+      "jetbrains-toolbox"
     ];
   };
 }
