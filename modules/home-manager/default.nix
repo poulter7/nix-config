@@ -29,6 +29,9 @@
       texliveFull
       nodejs_20
       uv
+      yarn
+      typescript
+      awscli
     ];
 
     sessionVariables = {
