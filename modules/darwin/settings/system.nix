@@ -2,6 +2,7 @@
 
   system = {
     defaults = {  
+      screencapture.location = "~/Screenshots";
       NSGlobalDomain = {
         # Dark mode
         AppleInterfaceStyle = "Dark";

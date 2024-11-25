@@ -61,7 +61,7 @@
     tmux = {
       source=./tmux;
       target=".config/tmux/";
-      recursive = true;
+      recursive=true;
       onChange="echo 'Refreshing tmux configuration' && ${pkgs.tmux}/bin/tmux source ~/.config/tmux/tmux.conf.local";
     };
     astronvim = {
@@ -91,6 +91,11 @@
     ideavimrc = {
       source=./idea/.ideavimrc;
       target=".ideavimrc";
+    };
+    screenshots = {
+       source=./screenshots/.keep;
+       target="Screenshots/.keep";
+       recursive=true;
     };
   };
 }

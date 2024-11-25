@@ -47,10 +47,6 @@
       # don't write __pycache__ files
       export PYTHONDONTWRITEBYTECODE=1
       
-      export PYENV_ROOT="$HOME/.pyenv"
-      [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-      eval "$(pyenv init -)"
-
       # from: https://github.com/NixOS/nixpkgs/issues/154696
       source ~/.p10k.zsh
       export EDITOR=vi
