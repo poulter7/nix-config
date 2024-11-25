@@ -26,6 +26,8 @@
       "readdle-spark"
       "cursor"
       "jetbrains-toolbox"
+      "chatgpt"
+      "qgis"
     ];
   };
 }

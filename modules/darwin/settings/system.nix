@@ -20,6 +20,7 @@
         # Style options
         orientation = "bottom";
         show-recents = false;
+        mru-spaces = false;
       };
 
       finder = {

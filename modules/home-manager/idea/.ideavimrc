@@ -1,5 +1,4 @@
 set shell=zsh\ -i
-let mapleader = " "
 
 " Press `f` to activate AceJump
 map f <Action>(AceAction)
@@ -15,9 +14,13 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 
-:set relativenumber
-:set number
+set relativenumber
+set number
 
+" Show current vim mode
+set showmode
 
+" Disable which-key timeout, i.e. show the menu until you press a key
 set notimeout
-set which-key
+
+" Show the menu also for default Vim actions like `gg` or `zz`.
