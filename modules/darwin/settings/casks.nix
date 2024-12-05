@@ -1,6 +1,9 @@
 { lib, ... }: {
   homebrew = {
     enable = true;
+    brews = [
+      "swiftlint"
+    ];
     casks = [
       "iterm2"
       "spotify"
@@ -28,6 +31,8 @@
       "jetbrains-toolbox"
       "chatgpt"
       "qgis"
+      "active-trader-pro"
+      "caffeine"
     ];
   };
 }

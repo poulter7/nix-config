@@ -32,6 +32,7 @@
       yarn
       typescript
       awscli
+      gh
     ];
 
     sessionVariables = {

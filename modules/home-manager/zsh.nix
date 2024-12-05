@@ -72,6 +72,7 @@
         # Open Neovim with the selected config
         NVIM_APPNAME=$(basename $config) nvim $@
       }
+      export PATH="$PATH:/opt/homebrew/bin"
       '';
     plugins = [
       {
