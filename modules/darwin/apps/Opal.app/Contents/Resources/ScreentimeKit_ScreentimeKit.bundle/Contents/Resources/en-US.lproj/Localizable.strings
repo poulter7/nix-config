@@ -1,0 +1,42 @@
+/* 20 apps will be blocked for 5 hours */
+"%@ will be blocked for %@" = "%@ will be blocked for %@";
+
+/* 2 apps will be blocked in 5 minutes */
+"%@ will be blocked in %@" = "%@ will be blocked in %@";
+
+/* 20 apps will be blocked until the end of the day */
+"%@ will be blocked until the end of the day" = "%@ will be blocked until the end of the day";
+
+/* No comment provided by engineer. */
+"%d apps" = "%d apps";
+
+/* No comment provided by engineer. */
+"%d websites" = "%d websites";
+
+/* No comment provided by engineer. */
+"All apps" = "All apps";
+
+/* All apps except 1 app, 2 websites */
+"All apps except %@" = "All apps except %@";
+
+/* No comment provided by engineer. */
+"App Limit almost reached" = "App Limit almost reached";
+
+/* No comment provided by engineer. */
+"No apps" = "No apps";
+
+/* No comment provided by engineer. */
+"Time to wrap up and get ready to focus" = "Time to wrap up and get ready to focus";
+
+/* No comment provided by engineer. */
+"We've put a bypassable block on all apps to help reduce your ScreenTime" = "We've put a bypassable block on all apps to help reduce your ScreenTime";
+
+/* No comment provided by engineer. */
+"We've put a bypassable block on distracting apps to help reduce your ScreenTime" = "We've put a bypassable block on distracting apps to help reduce your ScreenTime";
+
+/* No comment provided by engineer. */
+"You've reached your App Limit" = "You've reached your App Limit";
+
+/* No comment provided by engineer. */
+"Your apps are about to relock" = "Your apps are about to relock";
+

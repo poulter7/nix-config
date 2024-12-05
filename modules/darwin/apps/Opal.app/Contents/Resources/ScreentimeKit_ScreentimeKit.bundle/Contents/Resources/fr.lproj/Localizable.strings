@@ -1,0 +1,42 @@
+/* 20 apps will be blocked for 5 hours */
+"%@ will be blocked for %@" = "%@ seront bloquées pendant %@";
+
+/* 2 apps will be blocked in 5 minutes */
+"%@ will be blocked in %@" = "%@ seront bloquées dans %@";
+
+/* 20 apps will be blocked until the end of the day */
+"%@ will be blocked until the end of the day" = "%@ seront bloquées jusqu'à la fin de la journée";
+
+/* No comment provided by engineer. */
+"%d apps" = "%d apps";
+
+/* No comment provided by engineer. */
+"%d websites" = "%d sites web";
+
+/* No comment provided by engineer. */
+"All apps" = "Toutes les apps";
+
+/* All apps except 1 app, 2 websites */
+"All apps except %@" = "Toutes les apps sauf %@";
+
+/* No comment provided by engineer. */
+"App Limit almost reached" = "Limite d'Apps presque atteinte";
+
+/* No comment provided by engineer. */
+"No apps" = "Aucune app";
+
+/* No comment provided by engineer. */
+"Time to wrap up and get ready to focus" = "Il est temps de conclure et de te préparer à te concentrer";
+
+/* No comment provided by engineer. */
+"We've put a bypassable block on all apps to help reduce your ScreenTime" = "Nous avons mis en place un blocage contournable sur toutes les apps afin de réduire ton Temps d'Écran";
+
+/* No comment provided by engineer. */
+"We've put a bypassable block on distracting apps to help reduce your ScreenTime" = "Nous avons mis en place un blocage contournable sur les apps distrayantes afin de réduire ton Temps d'Écran";
+
+/* No comment provided by engineer. */
+"You've reached your App Limit" = "Tu as atteint ta Limite d'Apps";
+
+/* No comment provided by engineer. */
+"Your apps are about to relock" = "Tes apps sont sur le point d'être reverrouillées";
+

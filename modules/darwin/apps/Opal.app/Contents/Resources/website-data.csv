@@ -1,0 +1,159 @@
+ID,Name,Domains,IsVisible,Categories
+X,X,"twitter.com,x.com",TRUE,social
+Facebook,Facebook,"facebook.com,facebook.de,facebook.fr,fb.com,fb.me,",TRUE,social
+Reddit,Reddit,reddit.com,TRUE,social
+YouTube,YouTube,"youtube.com,googlevideo.com,youtu.be",TRUE,"social,video"
+TikTok,TikTok,tiktok.com,TRUE,social
+Vimeo,Vimeo,"vimeo.com,vimeopro.com",TRUE,"social,video"
+WashingtonPost,Washington Post,washingtonpost.com,TRUE,news
+Twitch,Twitch,twitch.tv,TRUE,social
+Tumblr,Tumblr,tumblr.com,TRUE,social
+Tinder,Tinder,gotinder.com,TRUE,dating
+Slack,Slack,slack.com,TRUE,work
+RobinHood,RobinHood,robinhood.com,TRUE,gambling
+Revolut,Revolut,revolut.com,TRUE,
+Quora,Quora,quora.com,TRUE,social
+ProductHunt,ProductHunt,producthunt.com,TRUE,
+Pinterest,Pinterest,"pinterest.com,pinterest.co.uk,pinterest.ca,pinterest.cl,pinterest.co.kr,pinterest.de,pinterest.dk,pinterest.es,pinterest.fr, pinterest.jp,pinterest.nz,pinterest.pt,pinterest.ru",TRUE,social
+Outlook,Outlook,"outlook.com,outlook.live.com,outlook.live.net,outlook.office.com,outlook.office365.com,hotmail.com",TRUE,work
+OKCupid,OKCupid,okcupid.com,TRUE,dating
+NYTimes,NY Times,nytimes.com,TRUE,news
+Notion,Notion,notion.so,TRUE,work
+Netflix,Netflix,netflix.com,TRUE,video
+NBCNews,NBC News,nbcnews.com,TRUE,news
+MSN,MSN,msn.com,TRUE,news
+Medium,Medium,medium.com,TRUE,work
+Match,Match,match.com,TRUE,dating
+LinkedIn,LinkedIn,linkedin.com,TRUE,work
+LeMonde,LeMonde,lemonde.fr,TRUE,news
+Hulu,Hulu,hulu.com,TRUE,video
+HackerNews,Hacker News,news.ycombinator.com,TRUE,news
+Guardian,Guardian,theguardian.com,TRUE,news
+Gmail,Gmail,"gmail.com,googlemail.com,inbox.google.com,mail.google.com",TRUE,work
+FanDuel,FanDuel,fanduel.com,TRUE,gambling
+Caesars,Caesars,caesars.com,TRUE,gambling
+Bet365,Bet366,bet365.com,TRUE,gambling
+Fanatics,Fanatics,fanatics.com,TRUE,gambling
+Instagram,Instagram,instagram.com,TRUE,social
+eToro,eToro,etoro.com,TRUE,gambling
+DraftKings,DraftKings,draftkings.com,TRUE,gambling
+BetMGM,BetMGM,betmgm.com,TRUE,gambling
+Discord,Discord,"discord.com,discord.gg",TRUE,"video,social"
+CNN,CNN,"cnn.com,cnn.net",TRUE,news
+Bumble,Bumble,bumble.com,TRUE,dating
+Binance,Binance,binance.com,TRUE,gambling
+BBC,BBC,"bbc.co.uk,bbc.com",TRUE,news
+AmazonPrimeVideo,Amazon Prime Video,"primevideo.com,amazonvideo.com",TRUE,video
+Amazon,Amazon,"amazon.com,amazon.co.uk,amazon.co.jp,amazon.ca,amazon.de,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl",TRUE,shopping
+Etsy,Etsy,etsy.com,TRUE,shopping
+Temu,Temu,temu.com,TRUE,shopping
+AliExpress,AliExpress,aliexpress.com,TRUE,shopping
+Shein,Shein,shein.co.uk,TRUE,shopping
+ABCNews,ABC News,abcnews.go.com,TRUE,news
+CBSNews,CBS News,cbsnews.com,TRUE,news
+Bloomberg,Bloomberg,bloomberg.com,TRUE,news
+CNBC,CNBC,cnbc.com,TRUE,news
+FoxNews,Fox News,foxnews.com,TRUE,news
+FoxBusiness,Fox Business,foxbusiness.com,TRUE,news
+WallStreetJournal,Wall Street Journal,wsj.com,TRUE,news
+WashingtonTimes,Washington Times,washingtontimes.com,TRUE,news
+Reuters,Reuters,reuters.com,TRUE,news
+Time,Time,time.com,TRUE,news
+TheGuardian,The Guardian,theguardian.com,TRUE,news
+Forbes,Forbes,forbes.com,TRUE,news
+Yahoo,Yahoo,yahoo.com,TRUE,news
+USAToday,USA Today,usatoday.com,TRUE,news
+AlJazeera,AlJazeera,aljazeera.com,TRUE,news
+AlMonitor,Al Monitor,al-monitor.com,TRUE,news
+News.com.au,News.com.au,news.com.au,TRUE,news
+EuroNews,Euro News,euronews.com,TRUE,news
+Politico,Politico,Politico.com,TRUE,news
+Salon,Salon,salon.com,TRUE,news
+Mashable,Mashable,mashable.com,TRUE,news
+pornhub.com,Pornhub,pornhub.com,FALSE,adult
+xvideos.com,XVideos,xvideos.com,FALSE,adult
+xhamster.com,XHamster,xhamster.com,FALSE,adult
+xnxx.com,XNXX,xnxx.com,FALSE,adult
+youporn.com,YouPorn,youporn.com,FALSE,adult
+redtube.com,RedTube,redtube.com,FALSE,adult
+dinotube.com,DinoTube,dinotube.com,FALSE,adult
+pornone.com,PornOne,pornone.com,FALSE,adult
+beeg.com,Beeg,beeg.com,FALSE,adult
+ok.xxx,OK.xxx,ok.xxx,FALSE,adult
+thumbzilla.com,ThumbZilla,thumbzilla.com,FALSE,adult
+porn300.com,Porn300,porn300.com,FALSE,adult
+fapster.xxx,Fapster,fapster.xxx,FALSE,adult
+eporner.com,Eporner,eporner.com,FALSE,adult
+fuq.com,Fuq,fuq.com,FALSE,adult
+ixxx.com,IXXX,ixxx.com,FALSE,adult
+onlyfans.com,OnlyFans,onlyfans.com,FALSE,adult
+txxx.com,TXXX,txxx.com,FALSE,adult
+pornzog.com,PornZog,pornzog.com,FALSE,adult
+hclips.com,HClips,hclips.com,FALSE,adult
+zbporn.com,ZBPorn,zbporn.com,FALSE,adult
+sexvid.xxx,SexVid,sexvid.xxx,FALSE,adult
+pornkai.com,PornKai,pornkai.com,FALSE,adult
+sunporno.com,SunPorno,sunporno.com,FALSE,adult
+tube8.com,Tube8,tube8.com,FALSE,adult
+smutr.com,Smutr,smutr.com,FALSE,adult
+gotporn.com,GotPorn,gotporn.com,FALSE,adult
+pornhat.com,PornHat,pornhat.com,FALSE,adult
+vipwank.com,VIPWank,vipwank.com,FALSE,adult
+tiava.com,Tiava,tiava.com,FALSE,adult
+tubev.sex,TubeV,tubev.sex,FALSE,adult
+iwank.tv,IWank,iwank.tv,FALSE,adult
+4tube.com,4Tube,4tube.com,FALSE,adult
+alohatube.com,AlohaTube,alohatube.com,FALSE,adult
+tube3.com,Tube3,tube3.com,FALSE,adult
+hello.porn,Hello.porn,hello.porn,FALSE,adult
+cumlouder.com,CumLouder,cumlouder.com,FALSE,adult
+hdxnxx.xxx,HDXNXX,hdxnxx.xxx,FALSE,adult
+megatube.xxx,MegaTube,megatube.xxx,FALSE,adult
+porn.com,Porn,porn.com,FALSE,adult
+porntube.com,Porntube,porntube.com,FALSE,adult
+shameless.com,Shameless,shameless.com,FALSE,adult
+xbabe.com,XBabe,xbabe.com,FALSE,adult
+pornid.xxx,PornID,pornid.xxx,FALSE,adult
+xxxvideos247.com,XXXVideos247,xxxvideos247.com,FALSE,adult
+fux.com,Fux,fux.com,FALSE,adult
+spankbang.com,SpankBang,spankbang.com,FALSE,adult
+largehdtube.com,LargeHDTube,largehdtube.com,FALSE,adult
+tubepornstars.com,TubePornstars,tubepornstars.com,FALSE,adult
+tastyblacks.com,TastyBlacks,tastyblacks.com,FALSE,adult
+bigporn.com,BigPorn,bigporn.com,FALSE,adult
+hotntubes.com,HotNTubes,hotntubes.com,FALSE,adult
+pornerbros.com,PornerBros,pornerbros.com,FALSE,adult
+pornjam.com,PornJam,pornjam.com,FALSE,adult
+milfporn.tv,MilfPorn,milfporn.tv,FALSE,adult
+pornfaze.com,Pornfaze,pornfaze.com,FALSE,adult
+lobstertube.com,LobsterTube,lobstertube.com,FALSE,adult
+melonstube.com,MelonsTube,melonstube.com,FALSE,adult
+pornheed.com,PornHeed,pornheed.com,FALSE,adult
+pornrabbit.com,PornRabbit,pornrabbit.com,FALSE,adult
+3movs.com,3Movs,3movs.com,FALSE,adult
+porndig.com,PornDig,porndig.com,FALSE,adult
+xxxbunker.com,XXXBunker,xxxbunker.com,FALSE,adult
+pornburst.xxx,PornBurst,pornburst.xxx,FALSE,adult
+efukt.com,Efukt,efukt.com,FALSE,adult
+forhertube.com,ForHerTube,forhertube.com,FALSE,adult
+pornito.xxx,Pornito,pornito.xxx,FALSE,adult
+tubewolf.com,TubeWolf,tubewolf.com,FALSE,adult
+hqporn.xxx,HQPorn,hqporn.xxx,FALSE,adult
+punishbang.com,PunishBang,punishbang.com,FALSE,adult
+thematureporn.net,TheMaturePorn,thematureporn.net,FALSE,adult
+livejasmin.com,LiveJasmin,livejasmin.com,FALSE,adult
+camsfinder.com,CamsFinder,camsfinder.com,FALSE,adult
+milfslive.com,MilfsLive,milfslive.com,FALSE,adult
+chaturbate.com,Chaturbate,chaturbate.com,FALSE,adult
+ichatonline.com,IChatOnline,ichatonline.com,FALSE,adult
+liveporngirls.com,LivePornGirls,liveporngirls.com,FALSE,adult
+flirt4free.com,Flirt4Free,flirt4free.com,FALSE,adult
+stripchat.com,StripChat,stripchat.com,FALSE,adult
+camsoda.com,CamSoda,camsoda.com,FALSE,adult
+fapchat.com,FapChat,fapchat.com,FALSE,adult
+rk.com,RealityKings,rk.com,FALSE,adult
+naughtyamerica.com,NaughtyAmerica,naughtyamerica.com,FALSE,adult
+brazzersnetwork.com,BrazzersNetwork,brazzersnetwork.com,FALSE,adult
+javhd.com,JavHD,javhd.com,FALSE,adult
+faphouse.com,FapHouse,faphouse.com,FALSE,adult
+bangbrosnetwork.com,BangBrosNetwork,bangbrosnetwork.com,FALSE,adult

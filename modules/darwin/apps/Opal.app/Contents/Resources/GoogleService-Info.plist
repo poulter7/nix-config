@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyC4rA88f_cvn4y-kewxu6zUDVWxzIgRkRE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>161403641378</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.withopal.opalmacos</string>
+	<key>PROJECT_ID</key>
+	<string>opal-fa413</string>
+	<key>STORAGE_BUCKET</key>
+	<string>opal-fa413.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:161403641378:ios:3551f18d27c09bd57eb47b</string>
+	<key>DATABASE_URL</key>
+	<string>https://opal-fa413.firebaseio.com</string>
+</dict>
+</plist>

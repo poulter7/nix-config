@@ -1,0 +1,9 @@
+ID,Name,IsAdult,IsContentHidden
+adult,Adult,TRUE,TRUE
+social,Social,FALSE,FALSE
+news,News,FALSE,TRUE
+dating,Dating,FALSE,FALSE
+work,Work,FALSE,FALSE
+gambling,Gambling,FALSE,FALSE
+video,Video,FALSE,FALSE
+shopping,Shopping,FALSE,FALSE

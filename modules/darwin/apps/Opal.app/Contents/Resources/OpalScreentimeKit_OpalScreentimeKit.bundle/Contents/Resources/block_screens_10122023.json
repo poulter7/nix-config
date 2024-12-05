@@ -1,0 +1,1100 @@
+[
+  {
+    "Emoji": "",
+    "Title": "[App] Was \nBlocked by Opal",
+    "Subtitle": "You have set up Opal to block this app during your session.\n\nManage blocking by opening the Opal app.\n\nOpal's mission is to empower humans to focus better. \n\nThank you.",
+    "Primary CTA": "Close",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Session"
+  },
+  {
+    "Emoji": "",
+    "Title": "Empower Humans \nto Focus Better.",
+    "Subtitle": "That's Opal's mission.\n\nThat's why [App] was blocked during your session.\n\nManage blocking by opening the Opal app.",
+    "Primary CTA": "Close",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Session"
+  },
+  {
+    "Emoji": "",
+    "Title": "50 Million \nHours Saved",
+    "Subtitle": "...and counting, from all Opal customers globally.\n\n[App] was blocked during your session.\n\nYou're saving time, too.\n\nManage blocking by opening the Opal app.",
+    "Primary CTA": "Close",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Session"
+  },
+  {
+    "Emoji": "",
+    "Title": "\nThis Is a Friendly Reminder 👋",
+    "Subtitle": "You set [App] as distracting.\n\nYou can customize this limit right now in the \"Limit\" tab of the Opal app. \n\nWe'll be waiting for you!",
+    "Primary CTA": "Refocus",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Limit"
+  },
+  {
+    "Emoji": "",
+    "Title": "Empower Humans \nto Focus Better.",
+    "Subtitle": "That's Opal's mission.\n\nAre you sure you want to use [App]?\n\nYou can customize this limit right now in the \"Limit\" tab of the Opal app. ",
+    "Primary CTA": "Close",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Limit"
+  },
+  {
+    "Emoji": "",
+    "Title": "50 Million \nHours Saved",
+    "Subtitle": "... and counting, from all Opal customers globally.\n\nAre you sure you want to use [App]?\n\nYou're saving time, too.\n\nYou can customize this limit right now in the \"Limit\" tab of the Opal app. ",
+    "Primary CTA": "Close",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Limit"
+  },
+  {
+    "Emoji": "",
+    "Title": "Do You Need [App] Right Now? ",
+    "Subtitle": "Breathe in...\n\nBreathe out..\n\nYou can customize this limit right now in the \"Limit\" tab of the Opal app. ",
+    "Primary CTA": "Close",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Default Limit"
+  },
+  {
+    "Emoji": "👽",
+    "Title": "[App] Was Abducted by Aliens.",
+    "Subtitle": "No worries, it’s only temporary! \n\nThey will return it to Earth before you know it.\n\nIn the meantime feel free to spend some time outside or read a book.",
+    "Primary CTA": "Call FBI",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#142325",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "⚙️",
+    "Title": "[App] Is Under Maintenance...",
+    "Subtitle": "But just for you...\n\nOpal blocked it to keep you focused.",
+    "Primary CTA": "All Right",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#353535",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "👹",
+    "Title": "The App-eating Monster Strikes Again!",
+    "Subtitle": "An app-eating monster is on the loose, and it seems to have devoured [App]. \n\nSounds like you’ll have to go enjoy some real-life adventures!",
+    "Primary CTA": "Turn Away",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#330D13",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "☁️",
+    "Title": "[App] Got Lost in the Cloud.",
+    "Subtitle": "Regrettably, the cloud hosting [App] has been displaced by strong winds and is currently untraceable.\n\nYou can enjoy this moment on the ground and talk to your nearest neighboor!",
+    "Primary CTA": "Set Sail",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#555555",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🤖",
+    "Title": "I'll Be Back...",
+    "Subtitle": "[App] has been temporarily terminated. \n\nRecharge, refresh, and return stronger than ever!",
+    "Primary CTA": "Hasta La Vista",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#09414C",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🎬",
+    "Title": "Cut! No [App] Allowed.",
+    "Subtitle": "This app is not in the script. Take center stage in your own life and let the show begin!",
+    "Primary CTA": "Action!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#302E2D",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🦸",
+    "Title": "App-block, \nAssemble!",
+    "Subtitle": "Shield activated! [App] is under lockdown. \n\nUnleash your inner superhero without distractions.",
+    "Primary CTA": "Be A Hero",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#382245",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🌋",
+    "Title": "Shielded from App-ocalypse!",
+    "Subtitle": "Fear not! You are protected by Opal. \n\nEscape the app-ocalyptic chaos and find solace in reality.",
+    "Primary CTA": "Escape",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#181818",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": " 🚧",
+    "Title": "Road Closed to Distractions!",
+    "Subtitle": "Detour ahead! [App] is temporarily out of reach.\n\nTake the scenic route and explore the uncharted territories of the real world.",
+    "Primary CTA": "Detour",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4d4d00",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🤩",
+    "Title": "The [App] Show Must Go On... Without You!",
+    "Subtitle": "This app is currently starring without you. \n\nTake a break and write your own real-life script.",
+    "Primary CTA": "Be Real",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#764900",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🚀",
+    "Title": "To Infinity... \nand No Apps!",
+    "Subtitle": "Blast off! [App] has left the galaxy. Explore the universe of possibilities beyond the screen.",
+    "Primary CTA": "Liftoff!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#391B24",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🐇",
+    "Title": "Take a Break \nFrom The Matrix.",
+    "Subtitle": "Unplug and reconnect with reality. [App] can wait while you savor the present moment.",
+    "Primary CTA": "Wake Up",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#063921",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🧑‍🚀",
+    "Title": "Houston, We Have \na Distraction Problem",
+    "Subtitle": "[App] is temporarily out of reach. \n\nIt's time to launch into the uncharted territories of your dreams.",
+    "Primary CTA": "Roger That",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#777777",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "✨",
+    "Title": "May The Focus \nBe With You.",
+    "Subtitle": "[App] is offline, but the force is strong in the real world. \n\nLet it guide your offline journey.",
+    "Primary CTA": "Always!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#001F6B",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "👋",
+    "Title": "This Isn't The App You're Looking For.",
+    "Subtitle": "Move along! [App] is hidden from view. \n\nExplore the real world and discover what you seek.",
+    "Primary CTA": "Move Along",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#826644",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "📜",
+    "Title": "Sorry, [App] Can't \nJoin Your Quest.",
+    "Subtitle": "Though [App] can't embark on your quest, your dreams still await. \n\nVenture forth and conquer new horizons.",
+    "Primary CTA": "Quest On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#442F22",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🎯",
+    "Title": "Locked on Target: Productivity!",
+    "Subtitle": "[App] is in the pits.\n\nZero in on your goals, block distractions, and hit the bullseye of success.",
+    "Primary CTA": "Hit It",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1B303B",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🛡️",
+    "Title": "Shield Up, Distractions Down!",
+    "Subtitle": "Defend your focus with this impenetrable shield.\n\nVanquish [App] and conquer the battle against distractions.",
+    "Primary CTA": "Defend",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#434343",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🌕",
+    "Title": "One Small Tap For You, Giant Step For Distractions!",
+    "Subtitle": "Leave [App] behind, launch into focus, and make giant leaps of productivity.",
+    "Primary CTA": "Tap Away",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#6B6550",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "⛷",
+    "Title": "Sorry, [App] \nWent Off-Piste.",
+    "Subtitle": "But you're skiing down a solid track.\n\nWhat style! Keep going.  ",
+    "Primary CTA": "Schuss!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4856b0",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🔴",
+    "Title": "Sorry, [App] \nIs Not Allowed.",
+    "Subtitle": "Assert control over machine and maintain the mission of productivity.",
+    "Primary CTA": "Mission OK",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1E0C0C",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🖖",
+    "Title": "Live Long and Prosper",
+    "Subtitle": "Embrace focus, and chart a course to your dreams - the final frontier.",
+    "Primary CTA": "Engage!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#232741",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🐉",
+    "Title": "[App] Slain by Dragon\t",
+    "Subtitle": "Unfortunately, a fierce dragon has taken [App] to its lair. While knights are on their way, why not slay some chores instead?      ",
+    "Primary CTA": "Onward",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#330D13",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🧙",
+    "Title": "[App] Under a Wizard's Spell",
+    "Subtitle": "A mischievous wizard has temporarily enchanted [App]. During this time, why not weave some magic in your world?",
+    "Primary CTA": "Cast Spell",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#353535 ",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🍀",
+    "Title": "[App] Chasing a Leprechaun",
+    "Subtitle": "[App] is off chasing a leprechaun. Use this chance to chase some luck of your own!",
+    "Primary CTA": "Chase Luck",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#181818",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🍄",
+    "Title": "[App] in Wonderland",
+    "Subtitle": "[App] has gone down the rabbit hole. While it's wandering, create your own wonderland!",
+    "Primary CTA": "Enter",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#302E2D",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🦄",
+    "Title": "Unicorn Magic on [App]",
+    "Subtitle": "A unicorn's magic has whisked [App] away to a mystical land. Use this time to create some magic in your life.",
+    "Primary CTA": "Make Magic",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#382245",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "💡",
+    "Title": "[App] Lightbulb Moment",
+    "Subtitle": "[App] is having a lightbulb moment. You should too. Go have some creative time!",
+    "Primary CTA": "Innovate",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#555555",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🏰",
+    "Title": "[App] at the Royal Ball",
+    "Subtitle": "[App] is off attending a royal ball. Use this time to be the prince/princess of your productivity",
+    "Primary CTA": "Be Royal",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#181818",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🧜‍♀️",
+    "Title": "[App] under the Sea",
+    "Subtitle": "[App] is having a chat with mermaids. It's your chance to dive deep into your real-life tasks!",
+    "Primary CTA": "Dive Deep",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#09414C",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🧞‍♂️",
+    "Title": "[App] Freed a Genie",
+    "Subtitle": "[App] is off on a magic carpet ride. Use this time to unleash your inner magic!",
+    "Primary CTA": "Magical",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#330D13",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🎪",
+    "Title": "[App] Joined the Circus",
+    "Subtitle": "[App] has taken a break to join the circus. While it's away, step into the center ring of your life!",
+    "Primary CTA": "Applaud",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#09414C",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🌍",
+    "Title": "[App] in Orbit",
+    "Subtitle": "[App] is orbiting Earth. How about achieving some down-to-earth goals in the meantime?",
+    "Primary CTA": "Bluey",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#09304C",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "⏳",
+    "Title": "[App] in a Time Loop",
+    "Subtitle": "[App] got caught in a time loop. Make the most of this time to loop in productivity!",
+    "Primary CTA": "Loop In",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#475F8A\n",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🚂",
+    "Title": "[App] on a Train Journey",
+    "Subtitle": "[App] is off on a scenic train ride. Use this time to stay on track with your goals!",
+    "Primary CTA": "On Track",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#463F3A",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🕹️",
+    "Title": "[App] is Respawning",
+    "Subtitle": "[App] got trapped in a video game. Level up your productivity before it respawns.",
+    "Primary CTA": "Level Up",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#6C717A",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🎞️",
+    "Title": "[App] at the Oscars",
+    "Subtitle": "\"[App] is walking the red carpet at the Oscars. Take the award for 'Best in Productivity'!",
+    "Primary CTA": "I Thank",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#6D7583",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "🪐",
+    "Title": "[App] in a Galaxy Far, Far Away",
+    "Subtitle": "[App] is needed by Rebels in Star Wars. Use the Force on your tasks!",
+    "Primary CTA": "Use Force",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#677380",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "⚔️",
+    "Title": "[App] is in a Knight's Quest",
+    "Subtitle": "[App] is away on a knightly quest. While it's away, go conquer your own challenges!",
+    "Primary CTA": "Conquer",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#555555",
+    "Category": "Fun/Pop Culture"
+  },
+  {
+    "Emoji": "✍️",
+    "Title": "Life's Connections",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nWarm touch, tender hug,\nScreens cannot replicate love,\nLife's connections true.\n•",
+    "Primary CTA": "Touch",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#485550",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🪶",
+    "Title": "The Time Of Time",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nTide of time surges,\nOpportunities ebb, flow,\nSeize now, dreams in tow.\n•",
+    "Primary CTA": "Let's Flow",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#364B4B",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🧞",
+    "Title": "The Steps Ahead",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nIn the present, thrive,\nFocus on the steps ahead,\nDestiny unfolds.\n•",
+    "Primary CTA": "Step Ahead",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#28232E",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🕰️",
+    "Title": "Time's a Gift",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nCherish fleeting breaths,\nMoments weave our tapestry,\nTime's gift, treasured wealth.\n•",
+    "Primary CTA": "Breathe In",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#232630",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🏃",
+    "Title": "Break the Cycle",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nSwipe, scroll, repeat,\nDreams lie dormant, untouched,\nBreak the cycle now.\n•",
+    "Primary CTA": "Dream On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#204430",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "💪",
+    "Title": "Goals Become Reality",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nMinds tuned to the task,\nConcentration fuels progress,\nGoals become reality.\n•",
+    "Primary CTA": "Set Course",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1C463E",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "⏱️",
+    "Title": "Precious Seconds",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nMinutes, jewels so rare,\nPrecious seconds, handle with care,\nTime's worth beyond compare.\n•",
+    "Primary CTA": "Tresure",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3D404F",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🌟",
+    "Title": "Dreams Manifest True",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nFocus, laser sharp,\nClear vision, steady purpose,\nDreams manifest true.\n•",
+    "Primary CTA": "Aim True",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#332F49",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "👑",
+    "Title": "Most Precious Treasure",
+    "Subtitle": "[App] is blocked, but here is an Opal haiku for you instead:\n\n•\nMoments, fleeting gems,\nTime, our most precious treasure,\nSpent wisely, it shines.\n•",
+    "Primary CTA": "Carpe Diem",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#553E5D",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🌊",
+    "Title": "Unstoppable Flow",
+    "Subtitle": "[App] is blocked, but\nMaster Yoda wrote a focus \nHaiku just for you:\n\n•\nMoments like stardust,\nTime's force, unstoppable flow,\nAppreciate, we should.\n•",
+    "Primary CTA": "Go On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#20304D",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🧧",
+    "Title": "The Gift We Hold",
+    "Subtitle": "[App] is blocked, but\nMaster Yoda wrote a focus \nHaiku just for you:\n\n•\nYesterday, gone, is,\nTomorrow, uncertain, still,\nNow, the gift we hold.\n•",
+    "Primary CTA": "Win Today",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4B2B35",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "⌚️",
+    "Title": "Time's a Rhythm",
+    "Subtitle": "[App] is blocked, but\nMaster Yoda wrote a focus \nHaiku just for you:\n\n•\nInfinite ticking,\nTime's rhythm, universe sings,\nEternal, yet short.\n•",
+    "Primary CTA": "Slow Down",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#313B4D",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🛣️",
+    "Title": "Guide Destiny",
+    "Subtitle": "[App] is blocked, but\nMaster Yoda wrote a focus \nHaiku just for you:\n\n•\nTime, a teacher, wise,\nIts whispers guide destiny,\nListen, learn, follow.\n•",
+    "Primary CTA": "I'm Ready",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#474F49",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🧠",
+    "Title": "Mind Consumed",
+    "Subtitle": "[App] is blocked, but\nMaster Yoda wrote a focus \nHaiku just for you:\n\n•\nMind consumed by screens,\nPresent moment slips away,\nAwake, be mindful.\n•",
+    "Primary CTA": "Be Mindful",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#383148",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "📱",
+    "Title": "Put It Down, \nYou Should",
+    "Subtitle": "[App] is blocked, but\nMaster Yoda wrote a focus \nHaiku just for you:\n\n•\nPut it down, you should,\niPhone's grip on mind and soul,\nFreedom lies beyond.\n•",
+    "Primary CTA": "Phone Down",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4C545D",
+    "Category": "Haiku/Yoda"
+  },
+  {
+    "Emoji": "🧘",
+    "Title": "The Power of Now \nWith [App]",
+    "Subtitle": "\"Realize deeply that the present moment is all you ever have.\" - Eckhart Tolle",
+    "Primary CTA": "Be Present",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#363A44",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🏆",
+    "Title": "Victory is Near \nWithout [App]",
+    "Subtitle": "\"Don't let what you cannot do interfere with what you can do.\" - John Wooden",
+    "Primary CTA": "Win On!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#36352F",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💡",
+    "Title": "Light Your Inner \nSpark, Not [App]",
+    "Subtitle": "\"Innovation is saying no to a thousand things.\" - Steve Jobs",
+    "Primary CTA": "Ignite!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#535246\t",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🚀",
+    "Title": "Shoot for the Stars, Not for [App]!",
+    "Subtitle": "\"When something is important enough, you do it even if the odds are not in your favor.\" \n- Elon Musk",
+    "Primary CTA": "Aim High",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#0D1018",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌱",
+    "Title": "Grow With Passion, Not With [App]",
+    "Subtitle": "\"The purpose of our lives is to be happy.\" \n- Dalai Lama",
+    "Primary CTA": "Grow Up",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#2B3426",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🏔️",
+    "Title": "Conquer Your Peaks, \nNot [App]'s",
+    "Subtitle": "\"It's not the mountain we conquer, but ourselves.\" \n- Edmund Hillary",
+    "Primary CTA": "Just Do",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#7B7B7B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🎯",
+    "Title": "Your Target \nIsn’t [App]",
+    "Subtitle": "\"You miss 100% of the shots you don’t take.\" \n- Wayne Gretzky",
+    "Primary CTA": "Fire!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4F1E1E",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🏃",
+    "Title": "Race Past [App]",
+    "Subtitle": "\"The only way to do great work is to love what you do.\" \n- Steve Jobs",
+    "Primary CTA": "Run On!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3F4D50",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🕰️",
+    "Title": "[App] Isn’t Your \nTime Machine",
+    "Subtitle": "\"The two most powerful warriors are patience and time.\" \n- Leo Tolstoy",
+    "Primary CTA": "Be Patient",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#434756",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌈",
+    "Title": "Find Your Rainbow, \nNot [App]",
+    "Subtitle": "\"Try to be a rainbow in someone's cloud.\" \n- Maya Angelou",
+    "Primary CTA": "Cheer Up",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#342634",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🦋",
+    "Title": "Flutter Past [App]",
+    "Subtitle": "\"Just when the caterpillar thought her life was over, she began to fly.\" \n- Unknown",
+    "Primary CTA": "Fly Now",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#173D56",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💪",
+    "Title": "[App] Won’t Make You Stronger",
+    "Subtitle": "\"Strength does not come from physical capacity. It comes from an indomitable will.\" \n- Mahatma Gandhi",
+    "Primary CTA": "Be Strong",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#464C5B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌟",
+    "Title": "Outshine [App]",
+    "Subtitle": "\"To be a star, you must shine your own light.\" \n- Unknown",
+    "Primary CTA": "Shine!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#454C73",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🎈",
+    "Title": "Let Go of [App]",
+    "Subtitle": "\"Some of us think holding on makes us strong; but sometimes it is letting go.\" \n- Hermann Hesse",
+    "Primary CTA": "Let It Go",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#6F3030",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🎨",
+    "Title": "Paint a Picture, Not [App]",
+    "Subtitle": "\"Every artist was first an amateur.\" \n- Ralph Waldo Emerson",
+    "Primary CTA": "Draw On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3A2121",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🦁",
+    "Title": "Roar Past [App]",
+    "Subtitle": "\"It’s better to be a lion for a day than a sheep all your life.\" \n- Elizabeth Kenny",
+    "Primary CTA": "Roar On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#392B21",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🏰",
+    "Title": "Build Castles, Not [App]",
+    "Subtitle": "\"The future belongs to those who believe in the beauty of their dreams.\" \n- Eleanor Roosevelt\"",
+    "Primary CTA": "Build On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4E4A56",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🦉",
+    "Title": "Gain Wisdom, \nLose [App]",
+    "Subtitle": "\"The only true wisdom is in knowing you know nothing.\" \n- Socrates",
+    "Primary CTA": "Learn On",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#272332",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌻",
+    "Title": "Bloom Brighter \nThan [App]",
+    "Subtitle": "\"Wherever life plants you, bloom with grace.\" \n- Unknown",
+    "Primary CTA": "Flourish",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#A16E3D",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💫",
+    "Title": "Find Your Magic, \nLose [App]",
+    "Subtitle": "\"Magic is believing in yourself, if you can do that, you can make anything happen.\" \n- Johann Wolfgang von Goethe",
+    "Primary CTA": "Believe!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#28273A",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🗺️",
+    "Title": "Explore Beyond [App]",
+    "Subtitle": "\"Not all those who wander are lost.\" \n- J.R.R. Tolkien",
+    "Primary CTA": "Explore",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#393F4B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌌",
+    "Title": "[App] Isn't Your Universe",
+    "Subtitle": "\"The universe is under no obligation to make sense to you.\" - Neil deGrasse Tyson",
+    "Primary CTA": "Be Free",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1C192D",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "⏳",
+    "Title": "Is [App] Time \nWell Spent?",
+    "Subtitle": "\"Time you enjoy wasting is not wasted time.\" \n- Marthe Troly-Curtin",
+    "Primary CTA": "Enjoy Time",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#302A23",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🧩",
+    "Title": "Solve Your Puzzles, \nNot [App]'s",
+    "Subtitle": "\"The only limit to our realization of tomorrow will be our doubts of today.\" \n- Franklin D. Roosevelt",
+    "Primary CTA": "Crack It!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3C5C3F",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌠",
+    "Title": "Dream Bigger \nThan [App]",
+    "Subtitle": "\"Every great dream begins with a dreamer.\" - Harriet Tubman",
+    "Primary CTA": "Dream Big",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#16114A",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🗝️",
+    "Title": "You've Unlocked [App], How About Your Potential?",
+    "Subtitle": "\"The key to success is to focus on goals, not obstacles.\" - Unknown",
+    "Primary CTA": "Unleash!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#A08A6C",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🎭",
+    "Title": "Unmask Reality, \nBut Hide [App]",
+    "Subtitle": "\"Life is not a problem to be solved, but a reality to be experienced.\" - Soren Kierkegaard",
+    "Primary CTA": "Unmask!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#4B3636",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🔥",
+    "Title": "Ignite Your Fire, \nNot [App]'s",
+    "Subtitle": "\"Success is not final, failure is not fatal: It is the courage to continue that counts.\" - Winston Churchill",
+    "Primary CTA": "Spark It!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#7F240B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🕊️",
+    "Title": "Fly Higher \nThan [App]",
+    "Subtitle": "\"The future depends on what you do today.\" - Mahatma Gandhi",
+    "Primary CTA": "Soar Now",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#38383A",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌙",
+    "Title": "Shine Brighter \nThan [App]",
+    "Subtitle": "\"Shoot for the moon. Even if you miss, you'll land among the stars.\" - Norman Vincent Peale",
+    "Primary CTA": "Glow Up!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3D425C",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🎼",
+    "Title": "Make Music,\nNot [App]",
+    "Subtitle": "\"Without music, life would be a mistake.\" - Friedrich Nietzsche",
+    "Primary CTA": "Play On!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#462A3A",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💎",
+    "Title": "You're a Gem, \n[App] is Not.",
+    "Subtitle": "\"No pressure, no diamonds.\" - Thomas Carlyle",
+    "Primary CTA": "Sparkle!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1F2C2F",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💡",
+    "Title": "Brighten Your Ideas, \nNot [App]'s",
+    "Subtitle": "\"We cannot solve our problems with the same thinking we used when we created them.\" - Albert Einstein",
+    "Primary CTA": "Spark!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#5D5B52",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌳",
+    "Title": "Grow Taller \nThan [App]",
+    "Subtitle": "\"Someone's sitting in the shade today because someone planted a tree a long time ago.\" - Warren Buffett",
+    "Primary CTA": "Rise Above",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#265732",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🚀",
+    "Title": "Fly Higher \nThan [App]",
+    "Subtitle": "\"'The sky is not the limit, your mind is.\" - Marilyn Monroe",
+    "Primary CTA": "Elevate!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1D1E28",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌉",
+    "Title": "Build Bridges, Not [App]",
+    "Subtitle": "\"The hardest thing in life is to know which bridge to cross and which to burn.\" - David Russell",
+    "Primary CTA": "Go Across",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#292E3C",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "⛅",
+    "Title": "Brighten Your Day, \nWithout [App]",
+    "Subtitle": "\"Keep your face always toward the sunshine—and shadows will fall behind you.\" - Walt Whitman",
+    "Primary CTA": "Shine On!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#455642",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🦚",
+    "Title": "Fly, Fly Away,\n[App]",
+    "Subtitle": "\"You are never too old to set another goal or to dream a new dream.\" - C.S. Lewis",
+    "Primary CTA": "Unfold",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#164663",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌊",
+    "Title": "Ride the Waves, \nNot [App]",
+    "Subtitle": "\"You can't stop the waves, but you can learn to surf.\" - Jon Kabat-Zinn\"",
+    "Primary CTA": "Surf Life!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#005E88",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "⚡",
+    "Title": "Charge Up, \n[App] Down.",
+    "Subtitle": "\"The energy of the mind is the essence of life.\" - Aristotle",
+    "Primary CTA": "Recharge",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#A68A2D",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💼",
+    "Title": "Work on Success, \nNot [App]",
+    "Subtitle": "\"Success usually comes to those who are too busy to be looking for it.\" - Henry David Thoreau",
+    "Primary CTA": "Work It!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#504442",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌼",
+    "Title": "Blossom, Don’t Bloom on [App]",
+    "Subtitle": "\"In the end, it's not the years in your life that count. It's the life in your years.\" - Abraham Lincoln",
+    "Primary CTA": "Bloom",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#99A137",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💖",
+    "Title": "Love Life, Not [App]",
+    "Subtitle": "\"Life is what happens when you're busy making other plans.\" - John Lennon",
+    "Primary CTA": "Love It!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#8D346F",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🗻",
+    "Title": "Summit Your Goals, Not [App]",
+    "Subtitle": "\"The best view comes after the hardest climb.\" - Unknown",
+    "Primary CTA": "Climb!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#524C4D",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🕯️",
+    "Title": "Light Your Way, Not [App]",
+    "Subtitle": "\"There are two ways of spreading light: to be the candle or the mirror that reflects it.\" - Edith Wharton",
+    "Primary CTA": "Enlighten!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#8C6E4B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🧗‍♀️",
+    "Title": "Climb Your Mountain, Not [App]",
+    "Subtitle": "\"Believe you can and you're halfway there.\" - Theodore Roosevelt",
+    "Primary CTA": "Ascent!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#72472B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🏞️",
+    "Title": "See the Bigger Picture, Not [App]",
+    "Subtitle": "\"It does not matter how slowly you go as long as you do not stop.\" - Confucius",
+    "Primary CTA": "Don't Stop",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#44663C",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🌄",
+    "Title": "Reach for New Heights, Not [App]",
+    "Subtitle": "\"The only limit to our realization of tomorrow will be our doubts of today.\" - Franklin D. Roosevelt",
+    "Primary CTA": "Elevate",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#2D251C",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🍎",
+    "Title": "A Note From Steve...",
+    "Subtitle": "\"I never foresaw the extent of iPhone addiction. We aimed to unleash human potential, not foster dependency. Let's harness technology mindfully and reclaim our focus\" - Steve Jobs (if he was alive)",
+    "Primary CTA": "Think Different",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🇺🇸",
+    "Title": "Donald Blocked [App]",
+    "Subtitle": "As he was headlining a festival back in 2019, Childish Gambino urged his fans to live more in the moment: \n\n“Put your phones down, you don't need \nto share this with anybody'\n\n― Donald Glover (AKA Childish Gambino)",
+    "Primary CTA": "ooh!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#160236",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "⛓️",
+    "Title": "Richard Blocked [App]",
+    "Subtitle": "In a 2013 tweet, Richard urged people to take control of their phone usage: \n\n“Don't become a slave to technology - manage your phone, don't let it manage you.”\n\n― Richard Branson\nFounder of the Virgin Group",
+    "Primary CTA": "Galactic",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#005993",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🥱",
+    "Title": "Arianna Blocked [App]",
+    "Subtitle": "The media mogul shared her nightly ritual to focus on her well-being and be more productive when she wakes up: \n\n“Put your phone under the blanket,\ntuck it in and say goodnight.”\n\n― Arianna Huffington \nCo-Founder of The Huffington Post\n",
+    "Primary CTA": "G’Night",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1C2152",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💅🏼",
+    "Title": "Barbie GirlBossed [App]",
+    "Subtitle": "Greta Gerwig \nFilmmaker of Barbie \nBanned the use of phones on set \nto allow the cast and crew to really \nget to know each other.\n \n\n“You said screen time and you didn't mean big screen?! For what?”\n\n— Barbie",
+    "Primary CTA": "Call Ken",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3F0037",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🏄🏼‍♂️",
+    "Title": "Ken Blocked [App]",
+    "Subtitle": "Ryan Gosling, \nPlaying Ken in the new Barbie movie \nby Greta Gerwig, has no social media.\n\n\n“Did you know they call it a 'cell' phone because it's like a tiny prison? \nBummer, man!”\n\n― Ken",
+    "Primary CTA": "Surf",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#032251",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "😤",
+    "Title": "Ridley Sulked [App]",
+    "Subtitle": "Ridley Scott blamed cell-phone addicted millennials for letting his film \nThe Last Duel flop in 2021.\n \n\n“What we've got today are the audiences who were brought up on these f*cking cell phones”\n\n— Sir Ridley Scott\nFilmmaker of Alien and Gladiator",
+    "Primary CTA": "Show Him",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1D3335",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🎤",
+    "Title": "Taylor Blocked [App]",
+    "Subtitle": "Even though she's amassed over 268 million Instagram followers, Taylor admits she prefers her social media presence to be like her style: simple.\n\n“One of the most important things about social media is knowing when to put the phone down and experience your life.”\n\n- Taylor Swift\nSinger & Songwriter",
+    "Primary CTA": "Be Simple",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#1F1631",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🫣",
+    "Title": "Michael Blocked [App]",
+    "Subtitle": "Michael Cera doesn’t own a smartphone:\n \n\"I feel a bit of fear about having a phone honestly, like I'd really lose control of my waking life\"\n\n\"For many years, people resented me for this lifestyle choice, but now people say that they envy it.\"\n\n— Michael Cera\nActor: Superbad, Juno, Barbie",
+    "Primary CTA": "Boom",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#17001D",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "➕",
+    "Title": "Ed Blocked [App]",
+    "Subtitle": "\"I got really, really overwhelmed and sad with a phone. I just spent my whole time just in a very low place. I got rid of it, and it was like a veil just lifted.\"\n\n\n— Ed Sheeran\nSinger & Songwriter",
+    "Primary CTA": "Perfect",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#2B316B",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "💧",
+    "Title": "Thirsty for [App]?",
+    "Subtitle": "It's key to stay hydrated. Take a selfie where you're drinking water and we'll let you in — just this once.\n\n— @juanbuis",
+    "Primary CTA": "Take Selfie",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#25546F",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "🔥",
+    "Title": "Diverging from [App]!",
+    "Subtitle": "Shailene Woodley on having a flip phone:\n\n“I'm talking to people more than I've ever talked to in my life. The more you get away from all the technological buzz, the more freedom you have”\n\n— Shailene Woodley\nActress, Producer, Activist",
+    "Primary CTA": "Let’s talk!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#000000",
+    "Category": "Luminaries"
+  },
+  {
+    "Emoji": "✨",
+    "Title": "The Fault in [App]!",
+    "Subtitle": "“I blocked all my attention \ngrabbing apps from my phone.\n\nIt still does a lot of things - but it no longer tell me how people feel about President Donald Trump serving McDonald's to college athletes.”\n\n— John Green\nAuthor, Philanthropist",
+    "Primary CTA": "Focus!",
+    "Secondary CTA (nudges)": "Use [App]",
+    "Color": "#3E4A38",
+    "Category": "Luminaries"
+  }
+]
