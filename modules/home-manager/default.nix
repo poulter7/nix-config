@@ -75,6 +75,11 @@
       target="./Applications/Vimac.app";
       recursive = true;
     };
+    opal = {
+      source=../darwin/apps/Opal.app;
+      target="./Applications/Opal.app";
+      recursive = true;
+    };
     vscode-settings = {
       source=./vscode/settings.json;
       target="./Library/Application Support/Code/User/settings.json";
