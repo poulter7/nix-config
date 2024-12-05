@@ -33,6 +33,7 @@
       "qgis"
       "active-trader-pro"
       "caffeine"
+      "font-hack-nerd-font"
     ];
   };
 }
