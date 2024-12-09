@@ -1,0 +1,22 @@
+disabled_rules:
+  - line_length
+  - function_body_length
+  - identifier_name
+  - trailing_comma
+  - large_tuple
+  - nesting
+  - function_parameter_count
+  - opening_brace
+  - switch_case_alignment
+  - cyclomatic_complexity
+  - non_optional_string_data_conversion
+  - colon
+type_body_length: 10000
+file_length: 10000
+
+type_name:
+  max_length:
+      warning: 50
+      error: 60
+  min_length:
+      warning: 1

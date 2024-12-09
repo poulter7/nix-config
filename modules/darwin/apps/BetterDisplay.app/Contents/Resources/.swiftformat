@@ -1,0 +1,6 @@
+--indent 2
+--indentcase true
+--nospaceoperators
+--exponentcase lowercase
+--exclude Carthage
+--disable redundantSelf, redundantStaticSelf

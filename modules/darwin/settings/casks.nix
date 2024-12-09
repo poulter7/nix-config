@@ -3,6 +3,7 @@
     enable = true;
     brews = [
       "swiftlint"
+      "entr"
     ];
     casks = [
       "iterm2"
@@ -34,6 +35,7 @@
       "active-trader-pro"
       "caffeine"
       "font-hack-nerd-font"
+      "virtual-desktop-streamer"
     ];
   };
 }

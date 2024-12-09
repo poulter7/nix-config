@@ -80,6 +80,11 @@
       target="./Applications/Opal.app";
       recursive = true;
     };
+    bd = {
+      source=../darwin/apps/BetterDisplay.app;
+      target="./Applications/BetterDisplay.app";
+      recursive = true;
+    };
     vscode-settings = {
       source=./vscode/settings.json;
       target="./Library/Application Support/Code/User/settings.json";
