@@ -5,6 +5,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     [ pkgs.vim
+    pkgs.fd
     ];
 
   # Use a custom configuration.nix location.
