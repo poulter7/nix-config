@@ -5,7 +5,6 @@
   # specify my home-manager configs
   imports = [
     ./zsh.nix
-    ./vscode.nix
   ];
 
   home = {
@@ -88,7 +87,7 @@
     wezterm = {
       source=./wezterm;
       target=".config/wezterm";
-      recursive = true
+      recursive = true;
     };
     vscode-settings = {
       source=./vscode/settings.json;
