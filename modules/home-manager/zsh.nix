@@ -24,6 +24,7 @@
       ll = "ls -lahrts";
       l = "ls -l";
       lg = "lazygit";
+      gg = "lazygit";
       vi = "nvim";
       python = "python3";
       k = "kubectl";
@@ -51,11 +52,6 @@
       # gitgone
       git config --global alias.gone "! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
 
-      # And enable this
-      # if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-      #   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-      # fi
-      #
       vv() {
         # Assumes all configs exist in directories named ~/.config/nvim-*
         local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
