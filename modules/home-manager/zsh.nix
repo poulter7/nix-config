@@ -33,12 +33,6 @@
       resource = ". ~/.zshrc";
       va = "NVIM_APPNAME=nvim-nixos nvim $@";
     };
-    
-    initExtraFirst = ''
-      if [[ "$TERM_PROGRAM" != "vscode" ]] && [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]]; then
-        export ZSH_TMUX_AUTOSTART=true
-      fi
-    '';
 
     initExtra = ''
       # shell integration for fzf
