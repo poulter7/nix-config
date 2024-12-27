@@ -85,6 +85,11 @@
       target="./Applications/BetterDisplay.app";
       recursive = true;
     };
+    wezterm = {
+      source=./wezterm;
+      target=".config/wezterm";
+      recursive = true
+    };
     vscode-settings = {
       source=./vscode/settings.json;
       target="./Library/Application Support/Code/User/settings.json";
