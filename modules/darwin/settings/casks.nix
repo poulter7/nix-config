@@ -6,7 +6,6 @@
       "entr"
     ];
     casks = [
-      "iterm2"
       "spotify"
       "docker"
       "postman"
