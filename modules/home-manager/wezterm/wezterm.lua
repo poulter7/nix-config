@@ -62,11 +62,16 @@ config.keys = {
 	{
 		mods = "LEADER",
 		key = "x",
-		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
 		mods = "LEADER",
-		key = "0",
+		key = "Tab",
+		action = wezterm.action.ShowTabNavigator,
+	},
+	{
+		mods = "LEADER",
+		key = "Space",
 		action = wezterm.action.PaneSelect({
 			mode = "SwapWithActive",
 		}),
