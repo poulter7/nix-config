@@ -28,7 +28,6 @@
       python = "python3";
       k = "kubectl";
       tf = "terraform";
-      tmux = "TERM=screen-256color-bce tmux";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       resource = ". ~/.zshrc";
       va = "NVIM_APPNAME=nvim-nixos nvim $@";
@@ -86,7 +85,6 @@
         "terraform" 
         "history" 
         "history-substring-search" 
-        "tmux"
     ];
     };
   };
