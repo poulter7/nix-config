@@ -61,6 +61,11 @@ config.keys = {
 	},
 	{
 		mods = "LEADER",
+		key = "x",
+		action = wezterm.action.CloseCurrentPane,
+	},
+	{
+		mods = "LEADER",
 		key = "0",
 		action = wezterm.action.PaneSelect({
 			mode = "SwapWithActive",
