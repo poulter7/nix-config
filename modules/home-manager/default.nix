@@ -20,7 +20,6 @@
       git
       duckdb
       shfmt
-      tmux
       jump
       neovim
       terraform
@@ -57,12 +56,6 @@
     p10k = {
       source=./zsh/p10k.zsh;
       target=".p10k.zsh";
-    };
-    tmux = {
-      source=./tmux;
-      target=".config/tmux/";
-      recursive=true;
-      onChange="echo 'Refreshing tmux configuration' && ${pkgs.tmux}/bin/tmux source ~/.config/tmux/tmux.conf.local";
     };
     astronvim = {
       source=./astronvim;
