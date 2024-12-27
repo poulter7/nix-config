@@ -62,7 +62,7 @@ config.keys = {
 	{
 		mods = "LEADER",
 		key = "x",
-		action = wezterm.action.CloseCurrentPane,
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 	{
 		mods = "LEADER",
@@ -81,4 +81,5 @@ config.keys = {
 	split_nav("resize", "k"),
 	split_nav("resize", "l"),
 }
+
 return config
