@@ -57,6 +57,11 @@
       source=./zsh/p10k.zsh;
       target=".p10k.zsh";
     };
+    kickstart = {
+      source=./kickstart;
+      target=".config/nvim-kickstart";
+      recursive = true;
+    };
     astronvim = {
       source=./astronvim;
       target=".config/nvim-nixos";

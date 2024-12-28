@@ -41,6 +41,7 @@ local config = {}
 
 config = wezterm.config_builder()
 
+config.color_scheme = "Catppuccin Mocha"
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	-- splitting
