@@ -4,6 +4,7 @@
     brews = [
       "swiftlint"
       "entr"
+      "zoxide"
     ];
     casks = [
       "spotify"
@@ -36,6 +37,7 @@
       "font-hack-nerd-font"
       "virtual-desktop-streamer"
       "wezterm"
+      "ollama"
     ];
   };
 }

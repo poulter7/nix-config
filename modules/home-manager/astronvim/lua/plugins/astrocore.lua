@@ -63,12 +63,14 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+        ["<C-w>="] = { "<Cmd>WindowsEqualize<CR>", desc = "WindowsEqualize" },
+        ["<C-w>+"] = { "<Cmd>WindowsMaximize<CR>", desc = "WindowsMaximize" },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
-        ["\\"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" }
+        ["\\"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
       },
     },
   },

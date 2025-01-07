@@ -32,6 +32,7 @@
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       resource = ". ~/.zshrc";
       va = "NVIM_APPNAME=nvim-nixos nvim $@";
+      vk = "NVIM_APPNAME=nvim-kickstart nvim $@";
     };
 
     initExtra = ''
@@ -39,6 +40,9 @@
       source <(fzf --zsh)
       # shell integration for jump
       eval "$(jump shell zsh)"
+      # shell integration for zoxide
+      eval "$(zoxide init zsh)"
+
       # don't write __pycache__ files
       export PYTHONDONTWRITEBYTECODE=1
       

@@ -2,6 +2,9 @@
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 vim.opt.clipboard = "unnamedplus"
+vim.api.nvim_create_autocmd("VimEnter", {
+  command = "WindowsEqualize",
+})
 
 -- Set up custom filetypes
 vim.filetype.add {
