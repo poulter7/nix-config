@@ -2,8 +2,14 @@ local wezterm = require("wezterm")
 local colors = require("colors")
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+-- resurrect.change_state_save_dir("/Users/jonathan/temp/")
+-- resurrect.save_state_dir = "/Users/jonathan/temp/"
 
-resurrect.periodic_save({ interval_seconds = 1, save_workspaces = true, save_windows = true, save_tabs = true })
+resurrect.periodic_save({ interval_seconds = 1 * 60, save_workspaces = true, save_windows = false, save_tabs = false })
+
+wezterm.on("resurrect.periodic_save", function()
+	resurrect.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
+end)
 
 local function toast(window, message)
 	window:toast_notification("wezterm", message .. " - " .. os.date("%I:%M:%S %p"), nil, 1000)
@@ -13,7 +19,7 @@ wezterm.on("window-config-reloaded", function(window, pane)
 	toast(window, "Configuration reloaded!")
 end)
 
--- local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
+wezterm.on("gui-startup", resurrect.resurrect_on_gui_startup)
 
 wezterm.on("augment-command-palette", function(window, pane)
 	local workspace_state = resurrect.workspace_state
@@ -38,38 +44,7 @@ wezterm.on("augment-command-palette", function(window, pane)
 		},
 	}
 end)
--- wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
--- 	window:gui_window():set_right_status(wezterm.format({
--- 		{ Attribute = { Intensity = "Bold" } },
--- 		{ Foreground = { Color = colors.colors.ansi[5] } },
--- 		{ Text = basename(path) .. "  " },
--- 	}))
--- 	local workspace_state = resurrect.workspace_state
---
--- 	workspace_state.restore_workspace(resurrect.load_state(label, "workspace"), {
--- 		window = window,
--- 		relative = true,
--- 		restore_text = true,
--- 		on_pane_restore = resurrect.tab_state.default_on_pane_restore,
--- 	})
--- end)
---
--- wezterm.on("smart_workspace_switcher.workspace_switcher.chosen", function(window, path, label)
--- 	wezterm.log_info(window)
--- 	window:gui_window():set_right_status(wezterm.format({
--- 		{ Attribute = { Intensity = "Bold" } },
--- 		{ Foreground = { Color = colors.colors.ansi[5] } },
--- 		{ Text = basename(path) .. "  " },
--- 	}))
--- end)
---
--- wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
--- 	wezterm.log_info(window)
--- 	local workspace_state = resurrect.workspace_state
--- 	resurrect.save_state(workspace_state.get_workspace_state())
--- 	resurrect.write_current_state(label, "workspace")
--- end)
---
+
 local keys = {
 	{
 		key = "D",
@@ -115,9 +90,10 @@ local keys = {
 		key = "s",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
-			toast(win, "Saved state")
-			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
-			resurrect.window_state.save_window_action()
+			local workspace_state = resurrect.workspace_state
+			resurrect.save_state(workspace_state.get_workspace_state())
+			resurrect.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
+			toast(win, "Saved workspace state")
 		end),
 	},
 }
@@ -132,5 +108,4 @@ function M.setup_sessions(config)
 	return config
 end
 
--- wezterm.on("gui-startup", resurrect.resurrect_on_gui_startup)
 return M
