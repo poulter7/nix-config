@@ -42,6 +42,7 @@ local config = {}
 
 config = wezterm.config_builder()
 
+config.default_workspace = "default"
 config.color_scheme = "kanagawabones"
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 

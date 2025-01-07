@@ -1,8 +1,8 @@
 local wezterm = require("wezterm")
 local colors = require("colors")
-local notify = require("my-notify")
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+
 resurrect.periodic_save({ interval_seconds = 1, save_workspaces = true, save_windows = true, save_tabs = true })
 
 local function toast(window, message)
@@ -13,54 +13,7 @@ wezterm.on("window-config-reloaded", function(window, pane)
 	toast(window, "Configuration reloaded!")
 end)
 
---
 -- local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
--- local session_manager = wezterm.plugin.require("https://github.com/danielcopper/wezterm-session-manager")
---
--- local function basename(s)
--- 	return string.gsub(s, "(.*[/\\])(.*)", "%2")
--- end
---
--- workspace_switcher.workspace_formatter = function(label)
--- 	return wezterm.format({
--- 		{ Attribute = { Italic = true } },
--- 		{ Foreground = { Color = colors.colors.ansi[3] } },
--- 		{ Background = { Color = colors.colors.background } },
--- 		{ Text = "󱂬 : " .. label },
--- 	})
--- end
---
-local suppress_notification = false
-
-wezterm.on("resurrect.error", function(error)
-	notify.send("Wezterm - ERROR", error, "critical")
-end)
-
-wezterm.on("resurrect.periodic_save", function()
-	suppress_notification = false
-end)
-
-wezterm.on("resurrect.save_state.finished", function(session_path)
-	local is_workspace_save = session_path:find("state/workspace")
-
-	if is_workspace_save == nil then
-		return
-	end
-
-	if suppress_notification then
-		suppress_notification = false
-		return
-	end
-
-	local path = session_path:match(".+/([^+]+)$")
-	local name = path:match("^(.+)%.json$")
-	notify.send("Wezterm - Save workspace", "Saved workspace " .. name .. "\n\n" .. session_path)
-end)
-
-wezterm.on("resurrect.load_state.finished", function(name, type)
-	local msg = "Completed loading " .. type .. " state: " .. name
-	notify.send("Wezterm - Restore session", msg, "normal")
-end)
 
 wezterm.on("augment-command-palette", function(window, pane)
 	local workspace_state = resurrect.workspace_state
@@ -136,7 +89,6 @@ local keys = {
 		key = "R",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
-			win:toast_notification("wezterm", "configuration reloaded!", nil, 4000)
 			resurrect.fuzzy_load(win, pane, function(id, label)
 				local type = string.match(id, "^([^/]+)") -- match before '/'
 				id = string.match(id, "([^/]+)$") -- match after '/'
@@ -160,11 +112,12 @@ local keys = {
 		end),
 	},
 	{
-		key = "W",
+		key = "s",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
+			toast(win, "Saved state")
 			resurrect.save_state(resurrect.workspace_state.get_workspace_state())
-			win:toast_notification("wezterm", "configuration reloaded!", nil, 4000)
+			resurrect.window_state.save_window_action()
 		end),
 	},
 }
@@ -176,7 +129,6 @@ function M.setup_sessions(config)
 	for _, key in ipairs(keys) do
 		table.insert(config.keys, key)
 	end
-	config.default_workspace = "default"
 	return config
 end
 
