@@ -23,6 +23,7 @@ return {
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },
   { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.note-taking.neorg" },
   { import = "astrocommunity.project.projectmgr-nvim" },
   -- { import = "astrocommunity.project.nvim-spectre" },
