@@ -20,7 +20,7 @@ function M.send(subject, msg, urgency)
 
 	wezterm.run_child_process({
 		"notify-send",
-		"-i",
+		"-",
 		"org.wezfurlong.wezterm",
 		"-a",
 		"wezterm",
