@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local module = {}
+local M = {}
 
 local function has_value(tab, val)
 	for index, value in ipairs(tab) do -- luacheck: ignore 213
@@ -11,7 +11,7 @@ local function has_value(tab, val)
 	return false
 end
 
-local function notify(subject, msg, urgency)
+function M.send(subject, msg, urgency)
 	local allowed_urgency = { "low", "normal", "critical" }
 	urgency = urgency or "normal"
 	if not has_value(allowed_urgency, urgency) then
@@ -31,6 +31,4 @@ local function notify(subject, msg, urgency)
 	})
 end
 
-module.send = notify
-
-return module
+return M
