@@ -5,10 +5,17 @@
       "swiftlint"
       "entr"
       "zoxide"
+      "zig"
+      "awscli"
     ];
+    onActivation = {
+autoUpdate = true;
+cleanup = "uninstall";
+upgrade = true;
+};
     casks = [
-      "spotify"
       "docker"
+      "spotify"
       "postman"
       "zoom"
       "whatsapp"
