@@ -29,7 +29,6 @@
       uv
       yarn
       typescript
-      awscli
       gh
     ];
 
