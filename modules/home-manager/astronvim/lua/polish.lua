@@ -5,6 +5,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_create_autocmd("VimEnter", {
   command = "WindowsEqualize",
 })
+vim.diagnostic.config { virtual_text = false }
 
 -- Set up custom filetypes
 vim.filetype.add {

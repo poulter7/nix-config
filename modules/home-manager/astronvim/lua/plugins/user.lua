@@ -21,6 +21,96 @@ return {
     },
   },
   {
+    "tadaa/vimade",
+    -- default opts (you can partially set these or configure them however you like)
+    opts = {
+      -- Recipe can be any of 'default', 'minimalist', 'duo', and 'ripple'
+      -- Set animate = true to enable animations on any recipe.
+      -- See the docs for other config options.
+      recipe = { "default", { animate = true } },
+      ncmode = "buffers", -- use 'windows' to fade inactive windows
+      fadelevel = 0.7, -- any value between 0 and 1. 0 is hidden and 1 is opaque.
+      tint = {
+        -- bg = {rgb={0,0,0}, intensity=0.3}, -- adds 30% black to background
+        -- fg = {rgb={0,0,255}, intensity=0.3}, -- adds 30% blue to foreground
+        -- fg = { rgb = { 120, 120, 120 }, intensity = 0.5 }, -- all text will be gray
+        -- sp = {rgb={255,0,0}, intensity=0.5}, -- adds 50% red to special characters
+        -- you can also use functions for tint or any value part in the tint object
+        -- to create window-specific configurations
+        -- see the `Tinting` section of the README for more details.
+      },
+
+      -- Changes the real or theoretical background color. basebg can be used to give
+      -- transparent terminals accurating dimming.  See the 'Preparing a transparent terminal'
+      -- section in the README.md for more info.
+      -- basebg = [23,23,23],
+      basebg = "",
+      -- prevent a window or buffer from being styled. You
+      blocklist = {
+        default = {
+          highlights = {
+            laststatus_3 = function(win, active)
+              -- Global statusline, laststatus=3, is currently disabled as multiple windows take ownership
+              -- of the StatusLine highlight (see #85).
+              if vim.go.laststatus == 3 then
+                -- you can also return tables (e.g. {'StatusLine', 'StatusLineNC'})
+                return "StatusLine"
+              end
+            end,
+            -- Exact highlight names are supported:
+            -- 'WinSeparator',
+            -- Lua patterns are supported, just put the text between / symbols:
+            -- '/^StatusLine.*/' -- will match any highlight starting with "StatusLine"
+          },
+          buf_opts = { buftype = { "prompt" } },
+          win_config = { relative = true },
+          -- buf_name = {'name1','name2', name3'},
+          -- buf_vars = { variable = {'match1', 'match2'} },
+          -- win_opts = { option = {'match1', 'match2' } },
+          -- win_vars = { variable = {'match1', 'match2'} },
+        },
+        -- any_rule_name1 = {
+        --   buf_opts = {}
+        -- },
+        -- only_behind_float_windows = {
+        --   buf_opts = function(win, current)
+        --     if (win.win_config.relative == '')
+        --       and (current and current.win_config.relative ~= '') then
+        --         return false
+        --     end
+        --     return true
+        --   end
+        -- },
+      },
+      -- Link connects windows so that they style or unstyle together.
+      -- Properties are matched against the active window. Same format as blocklist above
+      link = {},
+      groupdiff = true, -- links diffs so that they style together
+      groupscrollbind = false, -- link scrollbound windows so that they style together.
+      -- enable to bind to FocusGained and FocusLost events. This allows fading inactive
+      -- tmux panes.
+      enablefocusfading = false,
+      -- Time in milliseconds before re-checking windows. This is only used when usecursorhold
+      -- is set to false.
+      checkinterval = 1000,
+      -- enables cursorhold event instead of using an async timer.  This may make Vimade
+      -- feel more performant in some scenarios. See h:updatetime.
+      usecursorhold = false,
+      -- when nohlcheck is disabled the highlight tree will always be recomputed. You may
+      -- want to disable this if you have a plugin that creates dynamic highlights in
+      -- inactive windows. 99% of the time you shouldn't need to change this value.
+      nohlcheck = true,
+    },
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = true,
+  },
+  {
     "mfussenegger/nvim-dap-python",
     config = function()
       local dap_python = require "dap-python"

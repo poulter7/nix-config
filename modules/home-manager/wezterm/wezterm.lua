@@ -44,6 +44,11 @@ config = wezterm.config_builder()
 
 config.default_workspace = "default"
 config.color_scheme = "kanagawabones"
+config.cursor_blink_rate = 750
+config.inactive_pane_hsb = {
+	brightness = 0.5,
+	saturation = 0.7,
+}
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {

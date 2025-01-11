@@ -16,7 +16,6 @@ return {
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
-  { import = "astrocommunity.color.tint-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.motion.hop-nvim" },
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
@@ -40,21 +39,44 @@ return {
   { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", -- Or `LspAttach`
+    priority = 1000, -- needs to be loaded in first
+    config = function()
+      require("tiny-inline-diagnostic").setup {
+        preset = "ghost",
+        hi = {
+          background = "None",
+        },
+        options = {
+          -- Show the source of the diagnostic.
+          show_source = false,
+          multilines = {
+            enabled = true,
+            always_show = false,
+          },
+          enable_on_insert = true,
+        },
+      }
+    end,
+  },
   {
     "smoka7/hop.nvim",
     opts = {},
     keys = {
       {
         "f",
-        function() require("hop").hint_words() end,
+        function() require("hop").hint_words { multi_windows = true } end,
         mode = { "n" },
         desc = "Hop hint words",
       },
       {
         "<S-f>",
-        function() require("hop").hint_lines() end,
+        function() require("hop").hint_lines { multi_windows = true } end,
         mode = { "n" },
         desc = "Hop hint lines",
       },
