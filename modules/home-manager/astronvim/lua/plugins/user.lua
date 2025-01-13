@@ -6,6 +6,119 @@
 ---@type LazySpec
 return {
   {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", -- Or `LspAttach`
+    priority = 1000, -- needs to be loaded in first
+    config = function()
+      require("tiny-inline-diagnostic").setup {
+        preset = "ghost",
+        hi = {
+          background = "None",
+        },
+        options = {
+          -- Show the source of the diagnostic.
+          show_source = false,
+          multilines = {
+            enabled = true,
+            always_show = false,
+          },
+          enable_on_insert = true,
+        },
+      }
+    end,
+  },
+  {
+    "smoka7/hop.nvim",
+    opts = {},
+    keys = {
+      {
+        "f",
+        function() require("hop").hint_words { multi_windows = true } end,
+        mode = { "n" },
+        desc = "Hop hint words",
+      },
+      {
+        "<S-f>",
+        function() require("hop").hint_lines { multi_windows = true } end,
+        mode = { "n" },
+        desc = "Hop hint lines",
+      },
+      {
+        "f",
+        function() require("hop").hint_words { extend_visual = true } end,
+        mode = { "v" },
+        desc = "Hop hint words",
+      },
+      {
+        "<S-f>",
+        function() require("hop").hint_lines { extend_visual = true } end,
+        mode = { "v" },
+        desc = "Hop hint lines",
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      settings = {
+        java = {
+          configuration = {
+            runtimes = {
+              {
+                name = "JavaSE-17",
+                path = "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home/",
+              },
+              {
+                name = "JavaSE-21",
+                path = "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home/",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      suggestion = { enabled = true, auto_trigger = true, keymap = { accept = "<C-l>" } },
+      panel = { enabled = false },
+    },
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    config = function(plugin, opts)
+      --     -- run default AstroNvim nvim-dap-ui configuration function
+      --     require "plugins.configs.nvim-dap-ui"(plugin, opts)
+      --
+      -- disable dap events that are created
+      local dap = require "dap"
+
+      -- dap.listeners.after.event_initialized["dapui_config"] = nil
+      dap.listeners.before.event_terminated["dapui_config"] = nil
+      dap.listeners.before.event_exited["dapui_config"] = nil
+    end,
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/neotest-python",
+    },
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-python" {
+            dap = { justMyCode = false },
+          },
+        },
+      }
+    end,
+  },
+  {
     "LintaoAmons/scratch.nvim",
     event = "VeryLazy",
   },
@@ -133,6 +246,14 @@ return {
     config = function() require("venv-selector").setup() end,
     keys = {
       { ",v", "<cmd>VenvSelect<cr>" },
+    },
+    {
+      "akinsho/toggleterm.nvim",
+      commit = "193786e0371e3286d3bc9aa0079da1cd41beaa62",
+      opts = function(self, opts)
+        opts.direction = "float"
+        return opts
+      end,
     },
     -- -- == Examples of Adding Plugins ==
 
