@@ -7,6 +7,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 vim.diagnostic.config { virtual_text = false }
 
+require("dapui").setup()
+
 -- Set up custom filetypes
 vim.filetype.add {
   extension = {

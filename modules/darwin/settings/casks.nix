@@ -2,6 +2,7 @@
   homebrew = {
     enable = true;
     brews = [
+      "graphviz"
       "swiftlint"
       "entr"
       "zoxide"
