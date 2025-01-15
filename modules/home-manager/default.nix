@@ -1,13 +1,9 @@
-{ pkgs, config, ... }: 
+{ pkgs, config, osConfig, lib, ... }: 
   let
       user = "jonathan";
       root = "/Users/jonathan/Code/projects/nix-config";
       userpkgs = import ../userpkgs.nix pkgs;
   in {
-  # specify my home-manager configs
-  imports = [
-    ./zsh.nix
-  ];
 
   home = {
     username = "${user}";
@@ -16,13 +12,49 @@
     sessionVariables = {
       PAGER = "less";
       CLICLOLOR = 1;
-      EDITOR = "va";
+      EDITOR = "nvim";
+      NVIM_APPNAME="nvim-nixos";
     };
+  };
+
+  #launches fish unless the parent process is already fish
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ns = "darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac";
+      nb = "darwin-rebuild build --flake ~/Code/projects/nix-config/.#mac";
+      nix-up = "pushd ~/.config/snowflake; nix flake update; nixswitch; popd";
+      nix-lint = "nix run --extra-experimental-features 'nix-command flakes' nixpkgs#statix -- check .";
+      open-api-refresh = "npx @rtk-query/codegen-openapi src/rtk/api/openapi-config.json";
+      ls = "ls --color=auto";
+      ll = "ls -lahrts";
+      l = "ls -l";
+      lg = "lazygit";
+      gg = "lazygit";
+      vi = "nvim";
+      python = "python3";
+      k = "kubectl";
+      tf = "terraform";
+      docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
+      resource = ". ~/.zshrc";
+      va = "NVIM_APPNAME=nvim-nixos nvim $argv";
+      vk = "NVIM_APPNAME=nvim-kickstart nvim $argv";
+      jump = "${pkgs.jump}/bin/jump";
+    };
+    shellInit= ''
+      set fish_greeting # Disable greeting
+      ${pkgs.jump}/bin/jump shell fish | source
+    '';
+    plugins = with pkgs.fishPlugins; [
+      { name = "tide"; src = tide.src; }
+      { name = "grc"; src = grc.src; }
+      { name = "done"; src = done.src; }
+    ];
   };
 
   # home.file.".inputrc".source = ./settings/inputrc;
   # Don't change this when you change package input. Leave it alone.
-  home.stateVersion = "24.05"; # 23.11
+  home.stateVersion = "24.11";
   home.file = {
      karabiner = {
       source=./karabiner/karabiner.json;

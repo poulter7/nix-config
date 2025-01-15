@@ -2,10 +2,9 @@
     nix = {
         shells = with pkgs; [
             bash
-            zsh
-            fish
         ];
         utils = with pkgs; [
+            grc
             ripgrep
             tree
             lazygit
@@ -17,7 +16,6 @@
             jump
             neovim
             terraform
-            oh-my-zsh
             texliveFull
             nodejs_20
             uv

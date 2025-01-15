@@ -41,7 +41,6 @@ end
 local config = {}
 
 config = wezterm.config_builder()
-
 config.default_workspace = "default"
 config.color_scheme = "kanagawabones"
 config.cursor_blink_rate = 750
