@@ -1,19 +1,14 @@
 { lib, ... }: {
+  imports = [
+    ../../userpkgs.nix
+  ];
   homebrew = {
     enable = true;
-    brews = [
-      "graphviz"
-      "swiftlint"
-      "entr"
-      "zoxide"
-      "zig"
-      "awscli"
-    ];
     onActivation = {
-autoUpdate = true;
-cleanup = "uninstall";
-upgrade = true;
-};
+      autoUpdate = true;
+      cleanup = "uninstall";
+      upgrade = true;
+    };
     casks = [
       "docker"
       "spotify"
