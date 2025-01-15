@@ -1,24 +1,31 @@
 {pkgs, ...} :{
-    nix = with pkgs; [
-      ripgrep
-      tree
-      lazygit
-      jump
-      fzf
-      git
-      duckdb
-      shfmt
-      jump
-      neovim
-      terraform
-      oh-my-zsh
-      texliveFull
-      nodejs_20
-      uv
-      yarn
-      typescript
-      gh
-    ];
+    nix = {
+        shells = with pkgs; [
+            bash
+            zsh
+            fish
+        ];
+        utils = with pkgs; [
+            ripgrep
+            tree
+            lazygit
+            jump
+            fzf
+            git
+            duckdb
+            shfmt
+            jump
+            neovim
+            terraform
+            oh-my-zsh
+            texliveFull
+            nodejs_20
+            uv
+            yarn
+            typescript
+            gh
+        ];
+    };
     homebrew = {
         brews = [
             "graphviz"
@@ -27,7 +34,6 @@
             "zoxide"
             "zig"
             "awscli"
-            "fish"
         ];
         casks = [
             "docker"

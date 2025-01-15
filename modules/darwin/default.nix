@@ -3,8 +3,6 @@
     userpkgs = import ../userpkgs.nix pkgs;
   in
   {
-  # here go the darwin preferences and config items
-  programs.zsh.enable = true;
   users.users.jonathan.home = "/Users/jonathan";
   nix.extraOptions = ''
     experimental-features = nix-command flakes
@@ -20,7 +18,7 @@
     };
   };
   environment = {
-    shells = with pkgs; [ bash zsh ];
+    shells = userpkgs.nix.shells; # permissible login shells
     systemPackages = [ 
       pkgs.coreutils
     ];
@@ -60,8 +58,6 @@
   };
 
   services.nix-daemon.enable = true;
-
-  
   
   # backwards compat; don't change
   system.stateVersion = 4;

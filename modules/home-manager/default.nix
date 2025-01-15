@@ -12,7 +12,7 @@
   home = {
     username = "${user}";
     homeDirectory = "/Users/${user}";
-    packages = userpkgs.nix;
+    packages = userpkgs.nix.utils;
     sessionVariables = {
       PAGER = "less";
       CLICLOLOR = 1;
