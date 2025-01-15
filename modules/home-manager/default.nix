@@ -2,6 +2,7 @@
   let
       user = "jonathan";
       root = "/Users/jonathan/Code/projects/nix-config";
+      userpkgs = import ../userpkgs.nix pkgs;
   in {
   # specify my home-manager configs
   imports = [
@@ -11,28 +12,7 @@
   home = {
     username = "${user}";
     homeDirectory = "/Users/${user}";
-    
-    packages = with pkgs; [
-      ripgrep
-      tree
-      lazygit
-      jump
-      fzf
-      git
-      duckdb
-      shfmt
-      jump
-      neovim
-      terraform
-      oh-my-zsh
-      texliveFull
-      nodejs_20
-      uv
-      yarn
-      typescript
-      gh
-    ];
-
+    packages = userpkgs.nix;
     sessionVariables = {
       PAGER = "less";
       CLICLOLOR = 1;
