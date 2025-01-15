@@ -1,6 +1,7 @@
-{ pkgs, ... }: 
+{ pkgs, config, ... }: 
   let
       user = "jonathan";
+      root = "/Users/jonathan/Code/projects/nix-config";
   in {
   # specify my home-manager configs
   imports = [
@@ -56,16 +57,6 @@
       source=./zsh/p10k.zsh;
       target=".p10k.zsh";
     };
-    kickstart = {
-      source=./kickstart;
-      target=".config/nvim-kickstart";
-      recursive = true;
-    };
-    astronvim = {
-      source=./astronvim;
-      target=".config/nvim-nixos";
-      recursive = true;
-    };
     vimac = {
       source=../darwin/apps/Vimac.app;
       target="./Applications/Vimac.app";
@@ -81,11 +72,6 @@
       target="./Applications/BetterDisplay.app";
       recursive = true;
     };
-    wezterm = {
-      source=./wezterm;
-      target=".config/wezterm";
-      recursive = true;
-    };
     authorized-keys = {
       source=./ssh/authorized_keys;
       target=".ssh/authorized_keys";
@@ -98,6 +84,15 @@
        source=./screenshots/.keep;
        target="Screenshots/.keep";
        recursive=true;
+    };
+    ".config/wezterm" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/wezterm";
+    };
+    ".config/nvim-kickstart" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart";
+    };
+    ".config/nvim-nixos" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/astronvim";
     };
   };
 }
