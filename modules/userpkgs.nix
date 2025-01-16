@@ -1,5 +1,10 @@
 {pkgs, ...} :{
     nix = {
+        fishPlugins = with pkgs.fishPlugins; [
+            tide
+            grc
+            done
+        ];
         shells = with pkgs; [
             bash
         ];

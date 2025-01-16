@@ -45,11 +45,7 @@
       set fish_greeting # Disable greeting
       ${pkgs.jump}/bin/jump shell fish | source
     '';
-    plugins = with pkgs.fishPlugins; [
-      { name = "tide"; src = tide.src; }
-      { name = "grc"; src = grc.src; }
-      { name = "done"; src = done.src; }
-    ];
+    plugins = builtins.map (p: { name = p.name; src = p.src; }) userpkgs.nix.fishPlugins;
   };
 
   # home.file.".inputrc".source = ./settings/inputrc;

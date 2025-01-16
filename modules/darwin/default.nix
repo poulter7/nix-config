@@ -19,12 +19,7 @@
   };
   environment = {
     shells = userpkgs.nix.shells; # permissible login shells
-    systemPackages = [ 
-      pkgs.coreutils
-      pkgs.fishPlugins.tide
-      pkgs.fishPlugins.grc
-      pkgs.fishPlugins.done
-    ];
+    systemPackages = [ pkgs.coreutils ] ++ userpkgs.nix.fishPlugins;
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
     interactiveShellInit = ''
