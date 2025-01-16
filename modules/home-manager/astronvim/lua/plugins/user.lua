@@ -6,6 +6,15 @@
 ---@type LazySpec
 return {
   {
+    "windows.nvim",
+    opts = {
+      ignore = {
+        buftype = { "quickfix", "nofile" }, -- nofile is for neotest's main buffer
+        filetype = { "NvimTree", "neo-tree", "undotree", "gundo" },
+      },
+    },
+  },
+  {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy", -- Or `LspAttach`
     priority = 1000, -- needs to be loaded in first
