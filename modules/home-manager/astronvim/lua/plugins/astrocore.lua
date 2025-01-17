@@ -29,26 +29,26 @@ return {
     },
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
       highlighturl = true, -- highlight URLs at start
+      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       notifications = true, -- enable notifications at start
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
-      virtual_text = true,
       underline = true,
+      virtual_text = true,
     },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
         guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175", -- sets vim.opt.guicursor
-        relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        relativenumber = true, -- sets vim.opt.relativenumber
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        spell = false, -- sets vim.opt.spell
         wrap = false, -- sets vim.opt.wrap
       },
       g = { -- vim.g.<key>
@@ -82,6 +82,8 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+        ["<Leader>bb"] = { "<Cmd>BufferPick<CR>", desc = "Select buffer from barbar" },
+        ["<Leader>bD"] = { "<Cmd>BufferPickDelete<CR>", desc = "Select buffer from barbar to close" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
         ["<C-w>="] = { "<Cmd>WindowsEqualize<CR>", desc = "WindowsEqualize" },
