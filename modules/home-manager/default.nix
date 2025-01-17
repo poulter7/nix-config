@@ -43,6 +43,7 @@
     };
     shellInit= ''
       set fish_greeting # Disable greeting
+      eval "$(/opt/homebrew/bin/brew shellenv)"
       ${pkgs.jump}/bin/jump shell fish | source
     '';
     plugins = builtins.map (p: { name = p.name; src = p.src; }) userpkgs.nix.fishPlugins;
