@@ -5,6 +5,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_create_autocmd("VimEnter", {
   command = "WindowsEqualize",
 })
+vim.api.nvim_create_autocmd("InsertLeave", { command = "w" })
 vim.diagnostic.config { virtual_text = false }
 
 require("dapui").setup()

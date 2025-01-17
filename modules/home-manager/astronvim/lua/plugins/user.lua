@@ -217,24 +217,24 @@ return {
     keys = {
       { ",v", "<cmd>VenvSelect<cr>" },
     },
-    {
-      "akinsho/toggleterm.nvim",
-      commit = "193786e0371e3286d3bc9aa0079da1cd41beaa62",
-      opts = function(opts)
-        opts.direction = "float"
-        return opts
-      end,
-    },
-    {
-      "rebelot/heirline.nvim",
-      opts = function(_, opts)
-        opts.tabline = nil -- remove tabline
-      end,
-    },
-    {
-      "jsongerber/thanks.nvim",
-      config = true,
-    },
-    { "sQVe/sort.nvim" },
   },
+  {
+    "akinsho/toggleterm.nvim",
+    commit = "193786e0371e3286d3bc9aa0079da1cd41beaa62",
+    opts = function(opts)
+      opts.direction = "float"
+      return opts
+    end,
+  },
+  {
+    "rebelot/heirline.nvim",
+    opts = function(_, opts)
+      opts.tabline = nil -- remove tabline
+    end,
+  },
+  {
+    "jsongerber/thanks.nvim",
+    config = true,
+  },
+  { "sQVe/sort.nvim" },
 }
