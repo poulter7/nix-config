@@ -27,6 +27,7 @@
             yarn
             typescript
             gh
+            fd
         ];
     };
     homebrew = {
