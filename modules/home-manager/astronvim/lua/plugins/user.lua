@@ -15,6 +15,17 @@ return {
     },
   },
   {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "BufEnter" },
+    opts = {
+      smooth = false,
+      hi = {
+        fg = "#e98a00",
+      },
+    },
+  },
+  {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy", -- Or `LspAttach`
     priority = 1000, -- needs to be loaded in first
@@ -150,7 +161,7 @@ return {
       ncmode = "buffers", -- use 'windows' to fade inactive windows
       fadelevel = 0.7, -- any value between 0 and 1. 0 is hidden and 1 is opaque.
       tint = {
-        -- bg = {rgb={0,0,0}, intensity=0.3}, -- adds 30% black to background
+        -- bg = { rgb = { 0, 0, 0 }, intensity = 0.3 }, -- adds 30% black to background
         -- fg = {rgb={0,0,255}, intensity=0.3}, -- adds 30% blue to foreground
         -- fg = { rgb = { 120, 120, 120 }, intensity = 0.5 }, -- all text will be gray
         -- sp = {rgb={255,0,0}, intensity=0.5}, -- adds 50% red to special characters
@@ -337,5 +348,9 @@ return {
     --     )
     --   end,
     -- },
+    {
+      "jsongerber/thanks.nvim",
+      config = true,
+    },
   },
 }

@@ -10,7 +10,7 @@ return {
     },
     {
       mode = "n",
-      "<leader>dc",
+      "<leader>dM",
       function() require("dap-python").test_class() end,
       desc = "Debug Test Class",
     },
@@ -18,9 +18,7 @@ return {
     {
       mode = "v",
       "<leader>df",
-      function()
-        require("dap-python").debug_selection()
-      end,
+      function() require("dap-python").debug_selection() end,
       desc = "Debug Selection",
     },
   },
