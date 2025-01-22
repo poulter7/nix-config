@@ -5,8 +5,8 @@ return {
     {
       mode = "n",
       "<leader>dm",
-      function() require("dap-python").test_method() end,
-      desc = "Debug Test Method",
+      function() require("neotest").run.run { strategy = "dap" } end,
+      desc = "Debug Test",
     },
     {
       mode = "n",
