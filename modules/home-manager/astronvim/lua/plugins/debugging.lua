@@ -9,13 +9,6 @@ return {
       desc = "Debug Test",
     },
     {
-      mode = "n",
-      "<leader>dM",
-      function() require("dap-python").test_class() end,
-      desc = "Debug Test Class",
-    },
-    -- **File-Related Key Mappings**
-    {
       mode = "v",
       "<leader>df",
       function() require("dap-python").debug_selection() end,
