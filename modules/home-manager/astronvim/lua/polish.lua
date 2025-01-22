@@ -5,9 +5,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_create_autocmd("VimEnter", {
   command = "WindowsEqualize",
 })
-vim.api.nvim_create_autocmd("InsertLeave", { command = "w" })
 vim.diagnostic.config { virtual_text = false }
-
+require("dap-python").test_runner = "pytest"
 require("dapui").setup()
 
 -- Set up custom filetypes
