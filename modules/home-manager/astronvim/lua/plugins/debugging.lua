@@ -21,6 +21,18 @@ return {
       function() require("dap-python").debug_selection() end,
       desc = "Debug Selection",
     },
+    {
+      mode = "n",
+      "<leader>v",
+      function() require("dap-view").toggle() end,
+      desc = "dap-view toggle",
+    },
+    {
+      mode = "n",
+      "<leader>da",
+      function() require("dap-view").add_expr() end,
+      desc = "dap-view add expression",
+    },
   },
   config = function()
     require("dap-python").setup(vim.g.python3_host_prog)

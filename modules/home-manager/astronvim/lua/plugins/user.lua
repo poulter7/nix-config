@@ -202,6 +202,9 @@ return {
 
       dap_python.setup(adapter_python_path)
     end,
+    dependencies = {
+      { "igorlfs/nvim-dap-view", opts = {} },
+    },
   },
   {
     "linux-cultist/venv-selector.nvim",
@@ -237,4 +240,11 @@ return {
     config = true,
   },
   { "sQVe/sort.nvim" },
+  { "mistweaverco/kulala.nvim", opts = {} },
+  {
+    "0x00-ketsu/autosave.nvim",
+    -- lazy-loading on events
+    event = { "InsertLeave", "TextChanged" },
+    config = function() require("autosave").setup {} end,
+  },
 }
