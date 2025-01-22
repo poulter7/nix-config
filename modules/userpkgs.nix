@@ -38,6 +38,7 @@
             "zoxide"
             "zig"
             "awscli"
+            "spotify_player"
         ];
         casks = [
             "docker"
