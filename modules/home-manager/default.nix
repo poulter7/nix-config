@@ -21,6 +21,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
+      sp = "spotify_player";
       ns = "darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac";
       nb = "darwin-rebuild build --flake ~/Code/projects/nix-config/.#mac";
       nix-up = "pushd ~/.config/snowflake; nix flake update; nixswitch; popd";
