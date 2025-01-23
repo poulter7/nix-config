@@ -99,7 +99,7 @@
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/wezterm";
     };
     ".config/nvim-kickstart" = {
-      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart";
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
     };
     ".config/nvim-nixos" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/astronvim";

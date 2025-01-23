@@ -6,7 +6,7 @@
 ---@type LazySpec
 return {
   {
-    "windows.nvim",
+    "windows.nvim", -- in kickstart
     opts = {
       ignore = {
         buftype = { "quickfix", "nofile" }, -- nofile is for neotest's main buffer
@@ -15,7 +15,7 @@ return {
     },
   },
   {
-    "nvim-zh/colorful-winsep.nvim",
+    "nvim-zh/colorful-winsep.nvim", -- in kickstart
     config = true,
     event = { "BufEnter" },
     opts = {
@@ -26,7 +26,7 @@ return {
     },
   },
   {
-    "rebelot/kanagawa.nvim",
+    "rebelot/kanagawa.nvim", -- in kickstart
     config = function()
       require("kanagawa").setup {
         overrides = function() -- add/modify highlights
@@ -39,7 +39,7 @@ return {
     end,
   },
   {
-    "romgrk/barbar.nvim",
+    "romgrk/barbar.nvim", -- in kickstart
     dependencies = {
       "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
       "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
@@ -134,7 +134,7 @@ return {
     },
   },
   {
-    "rcarriga/nvim-dap-ui",
+    "rcarriga/nvim-dap-ui", -- maybe skip?
     config = function(plugin, opts)
       -- disable dap events that are created
       local dap = require "dap"
@@ -145,7 +145,7 @@ return {
     end,
   },
   {
-    "nvim-neotest/neotest",
+    "nvim-neotest/neotest", -- in kickstart
     dependencies = {
       "nvim-neotest/nvim-nio",
       "nvim-lua/plenary.nvim",
@@ -168,7 +168,7 @@ return {
     event = "VeryLazy",
   },
   {
-    "neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig", -- in kickstart
     opts = {
       servers = {
         pyright = {
@@ -179,7 +179,7 @@ return {
     },
   },
   {
-    "tadaa/vimade",
+    "tadaa/vimade", -- in kickstart
     -- default opts (you can partially set these or configure them however you like)
     opts = {
       fadelevel = 0.7, -- any value between 0 and 1. 0 is hidden and 1 is opaque.
@@ -222,7 +222,7 @@ return {
     },
   },
   {
-    "akinsho/toggleterm.nvim",
+    "akinsho/toggleterm.nvim", -- in kickstart
     commit = "193786e0371e3286d3bc9aa0079da1cd41beaa62",
     opts = function(opts)
       opts.direction = "float"
@@ -230,19 +230,19 @@ return {
     end,
   },
   {
-    "rebelot/heirline.nvim",
+    "rebelot/heirline.nvim", -- in kickstart
     opts = function(_, opts)
       opts.tabline = nil -- remove tabline
     end,
   },
   {
-    "jsongerber/thanks.nvim",
+    "jsongerber/thanks.nvim", -- in kickstart
     config = true,
   },
-  { "sQVe/sort.nvim" },
-  { "mistweaverco/kulala.nvim", opts = {} },
+  { "sQVe/sort.nvim" }, -- in kickstart
+  { "mistweaverco/kulala.nvim", opts = {} }, -- in kickstart
   {
-    "0x00-ketsu/autosave.nvim",
+    "0x00-ketsu/autosave.nvim", -- in kickstart
     -- lazy-loading on events
     event = { "InsertLeave", "TextChanged" },
     config = function() require("autosave").setup {} end,
