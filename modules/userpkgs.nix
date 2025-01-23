@@ -41,6 +41,7 @@
             "spotify_player"
         ];
         casks = [
+            "sunsama"
             "docker"
             "spotify"
             "postman"
