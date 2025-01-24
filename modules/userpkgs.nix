@@ -39,6 +39,7 @@
             "zig"
             "awscli"
             "spotify_player"
+            "yazi"
         ];
         casks = [
             "sunsama"
