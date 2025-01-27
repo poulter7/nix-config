@@ -13,7 +13,7 @@
       PAGER = "less";
       CLICLOLOR = 1;
       EDITOR = "nvim";
-      NVIM_APPNAME="nvim-nixos";
+      NVIM_APPNAME="nvim-kickstart";
     };
   };
 
@@ -46,6 +46,10 @@
       set fish_greeting # Disable greeting
       eval "$(/opt/homebrew/bin/brew shellenv)"
       ${pkgs.jump}/bin/jump shell fish | source
+      ollama serve  > /dev/null 2>&1 || true
+      # aider setup
+      export ANTHROPIC_API_KEY=$(cat ~/secrets/anthropic.key)
+      export OLLAMA_API_BASE=http://127.0.0.1:11434
     '';
     plugins = builtins.map (p: { name = p.name; src = p.src; }) userpkgs.nix.fishPlugins;
   };
@@ -62,10 +66,6 @@
       source=./amethyst/amethyst.yml;
       target=".config/amethyst/amethyst.yml";
       onChange="/usr/bin/pkill Amethyst; /usr/bin/open -a Amethyst";
-    };
-    p10k = {
-      source=./zsh/p10k.zsh;
-      target=".p10k.zsh";
     };
     vimac = {
       source=../darwin/apps/Vimac.app;
