@@ -31,15 +31,13 @@
       ll = "ls -lahrts";
       l = "ls -l";
       lg = "lazygit";
-      gg = "lazygit";
-      vi = "nvim";
+      v = "nvim";
       python = "python3";
       k = "kubectl";
       tf = "terraform";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       resource = ". ~/.zshrc";
       va = "NVIM_APPNAME=nvim-nixos nvim $argv";
-      vk = "NVIM_APPNAME=nvim-kickstart nvim $argv";
       jump = "${pkgs.jump}/bin/jump";
     };
     shellInit= ''

@@ -3,9 +3,6 @@ local colors = require("colors")
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
--- resurrect.change_state_save_dir("/Users/jonathan/temp/")
--- resurrect.save_state_dir = "/Users/jonathan/temp/"
-
 resurrect.periodic_save({ interval_seconds = 1 * 60, save_workspaces = true, save_windows = false, save_tabs = false })
 
 wezterm.on("resurrect.periodic_save", function()
@@ -25,11 +22,6 @@ wezterm.on("gui-startup", resurrect.resurrect_on_gui_startup)
 wezterm.on("augment-command-palette", function(window, pane)
 	local workspace_state = resurrect.workspace_state
 	return {
-		-- {
-		-- 	brief = "Window | Workspace: Switch Workspace",
-		-- 	icon = "md_briefcase_arrow_up_down",
-		-- 	action = workspace_switcher.switch_workspace(),
-		-- },
 		{
 			brief = "Window | Workspace: Rename Workspace",
 			icon = "md_briefcase_edit",
