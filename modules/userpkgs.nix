@@ -21,13 +21,13 @@
             jump
             neovim
             terraform
-            texliveFull
             nodejs_20
             uv
             yarn
             typescript
             gh
             fd
+            jujutsu
         ];
     };
     homebrew = {
@@ -40,6 +40,8 @@
             "awscli"
             "spotify_player"
             "yazi"
+            "llama.cpp"
+            "huggingface-cli"
         ];
         casks = [
             "sunsama"

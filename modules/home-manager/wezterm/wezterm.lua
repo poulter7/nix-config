@@ -76,7 +76,7 @@ config.keys = {
 	},
 	{
 		mods = "LEADER",
-		key = "Tab",
+		key = "b",
 		action = wezterm.action.ShowTabNavigator,
 	},
 	{

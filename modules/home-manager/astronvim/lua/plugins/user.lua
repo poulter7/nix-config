@@ -126,12 +126,20 @@ return {
       },
     },
   },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   opts = {
+  --     suggestion = { enabled = true, auto_trigger = true, keymap = { accept = "<C-l>" } },
+  --     panel = { enabled = false },
+  --   },
+  -- },
   {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      suggestion = { enabled = true, auto_trigger = true, keymap = { accept = "<C-l>" } },
-      panel = { enabled = false },
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
     },
+    config = true,
   },
   {
     "rcarriga/nvim-dap-ui", -- maybe skip?
@@ -184,14 +192,6 @@ return {
     opts = {
       fadelevel = 0.7, -- any value between 0 and 1. 0 is hidden and 1 is opaque.
     },
-  },
-  {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = true,
   },
   {
     "mfussenegger/nvim-dap-python",

@@ -16,6 +16,9 @@
       cleanup = "uninstall";
       upgrade = true;
     };
+    taps = [
+      "homebrew/cask"
+    ];
   };
   environment = {
     shells = userpkgs.nix.shells; # permissible login shells

@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 local colors = require("colors")
 
 local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+
 -- resurrect.change_state_save_dir("/Users/jonathan/temp/")
 -- resurrect.save_state_dir = "/Users/jonathan/temp/"
 
