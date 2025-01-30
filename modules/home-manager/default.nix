@@ -37,8 +37,9 @@
       tf = "terraform";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       resource = ". ~/.zshrc";
-      va = "NVIM_APPNAME=nvim-nixos nvim $argv";
+      nvim-astronvim = "NVIM_APPNAME=nvim-nixos nvim $argv";
       jump = "${pkgs.jump}/bin/jump";
+      rename-tab = "wezterm cli set-tab-title";
     };
     shellInit= ''
       set fish_greeting # Disable greeting
