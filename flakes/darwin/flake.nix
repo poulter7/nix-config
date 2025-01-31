@@ -43,7 +43,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
         config.allowUnfree = true; 
       };
       modules = [
-        ../modules/darwin
+        ../../modules/darwin
         home-manager.darwinModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
@@ -51,7 +51,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
             users."${user}".imports = [ 
 	            # NixVim module
               nixvim.homeManagerModules.nixvim 
-              ./modules/home-manager 
+              ../../modules/home-manager 
               mac-app-util.homeManagerModules.default
             ];
           };
