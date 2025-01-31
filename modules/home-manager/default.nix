@@ -1,13 +1,12 @@
-{ pkgs, config, osConfig, lib, ... }: 
+{user, userroot}: { pkgs, config, osConfig, lib, ... }: 
   let
-      user = "jonathan";
-      root = "/Users/jonathan/Code/projects/nix-config";
+      root = "${userroot}/${user}/Code/projects/nix-config";
       userpkgs = import ../userpkgs.nix pkgs;
   in {
 
   home = {
     username = "${user}";
-    homeDirectory = "/Users/${user}";
+    homeDirectory = "${userroot}/${user}";
     packages = userpkgs.nix.utils;
     sessionVariables = {
       PAGER = "less";

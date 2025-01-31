@@ -34,6 +34,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
     let
       user = "jonathan";
       system = "aarch64-darwin";
+      userroot = "/Users";
     in {
     
     darwinConfigurations.mac = darwin.lib.darwinSystem {
@@ -51,7 +52,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
             users."${user}".imports = [ 
 	            # NixVim module
               nixvim.homeManagerModules.nixvim 
-              ../../modules/home-manager 
+              (import ../../modules/home-manager { user=user; userroot=userroot; })
               mac-app-util.homeManagerModules.default
             ];
           };
