@@ -31,6 +31,18 @@ require('which-key').add {
   { '<C-a>', '<Cmd>CodeCompanionActions<CR>' },
   { '<Leader>a', '<Cmd>CodeCompanionChat Toggle<CR>' },
   { 'ga', '<Cmd>CodeCompanionChat<CR>' },
+  -- Trouble
+  { '<leader>x', group = '[X]Trouble', mode = nx },
+  {
+    '<leader>xx',
+    '<cmd>Trouble diagnostics toggle<cr>',
+    desc = 'Diagnostics (Trouble)',
+  },
+  {
+    '<leader>xX',
+    '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+    desc = 'Buffer Diagnostics (Trouble)',
+  },
   --- toggle term
   { '\\', '<Cmd>execute v:count . "ToggleTerm"<CR>' },
   { '\\', '<Cmd>ToggleTerm<CR>', mode = 't' },
