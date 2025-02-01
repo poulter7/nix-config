@@ -60,6 +60,7 @@
       rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
     };
     shellInit= ''
+      fish_vi_key_bindings
       set fish_greeting # Disable greeting
 	if test (uname) = "Darwin"
 	    eval "$(/opt/homebrew/bin/brew shellenv)"
