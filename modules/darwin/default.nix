@@ -25,22 +25,6 @@
     systemPackages = [ pkgs.coreutils ];
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
-    interactiveShellInit = ''
-    if [[ $(${pkgs.procps}/bin/ps -p "$PPID" -o comm=) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-            # Handle login shell detection for both bash and zsh
-            LOGIN_OPTION=""
-            if [[ -n "$BASH" ]]; then
-                shopt -q login_shell && LOGIN_OPTION="--login"
-            elif [[ -n "$ZSH_VERSION" ]]; then
-                [[ -o login ]] && LOGIN_OPTION="--login"
-            fi
-            
-            # Execute fish with proper login option
-            exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-        fi
-    fi
-  '';
   };
   system = {
     defaults = {  

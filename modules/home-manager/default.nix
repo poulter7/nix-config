@@ -2,6 +2,21 @@
   let
       root = "${userroot}/${user}/Code/projects/nix-config";
       userpkgs = import ../userpkgs.nix pkgs;
+      shellSwitch = ''
+    if [[ $(${pkgs.procps}/bin/ps -p "$PPID" -o comm=) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+      then
+            # Handle login shell detection for both bash and zsh
+            LOGIN_OPTION=""
+            if [[ -n "$BASH" ]]; then
+                shopt -q login_shell && LOGIN_OPTION="--login"
+            elif [[ -n "$ZSH_VERSION" ]]; then
+                [[ -o login ]] && LOGIN_OPTION="--login"
+            fi
+            
+            # Execute fish with proper login option
+            exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+    fi
+    '';
   in {
 
   home = {
@@ -15,6 +30,11 @@
       NVIM_APPNAME="nvim-kickstart";
     };
   };
+
+  programs.bash.enable = true;
+  programs.bash.initExtra = shellSwitch;
+  programs.zsh.enable = true;
+  programs.zsh.initExtra = shellSwitch;
 
   #launches fish unless the parent process is already fish
   programs.fish = {
@@ -35,7 +55,6 @@
       k = "kubectl";
       tf = "terraform";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
-      resource = ". ~/.zshrc";
       nvim-astronvim = "NVIM_APPNAME=nvim-nixos nvim $argv";
       jump = "${pkgs.jump}/bin/jump";
       rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
@@ -44,7 +63,6 @@
       set fish_greeting # Disable greeting
 	if test (uname) = "Darwin"
 	    eval "$(/opt/homebrew/bin/brew shellenv)"
-	    echo "Running on a Mac"
 	end
       ${pkgs.jujutsu}/bin/jj util completion fish | source
       ${pkgs.jump}/bin/jump shell fish | source
