@@ -1,9 +1,9 @@
-{ pkgs, ... }: 
+{user, userroot} :{ pkgs, ... }: 
   let 
     userpkgs = import ../userpkgs.nix pkgs;
   in
   {
-  users.users.jonathan.home = "/Users/jonathan";
+  users.users.${user}.home = "${userroot}/${user}";
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';

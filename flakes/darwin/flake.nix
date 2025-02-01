@@ -44,7 +44,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
         config.allowUnfree = true; 
       };
       modules = [
-        ../../modules/darwin
+        (import ../../modules/darwin {user=user; userroot=userroot; })
         home-manager.darwinModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
