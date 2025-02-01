@@ -38,7 +38,7 @@
       resource = ". ~/.zshrc";
       nvim-astronvim = "NVIM_APPNAME=nvim-nixos nvim $argv";
       jump = "${pkgs.jump}/bin/jump";
-      rename-tab = "wezterm cli set-tab-title";
+      rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
     };
     shellInit= ''
       set fish_greeting # Disable greeting
@@ -48,9 +48,8 @@
 	end
       ${pkgs.jujutsu}/bin/jj util completion fish | source
       ${pkgs.jump}/bin/jump shell fish | source
-      ${pkgs.ollama}/bin/ollama serve  > /dev/null 2>&1 || true
-      # aider setup
-      export ANTHROPIC_API_KEY=$(cat ~/secrets/anthropic.key)
+ #      ${pkgs.ollama}/bin/ollama serve  > /dev/null 2>&1 || true
+ #      # aider setup
       export OLLAMA_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_KEY=key
