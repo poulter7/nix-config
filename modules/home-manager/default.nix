@@ -42,7 +42,10 @@
     };
     shellInit= ''
       set fish_greeting # Disable greeting
+	if test (uname) = "Darwin"
       eval "$(/opt/homebrew/bin/brew shellenv)"
+	    echo "Running on a Mac"
+	end
       ${pkgs.jujutsu}/bin/jj util completion fish | source
       ${pkgs.jump}/bin/jump shell fish | source
       ${pkgs.ollama} serve  > /dev/null 2>&1 || true

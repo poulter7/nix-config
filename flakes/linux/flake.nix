@@ -20,13 +20,13 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }:
 	userroot = "/home";
     in {
 homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-	pkgs = nixpkgs.legacyPackages.${system};
+	pkgs = import nixpkgs { system = system;config.allowUnfree = true; };
 	modules = [
 nixvim.homeManagerModules.nixvim
 (import ../../modules/home-manager {user=user; userroot=userroot; })
 {
 home.username = user;
-home.homeDirectory = "/home/${user}";
+home.homeDirectory = "${userroot}/${user}";
 home.stateVersion = "24.11";
 }
 	];
