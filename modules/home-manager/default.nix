@@ -7,7 +7,7 @@
   home = {
     username = "${user}";
     homeDirectory = "${userroot}/${user}";
-    packages = userpkgs.nix.utils;
+    packages = userpkgs.nix.utils ++ userpkgs.nix.fishPlugins;
     sessionVariables = {
       PAGER = "less";
       CLICLOLOR = 1;
@@ -43,7 +43,7 @@
     shellInit= ''
       set fish_greeting # Disable greeting
 	if test (uname) = "Darwin"
-      eval "$(/opt/homebrew/bin/brew shellenv)"
+	    eval "$(/opt/homebrew/bin/brew shellenv)"
 	    echo "Running on a Mac"
 	end
       ${pkgs.jujutsu}/bin/jj util completion fish | source

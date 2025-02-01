@@ -29,6 +29,7 @@
             fd
             jujutsu
             ollama
+            wezterm
         ];
     };
     homebrew = {
@@ -75,7 +76,6 @@
             "caffeine"
             "font-hack-nerd-font"
             "virtual-desktop-streamer"
-            "wezterm"
         ];
     };
 }
