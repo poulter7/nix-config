@@ -28,6 +28,7 @@
             gh
             fd
             jujutsu
+            ollama
         ];
     };
     homebrew = {
@@ -75,7 +76,6 @@
             "font-hack-nerd-font"
             "virtual-desktop-streamer"
             "wezterm"
-            "ollama"
         ];
     };
 }
