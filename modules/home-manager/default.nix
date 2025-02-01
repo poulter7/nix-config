@@ -48,7 +48,7 @@
 	end
       ${pkgs.jujutsu}/bin/jj util completion fish | source
       ${pkgs.jump}/bin/jump shell fish | source
-      ${pkgs.ollama} serve  > /dev/null 2>&1 || true
+      ${pkgs.ollama}/bin/ollama serve  > /dev/null 2>&1 || true
       # aider setup
       export ANTHROPIC_API_KEY=$(cat ~/secrets/anthropic.key)
       export OLLAMA_API_BASE=http://127.0.0.1:8080
