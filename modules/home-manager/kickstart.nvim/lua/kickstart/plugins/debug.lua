@@ -54,8 +54,6 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
-    require('dap-python').setup(vim.g.python3_host_prog)
-    require('dap-python').test_runner = 'pytest'
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations

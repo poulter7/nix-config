@@ -104,6 +104,7 @@ require('which-key').add {
   -- Debug
   { '<leader>d', group = '[D]ebug' },
   { '<leader>dm', '<Cmd>lua require("neotest").run.run { strategy = "dap" }<CR>', desc = '[D]ebug Test [M]ethod' },
+  { '<leader>dM', '<Cmd>lua require("neotest").run.run() <CR>', desc = '[R]un Test [M]ethod' },
   { '<leader>db', '<Cmd>lua require("dap").toggle_breakpoint()<CR>', desc = '[D]ebug: [B]reakpoint' },
   { '<leader>dc', '<Cmd>lua require("dap").continue()<CR>', desc = '[D]ebug: [C]ontinue' },
   { '<leader>dd', '<Cmd>lua require("dap").step_into()<CR>', desc = '[D]ebug: Step Into' },

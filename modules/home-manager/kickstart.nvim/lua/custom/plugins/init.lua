@@ -99,7 +99,9 @@ return {
       require('neotest').setup {
         adapters = {
           require 'neotest-python' {
-            dap = { justMyCode = false },
+            dap = { justMyCode = false, console = 'integratedTerminal' },
+            args = { '-s', '--no-header', '--disable-warnings', '-qq' },
+            runner = 'pytest',
           },
         },
       }
@@ -201,7 +203,9 @@ return {
       local dap_python = require 'dap-python'
       local adapter_python_path = require('mason-registry').get_package('debugpy'):get_install_path() .. '/venv/bin/python'
 
-      dap_python.setup(adapter_python_path)
+      dap_python.setup(adapter_python_path, {
+        console = 'integratedTerminal',
+      })
     end,
   },
   {
