@@ -44,6 +44,7 @@
             "yazi"
             "llama.cpp"
             "huggingface-cli"
+            "asitop"
         ];
         casks = [
             "sunsama"
