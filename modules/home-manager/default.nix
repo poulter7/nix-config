@@ -60,6 +60,29 @@
       rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
     };
     shellInit= ''
+      function fish_mode_prompt
+      switch $fish_bind_mode
+        case default
+          set_color --bold red
+          echo '[N]'
+        case insert
+          set_color --bold green
+          echo '[I]'
+        case replace_one
+          set_color --bold green
+          echo '[R]'
+        case replace
+          set_color --bold green
+          echo '[R]'
+        case visual
+          set_color --bold brmagenta
+          echo '[V]'
+        case '*'
+          set_color --bold red
+          echo '[?]'
+      end
+      set_color normal
+    end
       fish_vi_key_bindings
       set fish_greeting # Disable greeting
 	if test (uname) = "Darwin"
@@ -68,7 +91,6 @@
       ${pkgs.jujutsu}/bin/jj util completion fish | source
       ${pkgs.jump}/bin/jump shell fish | source
  #      ${pkgs.ollama}/bin/ollama serve  > /dev/null 2>&1 || true
- #      # aider setup
       export OLLAMA_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_KEY=key
