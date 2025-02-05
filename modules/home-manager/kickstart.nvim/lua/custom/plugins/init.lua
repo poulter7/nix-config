@@ -135,7 +135,7 @@ return {
   {
     'romgrk/barbar.nvim',
     dependencies = {
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'lewis6991/gitsigns.nvim',
       'nvim-tree/nvim-web-devicons', -- TODO: not working OPTIONAL: for file icons
     },
     init = function()
