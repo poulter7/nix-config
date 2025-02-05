@@ -29,10 +29,7 @@ return {
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
     'theHamsta/nvim-dap-virtual-text',
-    { 'Weissle/persistent-breakpoints.nvim', event = 'BufReadPre', opts = {
-      load_breakpoints_event = { 'BufReadPost' },
-    } },
-
+    'Weissle/persistent-breakpoints.nvim',
     {
       'igorlfs/nvim-dap-view',
       dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view/',
@@ -54,6 +51,9 @@ return {
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+    require('persistent-breakpoints').setup {
+      load_breakpoints_event = { 'BufReadPost' },
+    }
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations

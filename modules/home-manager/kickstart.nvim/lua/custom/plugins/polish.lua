@@ -103,17 +103,23 @@ require('which-key').add {
   },
   -- Debug
   { '<leader>d', group = '[D]ebug' },
-  { '<leader>dm', '<Cmd>lua require("neotest").run.run { strategy = "dap" }<CR>', desc = '[D]ebug Test [M]ethod' },
-  { '<leader>dM', '<Cmd>lua require("neotest").run.run() <CR>', desc = '[R]un Test [M]ethod' },
-  { '<leader>db', '<Cmd>lua require("dap").toggle_breakpoint()<CR>', desc = '[D]ebug: [B]reakpoint' },
+  -- Debug: Start/Stop
+  { '<leader>dm', '<Cmd>lua require("neotest").run.run { strategy = "dap" }<CR>', desc = '[D]ebug: [M]ethod (neotest)' },
   { '<leader>dc', '<Cmd>lua require("dap").continue()<CR>', desc = '[D]ebug: [C]ontinue' },
-  { '<leader>dd', '<Cmd>lua require("dap").step_into()<CR>', desc = '[D]ebug: Step Into' },
-  { '<leader>do', '<Cmd>lua require("dap").step_over()<CR>', desc = '[D]ebug: Step Over' },
-  { '<leader>dr', '<Cmd>lua require("dap").step_out()<CR>', desc = '[D]ebug: Step Out' },
-  { '<leader>du', '<Cmd>lua require("dapui").toggle()<CR>', desc = '[D]ebug: See last session result.' },
-  { '<leader>dt', '<Cmd>lua require("dap").terminate()<CR>', desc = '[D]ebug: Terminate' },
+  { '<leader>dt', '<Cmd>lua require("dap").terminate()<CR>', desc = '[D]ebug: [T]erminate' },
+  -- Debug: Breakpoints
+  { '<leader>db', '<Cmd>lua require("persistent-breakpoints.api").toggle_breakpoint()<CR>', desc = '[D]ebug: [B]reakpoint' },
+  { '<leader>dX', '<Cmd>lua require("persistent-breakpoints.api").clear_all_breakpoints()<CR>', desc = '[D]ebug: [X]clear all breakpoints' },
+  -- Debug: UIs
+  { '<leader>du', '<Cmd>lua require("dapui").toggle()<CR>', desc = '[D]ebug: UI' },
   { '<leader>dv', '<Cmd>lua require("dap-view").toggle()<CR>', desc = 'dap-view toggle' },
   { '<Bs>', '<Cmd>DapToggleRepl<CR>', desc = '[D]ebug: repl' },
+  -- Debug: Step
+  { '<leader>ds', group = '[D]ebug: [S]tep' },
+  { '<leader>dsi', '<Cmd>lua require("dap").step_into()<CR>', desc = '[D]ebug: [S]tep [I]nto' },
+  { '<leader>dso', '<Cmd>lua require("dap").step_over()<CR>', desc = '[D]ebug: [S]tep [O]ver' },
+  { '<leader>dsO', '<Cmd>lua require("dap").step_out()<CR>', desc = '[D]ebug: [S]tep [O]ut' },
+  -- Aider
   { '<leader>ua', '<Cmd>lua _aider_toggle()<CR>', desc = 'ToggleTerm aider' },
   -- Hop
   {
