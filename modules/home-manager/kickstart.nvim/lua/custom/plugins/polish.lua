@@ -10,6 +10,9 @@ require('Comment').setup {
   },
 }
 
+-- dap settings
+vim.o.switchbuf = 'useopen,uselast'
+
 --- keybindings
 local tele = require 'telescope.builtin'
 local nx = { 'n', 'x' }
