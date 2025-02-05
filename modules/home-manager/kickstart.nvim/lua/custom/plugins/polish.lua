@@ -111,6 +111,7 @@ require('which-key').add {
   { '<leader>do', '<Cmd>lua require("dap").step_over()<CR>', desc = '[D]ebug: Step Over' },
   { '<leader>dr', '<Cmd>lua require("dap").step_out()<CR>', desc = '[D]ebug: Step Out' },
   { '<leader>du', '<Cmd>lua require("dapui").toggle()<CR>', desc = '[D]ebug: See last session result.' },
+  { '<leader>dt', '<Cmd>lua require("dap").terminate()<CR>', desc = '[D]ebug: Terminate' },
   { '<leader>dv', '<Cmd>lua require("dap-view").toggle()<CR>', desc = 'dap-view toggle' },
   { '<Bs>', '<Cmd>DapToggleRepl<CR>', desc = '[D]ebug: repl' },
   { '<leader>ua', '<Cmd>lua _aider_toggle()<CR>', desc = 'ToggleTerm aider' },
