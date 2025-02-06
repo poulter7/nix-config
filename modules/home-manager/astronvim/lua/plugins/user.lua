@@ -147,7 +147,9 @@ return {
       -- disable dap events that are created
       local dap = require "dap"
 
-      -- dap.listeners.after.event_initialized["dapui_config"] = nil
+      print(vim.inspect(dap.listeners.before))
+      dap.listeners.before.attach["dapui_config"] = nil
+      dap.listeners.before.launch["dapui_config"] = nil
       dap.listeners.before.event_terminated["dapui_config"] = nil
       dap.listeners.before.event_exited["dapui_config"] = nil
     end,

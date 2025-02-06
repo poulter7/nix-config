@@ -7,9 +7,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 vim.diagnostic.config { virtual_text = false }
 require("dap-python").test_runner = "pytest"
-require("dapui").setup()
 -- Set up custom filetypes
-vim.cmd("VimadeFocus")
+vim.cmd "VimadeFocus"
 vim.filetype.add {
   extension = {
     foo = "fooscript",

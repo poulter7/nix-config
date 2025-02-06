@@ -13,6 +13,11 @@ require('Comment').setup {
 -- dap settings
 vim.o.switchbuf = 'useopen,uselast'
 
+local dap = require 'dap'
+
+dap.listeners.after.event_initialized['dapui_config'] = nil
+dap.listeners.before.event_terminated['dapui_config'] = nil
+dap.listeners.before.event_exited['dapui_config'] = nil
 --- keybindings
 local tele = require 'telescope.builtin'
 local nx = { 'n', 'x' }

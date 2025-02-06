@@ -49,8 +49,6 @@ return {
     },
   },
   config = function()
-    local dap = require 'dap'
-    local dapui = require 'dapui'
     require('persistent-breakpoints').setup {
       load_breakpoints_event = { 'BufReadPost' },
     }
@@ -72,7 +70,7 @@ return {
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
-    dapui.setup {
+    require('dapui').setup {
       -- Set icons to characters that are more likely to work in every terminal.
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
@@ -88,6 +86,15 @@ return {
           run_last = '▶▶',
           terminate = '⏹',
           disconnect = '⏏',
+        },
+      },
+      layouts = {
+        {
+          elements = {
+            'console',
+          },
+          size = 0.25, -- 25% of total lines
+          position = 'bottom',
         },
       },
     }
