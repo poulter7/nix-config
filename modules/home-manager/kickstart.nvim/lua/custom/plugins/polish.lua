@@ -35,9 +35,9 @@ vim.diagnostic.config {
 
 local dap = require 'dap'
 
-dap.listeners.after.event_initialized['dapui_config'] = nil
-dap.listeners.before.event_terminated['dapui_config'] = nil
-dap.listeners.before.event_exited['dapui_config'] = nil
+-- dap.listeners.after.event_initialized['dapui_config'] = nil
+-- dap.listeners.before.event_terminated['dapui_config'] = nil
+-- dap.listeners.before.event_exited['dapui_config'] = nil
 --- keybindings
 local tele = require 'telescope.builtin'
 local nx = { 'n', 'x' }
@@ -252,5 +252,13 @@ vim.api.nvim_create_autocmd('User', {
     end)
   end,
 })
+
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = { 'dap-view', 'dap-view-term', 'dap-repl' }, -- dap-repl is set by `nvim-dap`
+  callback = function(evt)
+    vim.keymap.set('n', 'q', '<C-w>q', { silent = true, buffer = evt.buf })
+  end,
+})
+
 -- return plugins (this is a polish file, so we don't need to return anything)
 return {}

@@ -88,15 +88,6 @@ return {
           disconnect = '⏏',
         },
       },
-      layouts = {
-        {
-          elements = {
-            'console',
-          },
-          size = 0.25, -- 25% of total lines
-          position = 'bottom',
-        },
-      },
     }
 
     -- Change breakpoint icons
