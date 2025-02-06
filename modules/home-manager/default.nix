@@ -55,7 +55,6 @@
       k = "kubectl";
       tf = "terraform";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
-      nvim-astronvim = "NVIM_APPNAME=nvim-nixos nvim $argv";
       jump = "${pkgs.jump}/bin/jump";
       rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
     };
@@ -140,9 +139,6 @@
     };
     ".config/nvim-kickstart" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
-    };
-    ".config/nvim-nixos" = {
-      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/astronvim";
     };
   };
 }
