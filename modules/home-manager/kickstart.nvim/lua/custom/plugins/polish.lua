@@ -84,28 +84,56 @@ require('which-key').add {
   { '<leader>bp', '<Cmd>BufferPick<CR>', desc = '[B]uffer [P]ick' },
   { '<leader>bx', '<Cmd>BufferPickDelete<CR>', desc = '[B]uffer to [x]' },
   { '<leader>f', group = '[F]ind' },
-  { '<leader>fe', '<Cmd>Neotree toggle<CR>', desc = '[F]ind t[E]lescope', silent = true },
-  { '<leader>fh', tele.help_tags, desc = '[F]ind [H]elp' },
-  { '<leader>fk', tele.keymaps, desc = '[F]ind [K]eymaps' },
-  { '<leader>ff', tele.find_files, desc = '[F]ind [F]iles' },
-  { '<leader>ft', tele.builtin, desc = '[F]ind a [T]elescope' },
-  { '<leader>fw', tele.live_grep, desc = '[F]ind by [\\w]ord (Grep)' },
-  { '<leader>fd', tele.diagnostics, desc = '[F]ind [D]iagnostics' },
+  { '<leader>fe', '<Cmd>lua Snacks.explorer()<CR>', desc = '[F]ind t[E]lescope', silent = true },
+  {
+    '<leader>fk',
+    function()
+      Snacks.picker.keymaps()
+    end,
+    desc = '[F]ind [K]eymaps',
+  },
+  {
+    '<leader>ff',
+    function()
+      Snacks.picker.files()
+    end,
+    desc = '[F]ind [F]iles',
+  },
+  {
+    '<leader>fw',
+    function()
+      Snacks.picker.grep()
+    end,
+    desc = '[F]ind by [\\w]ord (Grep)',
+  },
+  {
+    '<leader>fd',
+    function()
+      Snacks.picker.diagnostics()
+    end,
+    desc = '[F]ind [D]iagnostics',
+  },
   {
     '<leader>fo',
     function()
-      tele.oldfiles { only_cwd = true }
+      Snacks.picker.recent { filter = { cwd = true } }
     end,
     desc = '[F]ind [O]ld files',
   },
   {
     '<leader>fO',
     function()
-      tele.oldfiles { only_cwd = false }
+      Snacks.picker.recent()
     end,
     desc = '[F]ind [O]ld files from everywhere',
   },
-  { '<leader>f.', tele.resume, desc = '[F]ind Recent Files ("." for repeat)' },
+  {
+    '<leader>f.',
+    function()
+      Snacks.picker.resume()
+    end,
+    desc = '[F]ind Recent Files ("." for repeat)',
+  },
   {
     '<leader>/',
     function()

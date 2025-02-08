@@ -266,25 +266,6 @@ return {
     },
   },
   {
-    'nvim-neo-tree/neo-tree.nvim',
-    version = '*',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-    cmd = 'Neotree',
-    opts = {
-      filesystem = {
-        window = {
-          mappings = {
-            ['q'] = 'close_window',
-          },
-        },
-      },
-    },
-  },
-  {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     -- Optional dependency
@@ -366,5 +347,28 @@ return {
     'folke/trouble.nvim',
     opts = {},
     cmd = 'Trouble',
+  },
+  {
+    'folke/snacks.nvim',
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      bigfile = { enabled = false },
+      dashboard = { enabled = false },
+      explorer = { enabled = false },
+      indent = { enabled = false },
+      input = { enabled = false },
+      picker = { enabled = true },
+      notifier = { enabled = false },
+      quickfile = { enabled = false },
+      scope = { enabled = false },
+      scroll = { enabled = false },
+      statuscolumn = { enabled = false },
+      words = { enabled = false },
+    },
   },
 }
