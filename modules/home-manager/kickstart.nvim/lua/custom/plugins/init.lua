@@ -66,6 +66,8 @@ return {
   },
   {
     'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 10000,
     config = function()
       --set colorscheme
       require('kanagawa').setup {

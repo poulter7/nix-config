@@ -15,29 +15,7 @@ vim.o.switchbuf = 'useopen,uselast'
 -- column settings
 vim.opt.numberwidth = 3
 vim.opt.signcolumn = 'yes:1'
--- vim.opt.statuscolumn = '%l%s'
-vim.diagnostic.config {
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '',
-      [vim.diagnostic.severity.WARN] = '',
-      [vim.diagnostic.severity.INFO] = '',
-      [vim.diagnostic.severity.HINT] = '',
-    },
-    numhl = {
-      [vim.diagnostic.severity.WARN] = 'WarningMsg',
-      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-    },
-  },
-}
 
-local dap = require 'dap'
-
--- dap.listeners.after.event_initialized['dapui_config'] = nil
--- dap.listeners.before.event_terminated['dapui_config'] = nil
--- dap.listeners.before.event_exited['dapui_config'] = nil
 --- keybindings
 local tele = require 'telescope.builtin'
 local nx = { 'n', 'x' }
@@ -235,14 +213,6 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
---Post-init
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    vim.cmd.colorscheme 'kanagawa'
-    -- vim.cmd 'VimadeFocus' -- this breaks ToggleTerm form now
-  end,
-})
-
 -- set resession to work within a directory
 local resession = require 'resession'
 vim.api.nvim_create_autocmd('VimEnter', {
@@ -288,5 +258,61 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   end,
 })
 
--- return plugins (this is a polish file, so we don't need to return anything)
+local function merge(a, b)
+  local _t = {}
+  for k, v in pairs(a) do
+    _t[k] = v
+  end
+  for k, v in pairs(b) do
+    _t[k] = v
+  end
+  return _t
+end
+
+-- Post-init - override default colors
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.cmd.colorscheme 'kanagawa'
+    local sign_column_hl = vim.api.nvim_get_hl(0, { name = 'SignColumn' })
+    local sign_column_bg = (sign_column_hl.bg ~= nil) and ('#%06x'):format(sign_column_hl.bg) or 'bg'
+    local sign_column_ctermbg = (sign_column_hl.ctermbg ~= nil) and sign_column_hl.ctermbg or 'Black'
+    vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#3399ff', bg = sign_column_bg })
+    vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#9ece6a', bg = '#31353f' })
+    vim.api.nvim_set_hl(0, 'DapLogPoint', { fg = '#FFFF00' })
+    vim.api.nvim_set_hl(0, 'DapBreakpointRejected', { fg = '#f09000' })
+    vim.api.nvim_set_hl(0, 'WarningMsg', merge(vim.api.nvim_get_hl(0, { name = 'WarningMsg' }), { bg = sign_column_bg }))
+    vim.api.nvim_set_hl(0, 'ErrorMsg', merge(vim.api.nvim_get_hl(0, { name = 'ErrorMsg' }), { bg = sign_column_bg }))
+    vim.api.nvim_set_hl(0, 'DiagnosticHint', merge(vim.api.nvim_get_hl(0, { name = 'DiagnosticHint' }), { bg = sign_column_bg }))
+    vim.api.nvim_set_hl(0, 'DiagnosticInfo', merge(vim.api.nvim_get_hl(0, { name = 'DiagnosticInfo' }), { bg = sign_column_bg }))
+    vim.api.nvim_set_hl(0, 'ArrowCurrentFile', merge(vim.api.nvim_get_hl(0, { name = 'ArrowCurrentFile' }), { fg = '#FF0000', bg = sign_column_bg }))
+
+    -- vim.api.nvim_set_hl()
+    --         BufferCurrent = { bg = '#e98a00', fg = '#000000' },
+    --         BufferCurrentMod = { link = 'BufferCurrent' },
+
+    vim.fn.sign_define('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapBreakpointCondition', { text = '●', texthl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'DapBreakpoint' })
+    vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint' })
+    vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' })
+
+    -- don't display diagnostic text, just highlight the numbers
+    vim.diagnostic.config {
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = '!',
+          [vim.diagnostic.severity.WARN] = '',
+          [vim.diagnostic.severity.INFO] = '',
+          [vim.diagnostic.severity.HINT] = '',
+        },
+        numhl = {
+          [vim.diagnostic.severity.WARN] = 'WarningMsg',
+          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+        },
+      },
+    }
+  end,
+})
 return {}
