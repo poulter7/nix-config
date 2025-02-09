@@ -41,13 +41,13 @@ require('which-key').add {
   { '<leader>x', group = '[X]Trouble', mode = nx },
   {
     '<leader>xx',
-    '<cmd>Trouble diagnostics toggle<cr>',
-    desc = 'Diagnostics (Trouble)',
+    '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+    desc = 'Diagnostics',
   },
   {
     '<leader>xX',
-    '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-    desc = 'Buffer Diagnostics (Trouble)',
+    '<cmd>Trouble diagnostics toggle<cr>',
+    desc = 'Diagnostics (Workspace)',
   },
   --- toggle term
   { '\\', '<Cmd>execute v:count . "ToggleTerm"<CR>' },
@@ -82,14 +82,7 @@ require('which-key').add {
     function()
       Snacks.picker.grep()
     end,
-    desc = '[F]ind by [\\w]ord (Grep)',
-  },
-  {
-    '<leader>fd',
-    function()
-      Snacks.picker.diagnostics()
-    end,
-    desc = '[F]ind [D]iagnostics',
+    desc = '[F]ind by [w]ord (Grep)',
   },
   {
     '<leader>fo',
@@ -284,11 +277,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
     vim.api.nvim_set_hl(0, 'ErrorMsg', merge(vim.api.nvim_get_hl(0, { name = 'ErrorMsg' }), { bg = sign_column_bg }))
     vim.api.nvim_set_hl(0, 'DiagnosticHint', merge(vim.api.nvim_get_hl(0, { name = 'DiagnosticHint' }), { bg = sign_column_bg }))
     vim.api.nvim_set_hl(0, 'DiagnosticInfo', merge(vim.api.nvim_get_hl(0, { name = 'DiagnosticInfo' }), { bg = sign_column_bg }))
-    vim.api.nvim_set_hl(0, 'ArrowCurrentFile', merge(vim.api.nvim_get_hl(0, { name = 'ArrowCurrentFile' }), { fg = '#FF0000', bg = sign_column_bg }))
-
-    -- vim.api.nvim_set_hl()
-    --         BufferCurrent = { bg = '#e98a00', fg = '#000000' },
-    --         BufferCurrentMod = { link = 'BufferCurrent' },
+    vim.api.nvim_set_hl(0, 'ArrowBookmarkSign', merge(vim.api.nvim_get_hl(0, { name = 'ArrowBookmarkSign' }), { fg = '#32CD32', bg = sign_column_bg }))
 
     vim.fn.sign_define('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
     vim.fn.sign_define('DapBreakpointCondition', { text = '●', texthl = 'DapBreakpoint' })
