@@ -49,7 +49,9 @@ config.inactive_pane_hsb = {
 	saturation = 0.7,
 }
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
-
+config.window_padding = {
+	bottom = 0,
+}
 config.keys = {
 	{ key = "p", mods = "LEADER", action = wezterm.action.ActivateCommandPalette },
 	-- splitting
