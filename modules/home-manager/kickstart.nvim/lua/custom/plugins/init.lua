@@ -219,6 +219,20 @@ return {
     end,
   },
   {
+    'uga-rosa/ccc.nvim',
+    event = 'FileType',
+    keys = {
+      { '<Leader>mc', '<cmd>CccPick<CR>', desc = 'Color-picker' },
+    },
+    opts = {
+      highlighter = {
+        auto_enable = true,
+        lsp = true,
+        excludes = { 'lazy', 'mason', 'help', 'neo-tree' },
+      },
+    },
+  },
+  {
     'jay-babu/mason-null-ls.nvim', -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
     -- overrides `require("mason-null-ls").setup(...)`
     event = { 'BufReadPre', 'BufNewFile' },

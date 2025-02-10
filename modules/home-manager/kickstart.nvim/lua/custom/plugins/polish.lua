@@ -56,10 +56,11 @@ require('which-key').add {
   { '\\', '<Cmd>ToggleTerm<CR>', mode = 't' },
   -- code
   { '<leader>c', group = '[C]ode', mode = nx },
+  { '<Leader>cv', '<cmd>VenvSelect<cr>' },
+  { '<Leader>cp', '<cmd>CccPick<cr>', desc = '[C]ode color [P]icker' },
   { '<leader>r', group = '[R]est', mode = nx },
   { '<leader>rr', '<Cmd>Rest run<CR>', desc = '[R]est [R]un' },
   { '<leader>a', group = '[A]rrow', mode = nx },
-  { '<Leader>cv', '<cmd>VenvSelect<cr>' },
   { '<leader>u', group = '[U]ser Interface' },
   { '<leader>ut', '<Cmd>Neotest summary<CR>', desc = 'UI: toggle neotest summary' },
   { '<leader>b', group = '[B]uffers' },
