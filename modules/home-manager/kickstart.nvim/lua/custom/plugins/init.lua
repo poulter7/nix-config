@@ -188,6 +188,7 @@ return {
   { 'mistweaverco/kulala.nvim', opts = {} },
   {
     '0x00-ketsu/autosave.nvim',
+    enabled = vim.fn.getcwd() ~= '/Users/jonathan/Code/projects/nix-config',
     -- lazy-loading on events
     event = { 'InsertLeave', 'TextChanged' },
     config = function()
