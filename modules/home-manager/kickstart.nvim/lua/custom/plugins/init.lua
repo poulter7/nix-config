@@ -293,6 +293,19 @@ return {
       show_icons = true,
       leader_key = '\t', -- Recommended to be a single key
       buffer_leader_key = '<S-\t>', -- Per Buffer Mappings
+      index_keys = 'fjdksla;zxcvnm,.',
+      mappings = {
+        edit = 'E',
+        delete_mode = 'D',
+        clear_all_items = 'C',
+        toggle = 'S', -- used as save if separate_save_and_remove is true
+        open_vertical = 'V',
+        open_horizontal = '-',
+        quit = 'q',
+        remove = 'X', -- only used if separate_save_and_remove is true
+        next_item = ']',
+        prev_item = '[',
+      },
     },
   },
   {
