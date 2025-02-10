@@ -15,6 +15,7 @@ vim.o.switchbuf = 'useopen,uselast'
 -- column settings
 vim.opt.numberwidth = 3
 vim.opt.signcolumn = 'yes:1'
+vim.opt.cmdheight = 0
 
 --- keybindings
 local tele = require 'telescope.builtin'
@@ -44,6 +45,7 @@ require('which-key').add {
     '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
     desc = 'Diagnostics',
   },
+  { '<leader>xq', '<Cmd>Trouble qflist toggle<Cr>', desc = '[X]Trouble Quickfix' },
   {
     '<leader>xX',
     '<cmd>Trouble diagnostics toggle<cr>',
@@ -54,6 +56,8 @@ require('which-key').add {
   { '\\', '<Cmd>ToggleTerm<CR>', mode = 't' },
   -- code
   { '<leader>c', group = '[C]ode', mode = nx },
+  { '<leader>r', group = '[R]est', mode = nx },
+  { '<leader>rr', '<Cmd>Rest run<CR>', desc = '[R]est [R]un' },
   { '<leader>a', group = '[A]rrow', mode = nx },
   { '<Leader>cv', '<cmd>VenvSelect<cr>' },
   { '<leader>u', group = '[U]ser Interface' },
@@ -245,7 +249,7 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'dap-view', 'dap-view-term', 'dap-repl' }, -- dap-repl is set by `nvim-dap`
+  pattern = { 'dap-view', 'dap-view-term', 'dap-repl', 'rest_nvim_result' }, -- dap-repl is set by `nvim-dap`
   callback = function(evt)
     vim.keymap.set('n', 'q', '<C-w>q', { silent = true, buffer = evt.buf })
   end,
