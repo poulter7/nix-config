@@ -352,8 +352,16 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('lualine').setup {
-        opts = {
-          theme = 'gruvbox',
+        options = {
+          theme = 'codedark',
+        },
+        sections = {
+          lualine_c = {
+            function()
+              return vim.fs.basename(vim.fn.getcwd())
+            end,
+            'filename',
+          },
         },
       }
     end,
