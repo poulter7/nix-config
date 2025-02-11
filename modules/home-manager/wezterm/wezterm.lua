@@ -58,12 +58,12 @@ config.keys = {
 	{ key = "d", mods = "LEADER", action = wezterm.action.ShowDebugOverlay },
 	{
 		mods = "LEADER",
-		key = "-",
+		key = "j",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		mods = "LEADER",
-		key = "|",
+		key = "h",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{

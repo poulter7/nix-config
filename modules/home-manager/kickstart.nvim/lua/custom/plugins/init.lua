@@ -39,10 +39,14 @@ return {
   {
     'akinsho/toggleterm.nvim',
     commit = '193786e0371e3286d3bc9aa0079da1cd41beaa62',
-    opts = function(opts)
-      opts.direction = 'float'
-      return opts
-    end,
+    opts = {
+      direction = 'float',
+      start_in_insert = true,
+      persist_mode = false,
+      on_open = function(term)
+        vim.cmd 'startinsert'
+      end,
+    },
   },
   {
     'tadaa/vimade',

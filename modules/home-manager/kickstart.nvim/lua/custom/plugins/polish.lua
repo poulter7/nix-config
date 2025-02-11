@@ -37,6 +37,13 @@ require('which-key').add {
   -- CodeCompanion
   { '<C-a>', '<Cmd>CodeCompanionActions<CR>' },
   { '<Leader>a', '<Cmd>CodeCompanionChat Toggle<CR>' },
+  {
+    '<Leader><Leader>',
+    ':',
+    desc = 'Begin Command',
+    noremap = true,
+    silent = true,
+  },
   { 'ga', '<Cmd>CodeCompanionChat<CR>' },
   -- Trouble
   { '<leader>x', group = '[X]Trouble', mode = nx },
