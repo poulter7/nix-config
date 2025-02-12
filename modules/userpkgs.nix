@@ -32,6 +32,7 @@
             wezterm
             clang
             lua
+            unzip
         ];
     };
     homebrew = {
