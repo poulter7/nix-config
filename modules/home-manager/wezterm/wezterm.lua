@@ -1,11 +1,22 @@
 local wezterm = require("wezterm")
 local sessions = require("sessions")
+
 -- nav
 local function is_vim(pane)
 	-- this is set by the plugin, and unset on ExitPre in Neovim
 	return pane:get_user_vars().IS_NVIM == "true"
 end
+local is_linux = function()
+	return wezterm.target_triple:find("linux") ~= nil
+end
 
+local is_darwin = function()
+	return wezterm.target_triple:find("darwin") ~= nil
+end
+
+local is_windows = function()
+	return not (is_darwin() or is_linux())
+end
 local direction_keys = {
 	Left = "h",
 	Down = "j",
@@ -41,6 +52,14 @@ end
 local config = {}
 
 config = wezterm.config_builder()
+if is_windows() then
+	if wezterm.config_builder then
+		config = wezterm.config_builder()
+	end
+
+	-- change config now
+	config.default_domain = "WSL:Ubuntu"
+end
 config.default_workspace = "default"
 config.color_scheme = "kanagawabones"
 config.cursor_blink_rate = 750

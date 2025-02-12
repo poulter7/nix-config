@@ -31,7 +31,7 @@ return {
     'theHamsta/nvim-dap-virtual-text',
     'Weissle/persistent-breakpoints.nvim',
     {
-      'igorlfs/nvim-dap-view',
+      'poulter7/nvim-dap-view',
       dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view/',
       opts = {
         winbar = {
