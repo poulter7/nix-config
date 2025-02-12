@@ -31,6 +31,7 @@
             ollama
             wezterm
             clang
+            lua
         ];
     };
     homebrew = {
