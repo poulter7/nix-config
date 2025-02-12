@@ -57,6 +57,9 @@
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       jump = "${pkgs.jump}/bin/jump";
       rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
+      jbm = "jj bookmark move main --to @-";
+      jgp = "jj git push";
+      jdm = "jj describe -m ";
     };
     shellInit= ''
       function fish_mode_prompt
