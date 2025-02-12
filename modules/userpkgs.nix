@@ -30,6 +30,7 @@
             jujutsu
             ollama
             wezterm
+            clang
         ];
     };
     homebrew = {
