@@ -30,7 +30,6 @@
             jujutsu
             ollama
             wezterm
-            luajit
             clang
             unzip
         ];
