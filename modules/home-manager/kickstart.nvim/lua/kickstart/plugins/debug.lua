@@ -43,6 +43,7 @@ return {
           height = 12,
           terminal = {
             position = 'right',
+            start_hidden = true,
           },
         },
       },
