@@ -31,25 +31,26 @@ return {
     'theHamsta/nvim-dap-virtual-text',
     'Weissle/persistent-breakpoints.nvim',
     {
-      'poulter7/nvim-dap-view',
-      dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view/',
-      opts = {
-        winbar = {
-          show = true,
-          sections = { 'repl', 'watches', 'breakpoints', 'exceptions' },
-          default_section = 'repl',
-        },
-        windows = {
-          height = 12,
-          terminal = {
-            position = 'right',
-            start_hidden = true,
-          },
-        },
-      },
+      'igorlfs/nvim-dap-view',
+      dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view-igor/',
     },
   },
   config = function()
+    require('dap-view').setup {
+      winbar = {
+        show = true,
+        sections = { 'repl', 'watches', 'breakpoints', 'exceptions' },
+        default_section = 'repl',
+      },
+      windows = {
+        height = 12,
+        terminal = {
+          position = 'left',
+          start_hidden = true,
+          hide = {},
+        },
+      },
+    }
     require('persistent-breakpoints').setup {
       load_breakpoints_event = { 'BufReadPost' },
     }
