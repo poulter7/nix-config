@@ -151,7 +151,7 @@ require('which-key').add {
   { '<leader>dX', '<Cmd>lua require("persistent-breakpoints.api").clear_all_breakpoints()<CR>', desc = '[D]ebug: [X]clear all breakpoints' },
   -- Debug: UIs
   { '<leader>du', '<Cmd>lua require("dapui").toggle()<CR>', desc = '[D]ebug: UI' },
-  { '<leader>dv', '<Cmd>lua require("dap-view").toggle()<CR>', desc = 'dap-view toggle' },
+  { '<leader>dv', '<Cmd>DapViewToggle!<CR>', desc = 'dap-view toggle' },
   { '<Bs>', '<Cmd>DapToggleRepl<CR>', desc = '[D]ebug: repl' },
   -- Debug: Step
   { '<leader>ds', group = '[D]ebug: [S]tep' },
