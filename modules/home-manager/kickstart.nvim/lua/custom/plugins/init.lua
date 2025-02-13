@@ -28,6 +28,9 @@ return {
     'mrjones2014/smart-splits.nvim',
   },
   {
+    'f-person/git-blame.nvim',
+  },
+  {
     'numToStr/Comment.nvim',
     lazy = false,
     config = true,
@@ -353,6 +356,7 @@ return {
           theme = 'codedark',
         },
         sections = {
+          lualine_b = { 'diff', 'diagnostics' },
           lualine_c = {
             function()
               return vim.fs.basename(vim.fn.getcwd())
