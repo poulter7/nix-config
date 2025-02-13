@@ -16,6 +16,8 @@ vim.o.switchbuf = 'useopen,uselast'
 vim.opt.numberwidth = 3
 vim.opt.signcolumn = 'yes:1'
 vim.opt.cmdheight = 0
+-- Git blame virtual text
+vim.g.gitblame_display_virtual_text = 0
 
 --- keybindings
 local tele = require 'telescope.builtin'
