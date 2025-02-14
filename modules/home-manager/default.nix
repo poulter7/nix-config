@@ -143,5 +143,8 @@
     ".config/nvim-kickstart" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
     };
+    ".config/libexec/aerc/stylesets" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/aerc/stylesets";
+    };
   };
 }

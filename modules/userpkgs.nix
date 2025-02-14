@@ -32,6 +32,9 @@
             wezterm
             clang
             unzip
+            go
+            lynx
+            aerc
         ];
     };
     homebrew = {
