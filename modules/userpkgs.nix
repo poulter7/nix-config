@@ -1,5 +1,4 @@
-{pkgs, ...} :{
-    nix = {
+{pkgs, ...} :{ nix = {
         fishPlugins = with pkgs.fishPlugins; [
             tide
             grc
@@ -34,7 +33,11 @@
             unzip
             go
             lynx
-            aerc
+            pass
+            gnupg
+            mutt-wizard
+            isync
+            gnused
         ];
     };
     homebrew = {

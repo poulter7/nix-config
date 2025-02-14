@@ -30,6 +30,7 @@
       NVIM_APPNAME="nvim-kickstart";
     };
   };
+  programs.neomutt.enable = true;
 
   programs.bash.enable = true;
   programs.bash.initExtra = shellSwitch;
@@ -143,6 +144,12 @@
     };
     ".config/wezterm" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/wezterm";
+    };
+    ".config/mutt" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/mutt";
+    };
+    ".config/neomutt" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/neomutt";
     };
     ".config/nvim-kickstart" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
