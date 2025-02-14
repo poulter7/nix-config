@@ -39,13 +39,6 @@ require('which-key').add {
   -- CodeCompanion
   { '<C-a>', '<Cmd>CodeCompanionActions<CR>' },
   { '<Leader>a', '<Cmd>CodeCompanionChat Toggle<CR>' },
-  {
-    '<Leader><Leader>',
-    ':',
-    desc = 'Begin Command',
-    noremap = true,
-    silent = true,
-  },
   { 'ga', '<Cmd>CodeCompanionChat<CR>' },
   -- Trouble
   { '<leader>x', group = '[X]Trouble', mode = nx },
@@ -61,8 +54,8 @@ require('which-key').add {
     desc = 'Diagnostics (Workspace)',
   },
   --- toggle term
-  { ']', '<Cmd>execute v:count . "ToggleTerm"<CR>' },
-  { ']', '<Cmd>ToggleTerm<CR>', mode = 't' },
+  { ')', '<Cmd>execute v:count . "ToggleTerm"<CR>' },
+  { ')', '<Cmd>ToggleTerm<CR>', mode = 't' },
   -- code
   { '<leader>c', group = '[C]ode', mode = nx },
   { '<Leader>cv', '<cmd>VenvSelect<cr>' },
