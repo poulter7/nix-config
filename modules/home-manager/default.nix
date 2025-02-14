@@ -132,6 +132,10 @@
       source=./idea/.ideavimrc;
       target=".ideavimrc";
     };
+    aerc = {
+      source=./aerc/stylesets/catppuccin-latte;
+      target=".local/libexec/aerc/stylesets/catppuccin";
+    };
     screenshots = {
        source=./screenshots/.keep;
        target="Screenshots/.keep";
@@ -142,9 +146,6 @@
     };
     ".config/nvim-kickstart" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
-    };
-    ".config/libexec/aerc/stylesets" = {
-      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/aerc/stylesets";
     };
   };
 }
