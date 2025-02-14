@@ -52,6 +52,7 @@
       l = "ls -l";
       lg = "lazygit";
       v = "nvim";
+      m = "neomutt";
       python = "python3";
       k = "kubectl";
       tf = "terraform";

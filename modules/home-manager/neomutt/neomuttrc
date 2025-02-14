@@ -11,10 +11,12 @@ set ssl_force_tls = yes
 
 # G to get mail
 bind index G imap-fetch-mail
-set editor = "v"
+set editor = "nvim"
 set charset = "utf-8"
 set record = ''
  set imap_authenticators="oauthbearer:xoauth2"
  set imap_oauth_refresh_command="~/.config/mutt/mutt_oauth2.py ~/.gmail-token"
  set smtp_authenticators=${imap_authenticators}
  set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
+
+source ~/.config/neomutt/theme
