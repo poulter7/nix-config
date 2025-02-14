@@ -133,10 +133,6 @@
       source=./idea/.ideavimrc;
       target=".ideavimrc";
     };
-    aerc = {
-      source=./aerc/stylesets/catppuccin-latte;
-      target=".local/libexec/aerc/stylesets/catppuccin";
-    };
     screenshots = {
        source=./screenshots/.keep;
        target="Screenshots/.keep";
