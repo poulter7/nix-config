@@ -144,7 +144,7 @@ return {
       require('neotest').setup {
         adapters = {
           require 'neotest-python' {
-            dap = { justMyCode = false, console = 'integratedTerminal' },
+            dap = { justMyCode = false, console = 'internalConsole' },
             args = { '-s', '--no-header', '--disable-warnings', '-qq' },
             runner = 'pytest',
           },
@@ -191,7 +191,7 @@ return {
   },
   {
     'rachartier/tiny-inline-diagnostic.nvim',
-    event = 'VeryLazy', -- Or `LspAttach`
+    event = 'LspAttach', -- Or `LspAttach`
     priority = 1000, -- needs to be loaded in first
     config = function()
       vim.diagnostic.config { virtual_text = false }
