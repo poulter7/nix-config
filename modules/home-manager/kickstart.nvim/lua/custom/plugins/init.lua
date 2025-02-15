@@ -63,6 +63,7 @@ return {
   },
   {
     'bassamsdata/namu.nvim',
+    dir = get_folder_if_exists '/Users/jonathan/Code/projects/namu.nvim/',
     config = function()
       require('namu').setup {
         -- Enable the modules you want
@@ -82,16 +83,6 @@ return {
         ui_select = { enable = false }, -- vim.ui.select() wrapper
       }
       -- === Suggested Keymaps: ===
-      local namu = require 'namu.namu_symbols'
-      local colorscheme = require 'namu.colorscheme'
-      vim.keymap.set('n', '<leader>ss', ':Namu symbols<cr>', {
-        desc = 'Jump to LSP symbol',
-        silent = true,
-      })
-      vim.keymap.set('n', '<leader>th', ':Namu colorscheme<cr>', {
-        desc = 'Colorscheme Picker',
-        silent = true,
-      })
     end,
   },
   {
