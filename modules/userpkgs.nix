@@ -40,6 +40,7 @@
             gnused
             markdownlint-cli
             nerd-fonts.commit-mono
+            ruff
         ];
     };
     homebrew = {
