@@ -39,6 +39,7 @@
             isync
             gnused
             markdownlint-cli
+            nerd-fonts.commit-mono
         ];
     };
     homebrew = {

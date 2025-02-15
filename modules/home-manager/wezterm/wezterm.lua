@@ -60,6 +60,7 @@ if is_windows() then
 	-- change config now
 	config.default_domain = "WSL:Ubuntu"
 end
+config.font = wezterm.font("CommitMono Nerd Font")
 config.default_workspace = "default"
 config.color_scheme = "kanagawabones"
 config.cursor_blink_rate = 750
