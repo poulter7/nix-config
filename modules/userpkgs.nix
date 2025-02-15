@@ -38,6 +38,7 @@
             mutt-wizard
             isync
             gnused
+            markdownlint-cli
         ];
     };
     homebrew = {
