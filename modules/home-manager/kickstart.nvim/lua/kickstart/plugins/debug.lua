@@ -32,7 +32,7 @@ return {
     'Weissle/persistent-breakpoints.nvim',
     {
       'igorlfs/nvim-dap-view',
-      dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view-igor/',
+      dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view/',
     },
   },
   config = function()
@@ -47,7 +47,7 @@ return {
         terminal = {
           position = 'left',
           start_hidden = true,
-          hide = {},
+          hide = { 'python' },
         },
       },
     }
