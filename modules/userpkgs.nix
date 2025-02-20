@@ -60,7 +60,8 @@
             "asitop"
         ];
         casks = [
-            "sunsama"
+            "slack"
+            "akiflow"
             "docker"
             "spotify"
             "postman"
@@ -81,7 +82,6 @@
             "steam"
             "sublime-text"
             "logi-options+"
-            "readdle-spark"
             "cursor"
             "jetbrains-toolbox"
             "chatgpt"
