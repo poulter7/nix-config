@@ -92,7 +92,7 @@
 	if test (uname) = "Darwin"
 	    eval "$(/opt/homebrew/bin/brew shellenv)"
 	end
-      ${pkgs.jujutsu}/bin/jj util completion fish | source
+      COMPLETE=fish ${pkgs.jujutsu}/bin/jj | source
       ${pkgs.jump}/bin/jump shell fish | source
  #      ${pkgs.ollama}/bin/ollama serve  > /dev/null 2>&1 || true
       export OLLAMA_API_BASE=http://127.0.0.1:8080
