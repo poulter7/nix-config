@@ -422,6 +422,32 @@ return {
     'folke/noice.nvim',
     event = 'VeryLazy',
     opts = {
+      routes = {
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'written',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'Autosave',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'change',
+          },
+          opts = { skip = true },
+        },
+      },
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
