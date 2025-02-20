@@ -24,6 +24,17 @@ local tele = require 'telescope.builtin'
 local nx = { 'n', 'x' }
 local nv = { 'n', 'v' }
 
+vim.api.nvim_create_user_command('TypstOpenPdf', function()
+  local filepath = vim.api.nvim_buf_get_name(0)
+  if filepath:match '%.typ$' then
+    os.execute('open ' .. vim.fn.shellescape(filepath:gsub('%.typ$', '.pdf')))
+    -- replace open with your preferred pdf viewer
+    -- os.execute("zathura " .. vim.fn.shellescape(filepath:gsub("%.typ$", ".pdf")))
+  end
+end, {})
+
+Snacks = Snacks
+
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd [[cab cc CodeCompanion]]
 require('which-key').add {
@@ -36,10 +47,33 @@ require('which-key').add {
   { '|', '<Cmd>vsplit<CR>' },
   { '<C-w>=', '<Cmd>WindowsEqualize<CR>' },
   { '<C-w>+', '<Cmd>WindowsMaximize<CR>' },
+  -- Spell
+  { '<Leader>s', group = '[S]pell' },
+  { '<Leader>sn', ']s', desc = '[S]pell [N]ext' },
+  { '<Leader>sb', '[s', desc = '[S]pell [B]prev' },
+  {
+    '<Leader>e',
+    function()
+      require('zendiagram').open()
+    end,
+    desc = '[E]rrors view',
+  },
+  {
+    '<Leader>sq',
+    function()
+      Snacks.picker.spelling()
+    end,
+    desc = '[S]pell [Q]uickfix',
+  },
+  { '<Leader>sa', 'zg', desc = '[S]pell [A]dd' },
+  { '<Leader>sx', 'zw', desc = '[S]pell [X]remove' },
   -- CodeCompanion
   { '<C-a>', '<Cmd>CodeCompanionActions<CR>' },
   { '<Leader>a', '<Cmd>CodeCompanionChat Toggle<CR>' },
   { 'ga', '<Cmd>CodeCompanionChat<CR>' },
+  { '<leader>t', group = '[T]ypst' },
+  { '<leader>tp', '<Cmd>TypstPreview<CR>' },
+  { '<leader>to', '<Cmd>TypstOpenPdf<CR>' },
   -- Trouble
   { '<leader>x', group = '[X]Trouble', mode = nx },
   {
@@ -147,7 +181,6 @@ require('which-key').add {
   -- Debug: UIs
   { '<leader>du', '<Cmd>lua require("dapui").toggle()<CR>', desc = '[D]ebug: UI' },
   { '<leader>dv', '<Cmd>DapViewToggle!<CR>', desc = 'dap-view toggle' },
-  { '<Bs>', '<Cmd>DapToggleRepl<CR>', desc = '[D]ebug: repl' },
   -- Debug: Step
   { '<leader>ds', group = '[D]ebug: [S]tep' },
   { '<leader>dsi', '<Cmd>lua require("dap").step_into()<CR>', desc = '[D]ebug: [S]tep [I]nto' },
@@ -256,6 +289,24 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   callback = function(evt)
     vim.keymap.set('n', 'q', '<C-w>q', { silent = true, buffer = evt.buf })
   end,
+})
+-- Filetypes to enable spellcheck
+local spell_types = { 'text', 'plaintex', 'typst', 'gitcommit', 'markdown' }
+
+-- Set global spell option to false initially to disable it for all file types
+vim.opt.spell = false
+
+-- Create an augroup for spellcheck to group related autocommands
+vim.api.nvim_create_augroup('Spellcheck', { clear = true })
+
+-- Create an autocommand to enable spellcheck for specified file types
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  group = 'Spellcheck', -- Grouping the command for easier management
+  pattern = spell_types, -- Only apply to these file types
+  callback = function()
+    vim.opt_local.spell = true -- Enable spellcheck for these file types
+  end,
+  desc = 'Enable spellcheck for defined filetypes', -- Description for clarity
 })
 
 local function merge(a, b)

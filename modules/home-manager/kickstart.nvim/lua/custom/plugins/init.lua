@@ -25,6 +25,26 @@ end
 
 return {
   {
+    'caliguIa/zendiagram.nvim',
+    opts = {
+      -- Below are the default values
+      header = '', -- Header text
+      style = 'default', -- Float window style - 'default' | 'compact'
+      max_width = 50, -- The maximum width of the float window
+      min_width = 25, -- The minimum width of the float window
+      max_height = 10, -- The maximum height of the float window
+      position = {
+        row = 1, -- The offset from the top of the screen
+        col_offset = 2, -- The offset from the right of the screen
+      },
+    },
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    opts = {},
+  },
+  {
     'mrjones2014/smart-splits.nvim',
   },
   {
@@ -39,6 +59,11 @@ return {
     config = true,
   },
   {
+    'chomosuke/typst-preview.nvim',
+    lazy = false, -- or ft = 'typst'
+    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+  },
+  {
     'stevearc/resession.nvim',
     opts = {},
   },
@@ -49,7 +74,7 @@ return {
       direction = 'float',
       start_in_insert = true,
       persist_mode = false,
-      on_open = function(term)
+      on_open = function()
         vim.cmd 'startinsert'
       end,
     },
@@ -102,17 +127,14 @@ return {
     'rebelot/kanagawa.nvim',
     lazy = false,
     priority = 10000,
-    config = function()
-      --set colorscheme
-      require('kanagawa').setup {
-        overrides = function() -- add/modify highlights
-          return {
-            BufferCurrent = { bg = '#e98a00', fg = '#000000' },
-            BufferCurrentMod = { link = 'BufferCurrent' },
-          }
-        end,
-      }
-    end,
+    opts = {
+      overrides = function() -- add/modify highlights
+        return {
+          BufferCurrent = { bg = '#e98a00', fg = '#000000' },
+          BufferCurrentMod = { link = 'BufferCurrent' },
+        }
+      end,
+    },
   },
   -- co-pilot will rot your brain
   -- {
@@ -222,7 +244,6 @@ return {
   { 'mistweaverco/kulala.nvim', opts = {} },
   {
     '0x00-ketsu/autosave.nvim',
-    enabled = vim.fn.getcwd() ~= '/Users/jonathan/Code/projects/nix-config',
     -- lazy-loading on events
     event = { 'InsertLeave', 'TextChanged' },
     config = function()
@@ -401,7 +422,6 @@ return {
     'folke/noice.nvim',
     event = 'VeryLazy',
     opts = {
-      -- add any options here
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

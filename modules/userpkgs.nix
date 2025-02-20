@@ -41,6 +41,8 @@
             markdownlint-cli
             nerd-fonts.commit-mono
             ruff
+            typst
+            typstyle
         ];
     };
     homebrew = {
