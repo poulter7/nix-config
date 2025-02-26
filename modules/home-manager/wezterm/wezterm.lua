@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-local sessions = require("sessions")
 
 -- nav
 local function is_vim(pane)
@@ -61,6 +60,16 @@ if is_windows() then
 	config.default_domain = "WSL:Ubuntu"
 end
 config.font = wezterm.font("CommitMono Nerd Font")
+config.window_decorations = "RESIZE"
+config.window_frame = {
+	-- Berkeley Mono for me again, though an idea could be to try a
+	-- serif font here instead of monospace for a nicer look?
+	font = wezterm.font({ family = "Berkeley Mono", weight = "Bold" }),
+	font_size = 11,
+}
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 30
+
 config.default_workspace = "default"
 config.color_scheme = "kanagawabones"
 config.cursor_blink_rate = 750
@@ -119,6 +128,28 @@ config.keys = {
 	split_nav("resize", "l"),
 }
 
-sessions.setup_sessions(config)
+wezterm.on("update-status", function(window)
+	-- Grab the utf8 character for the "powerline" left facing
+	-- solid arrow.
+	local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+
+	-- Grab the current window's configuration, and from it the
+	-- palette (this is the combination of your chosen colour scheme
+	-- including any overrides).
+	local color_scheme = window:effective_config().resolved_palette
+	local bg = color_scheme.background
+	local fg = color_scheme.foreground
+
+	window:set_right_status(wezterm.format({
+		-- First, we draw the arrow...
+		{ Background = { Color = "none" } },
+		{ Foreground = { Color = bg } },
+		{ Text = SOLID_LEFT_ARROW },
+		-- Then we draw our text
+		{ Background = { Color = bg } },
+		{ Foreground = { Color = fg } },
+		{ Text = " " .. wezterm.hostname() .. " " },
+	}))
+end)
 
 return config

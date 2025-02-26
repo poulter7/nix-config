@@ -43,6 +43,7 @@
             ruff
             typst
             typstyle
+            zellij
         ];
     };
     homebrew = {
