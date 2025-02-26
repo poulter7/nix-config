@@ -101,7 +101,7 @@ require('which-key').add {
   { '<leader>ut', '<Cmd>Neotest summary<CR>', desc = 'UI: toggle neotest summary' },
   { '<leader>b', group = '[B]uffers' },
   { '<leader>bp', '<Cmd>BufferPick<CR>', desc = '[B]uffer [P]ick' },
-  { '<leader>bx', '<Cmd>BufferPickDelete<CR>', desc = '[B]uffer to [x]' },
+  { '<leader>bx', '<Cmd>BufferPickDelete<CR>', desc = '[B]uffer to [x] close' },
   { '<leader>f', group = '[F]ind' },
   { '<leader>fe', '<Cmd>lua Snacks.explorer()<CR>', desc = '[F]ind t[E]lescope', silent = true },
   {

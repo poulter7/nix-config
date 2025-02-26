@@ -25,6 +25,13 @@ end
 
 return {
   {
+    'tris203/precognition.nvim',
+    --event = "VeryLazy",
+    opts = {
+      highlightColor = { link = 'Comment' },
+    },
+  },
+  {
     'caliguIa/zendiagram.nvim',
     opts = {
       -- Below are the default values
