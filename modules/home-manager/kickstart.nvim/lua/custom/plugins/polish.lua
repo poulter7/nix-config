@@ -364,6 +364,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
 vim.api.nvim_create_autocmd('VimLeave', {
   pattern = '*',
-  command = 'silent !zellij action switch-mode locked',
+  command = 'silent !zellij action switch-mode normal',
 })
 return {}
