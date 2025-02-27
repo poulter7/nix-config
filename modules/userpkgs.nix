@@ -44,6 +44,8 @@
             typst
             typstyle
             zellij
+            nix-search-cli
+            just
         ];
     };
     homebrew = {
