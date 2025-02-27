@@ -24,6 +24,7 @@ local function get_folder_if_exists(path)
 end
 
 return {
+  { 'echasnovski/mini.files', version = '*', opts = {} },
   {
     'swaits/zellij-nav.nvim',
     lazy = true,

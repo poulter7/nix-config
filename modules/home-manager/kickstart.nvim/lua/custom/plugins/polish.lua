@@ -103,7 +103,7 @@ require('which-key').add {
   { '<leader>bp', '<Cmd>BufferPick<CR>', desc = '[B]uffer [P]ick' },
   { '<leader>bx', '<Cmd>BufferPickDelete<CR>', desc = '[B]uffer to [x] close' },
   { '<leader>f', group = '[F]ind' },
-  { '<leader>fe', '<Cmd>lua Snacks.explorer()<CR>', desc = '[F]ind t[E]lescope', silent = true },
+  { '<leader>fe', '<Cmd>lua MiniFiles.open()<CR>', desc = '[F]ile [E]xplorer', silent = true },
   {
     '<leader>fk',
     function()
