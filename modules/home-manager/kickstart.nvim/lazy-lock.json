@@ -73,5 +73,6 @@
   "which-key.nvim": { "branch": "main", "commit": "5bf7a73fe851896d5ac26d313db849bf00f45b78" },
   "windows.nvim": { "branch": "main", "commit": "c7492552b23d0ab30325e90b56066ec51242adc8" },
   "yazi.nvim": { "branch": "main", "commit": "2ee7636cd8ea0e065abc1f168c039c1fa1092ed4" },
+  "zellij-nav.nvim": { "branch": "main", "commit": "91cc2a642d8927ebde50ced5bf71ba470a0fc116" },
   "zendiagram.nvim": { "branch": "main", "commit": "fc3a918988c850eece2fee7f689dbf1588563fa9" }
 }

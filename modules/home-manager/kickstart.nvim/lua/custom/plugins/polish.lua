@@ -273,7 +273,7 @@ vim.api.nvim_create_autocmd('StdinReadPre', {
 -- Arrow handlers to get buffer -> line -> hop functionality
 vim.api.nvim_create_autocmd('User', {
   pattern = 'ArrowOpenFile',
-  callback = function(e)
+  callback = function()
     vim.schedule(function()
       local bfr = vim.api.nvim_get_current_buf()
       local bookmarks = require('arrow.buffer_persist').get_bookmarks_by(bfr)
@@ -326,7 +326,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
     vim.cmd.colorscheme 'kanagawa'
     local sign_column_hl = vim.api.nvim_get_hl(0, { name = 'SignColumn' })
     local sign_column_bg = (sign_column_hl.bg ~= nil) and ('#%06x'):format(sign_column_hl.bg) or 'bg'
-    local sign_column_ctermbg = (sign_column_hl.ctermbg ~= nil) and sign_column_hl.ctermbg or 'Black'
     vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#3399ff', bg = sign_column_bg })
     vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#9ece6a', bg = '#31353f' })
     vim.api.nvim_set_hl(0, 'DapLogPoint', { fg = '#FFFF00' })
@@ -361,5 +360,10 @@ vim.api.nvim_create_autocmd('VimEnter', {
       },
     }
   end,
+})
+
+vim.api.nvim_create_autocmd('VimLeave', {
+  pattern = '*',
+  command = 'silent !zellij action switch-mode locked',
 })
 return {}

@@ -151,5 +151,8 @@
     ".config/nvim-kickstart" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
     };
+    ".config/zellij" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/zellij";
+    };
   };
 }
