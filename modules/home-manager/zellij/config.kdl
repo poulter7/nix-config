@@ -1,6 +1,6 @@
 // If you'd likde to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds clear-defaults=true {
-        normal {
+    normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
     }
@@ -154,10 +154,10 @@ keybinds clear-defaults=true {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
         bind "Ctrl h" {
-            MoveFocus "Left";
+            MoveFocusOrTab "Left";
         }
         bind "Ctrl l" {
-            MoveFocus "Right";
+            MoveFocusOrTab "Right";
         }
         bind "Ctrl j" {
             MoveFocus "Down";
@@ -222,7 +222,7 @@ load_plugins {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-// default_shell "fish"
+default_shell "fish"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -233,7 +233,7 @@ load_plugins {
 //   - true (default)
 //   - false
 //
-// pane_frames false
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -294,7 +294,7 @@ theme "kanagawa"
 // Default: "default"
 // (Requires restart)
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
