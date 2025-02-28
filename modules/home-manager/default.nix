@@ -54,7 +54,7 @@
       lg = "lazygit";
       v = "nvim";
       m = "neomutt";
-j     python = "python3";
+      python = "python3";
       k = "kubectl";
       tf = "terraform";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
@@ -99,7 +99,7 @@ j     python = "python3";
 	end
       COMPLETE=fish ${pkgs.jujutsu}/bin/jj | source
       ${pkgs.jump}/bin/jump shell fish | source
- #      ${pkgs.ollama}/bin/ollama serve  > /dev/null 2>&1 || true
+      ${pkgs.just}/bin/just --completions fish | source
       export OLLAMA_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_KEY=key
