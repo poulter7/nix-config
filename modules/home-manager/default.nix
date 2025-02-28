@@ -28,6 +28,7 @@
       CLICLOLOR = 1;
       EDITOR = "nvim";
       NVIM_APPNAME="nvim-kickstart";
+      SHELL = "fish";
     };
   };
   programs.neomutt.enable = true;
@@ -53,7 +54,7 @@
       lg = "lazygit";
       v = "nvim";
       m = "neomutt";
-      python = "python3";
+j     python = "python3";
       k = "kubectl";
       tf = "terraform";
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
@@ -64,6 +65,10 @@
       jjdiff = "jj diff";
     };
     shellInit= ''
+      if set -q ZELLIJ
+      else
+        zellij a base
+      end
       function fish_mode_prompt
       switch $fish_bind_mode
         case default
