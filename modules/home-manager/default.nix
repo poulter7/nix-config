@@ -29,6 +29,7 @@
       EDITOR = "nvim";
       NVIM_APPNAME="nvim-kickstart";
       SHELL = "fish";
+      ZELLIJ_CONFIG_DIR = "~/.config/zellij"
     };
   };
   programs.neomutt.enable = true;
