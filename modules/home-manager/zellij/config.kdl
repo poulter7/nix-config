@@ -269,26 +269,26 @@ pane_frames false
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
-themes {
-  kanagawa {
-    bg "#DCD7BA"
-    fg "#1F1F28"
-    white "#090618"
-    black "#dcd6ba"
-    red "#e82424"
-    green "#98bb6c"
-    yellow "#e6c384"
-    blue "#7fb4ca"
-    magenta "#938aa9"
-    cyan "#7aa89f"
-    orange "#FFA066"
-  }
-}
+// themes {
+//   kanagawa {
+//     bg "#DCD7BA"
+//     fg "#1F1F28"
+//     white "#090618"
+//     black "#dcd6ba"
+//     red "#e82424"
+//     green "#98bb6c"
+//     yellow "#e6c384"
+//     blue "#7fb4ca"
+//     magenta "#938aa9"
+//     cyan "#7aa89f"
+//     orange "#FFA066"
+//   }
+// }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "kanagawa"
+// theme "kanagawa"
 
 // The name of the default layout to load on startup
 // Default: "default"
