@@ -1,4 +1,4 @@
-{pkgs, ...} :{ nix = {
+{pkgs, lib, ...} :{ nix = {
         fishPlugins = with pkgs.fishPlugins; [
             tide
             grc
@@ -38,7 +38,6 @@
             gnupg
             mutt-wizard
             isync
-            strace
             gnused
             markdownlint-cli
             nerd-fonts.commit-mono
@@ -48,7 +47,7 @@
             zellij
             nix-search-cli
             just
-        ];
+        ];# ++ (lib.mkIf pkgs.stdenv.isLinux strace );
     };
     homebrew = {
         brews = [

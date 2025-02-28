@@ -36,12 +36,12 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
       system = "aarch64-darwin";
       userroot = "/Users";
     in {
-    
     darwinConfigurations.mac = darwin.lib.darwinSystem {
       inherit system;
       pkgs = import nixpkgs { 
         inherit system;
         config.allowUnfree = true; 
+        config.allowUnsupportedSystem = true;
       };
       modules = [
         (import ../../modules/darwin {user=user; userroot=userroot; })

@@ -58,8 +58,8 @@
     };
   };
 
-  services.nix-daemon.enable = true;
-  
+  nix.enable = true;
+  ids.gids.nixbld = 350;
   # backwards compat; don't change
   system.stateVersion = 4;
 }
