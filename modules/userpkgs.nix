@@ -38,6 +38,7 @@
             gnupg
             mutt-wizard
             isync
+            strace
             gnused
             markdownlint-cli
             nerd-fonts.commit-mono
