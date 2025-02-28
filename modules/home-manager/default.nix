@@ -65,10 +65,10 @@
       jjdiff = "jj diff";
     };
     shellInit= ''
-      if set -q ZELLIJ
-      else
-        zellij a base
-      end
+      # if set -q ZELLIJ
+      # else
+      #   zellij a -c base
+      # end
       function fish_mode_prompt
       switch $fish_bind_mode
         case default
