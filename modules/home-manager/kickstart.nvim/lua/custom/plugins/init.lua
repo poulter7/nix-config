@@ -24,6 +24,11 @@ local function get_folder_if_exists(path)
 end
 
 return {
+  {
+    'm4xshen/hardtime.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    opts = {},
+  },
   { 'echasnovski/mini.files', version = '*', opts = {} },
   {
     'swaits/zellij-nav.nvim',
