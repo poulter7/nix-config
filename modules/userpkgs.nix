@@ -8,6 +8,7 @@
             bash
         ];
         utils = with pkgs; [
+            curl
             grc
             ripgrep
             tree
