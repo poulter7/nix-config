@@ -101,6 +101,7 @@
       COMPLETE=fish ${pkgs.jujutsu}/bin/jj | source
       ${pkgs.jump}/bin/jump shell fish | source
       ${pkgs.just}/bin/just --completions fish | source
+      ${pkgs.starship}/bin/starship init fish | source
       export OLLAMA_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_KEY=key

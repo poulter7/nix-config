@@ -1,6 +1,5 @@
 {pkgs, lib, ...} :{ nix = {
         fishPlugins = with pkgs.fishPlugins; [
-            tide
             grc
             done
         ];
@@ -11,6 +10,7 @@
             curl
             python312Full
             grc
+            starship
             ripgrep
             tree
             lazygit
