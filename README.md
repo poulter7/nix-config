@@ -22,6 +22,10 @@ Install Karabiner manually
 
 ## Installing on Windows
 
+For twm - In an admin terminal
+Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
+
+
 Install wsl
 wsl --set-default-version 2
 wsl --install
