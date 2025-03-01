@@ -22,3 +22,6 @@ nix-update-mac:
 [working-directory: 'flakes/linux-jonathan']
 nix-update-windows:
 	nix flake update
+
+copy-wezterm-config:
+	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua C\\Users\\jonathan\\wezterm\\
