@@ -5,8 +5,9 @@ enable-experimental-features:
 	mkdir -p ~/.config/nix
 	echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
 
-nix-install-linux-jonathan:
+nix-install-wsl-jonathan:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
+	just windows-copy-wezterm-config
 
 nix-install-linux-parallels:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-parallels
