@@ -48,6 +48,6 @@ gh repo clone poulter7/nix-config
 cd nix-config
 
 just enable-experimental-features
-just nix-install-linux-jonathan
+just nix-install-wsl-jonathan
 
 

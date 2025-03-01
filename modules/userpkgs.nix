@@ -30,7 +30,6 @@
             fd
             jujutsu
             ollama
-            wezterm
             clang
             unzip
             go
@@ -48,6 +47,7 @@
             zellij
             nix-search-cli
             just
+            (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm)
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace)
         ];
     };
