@@ -9,6 +9,7 @@
         ];
         utils = with pkgs; [
             curl
+            python312Full
             grc
             ripgrep
             tree
