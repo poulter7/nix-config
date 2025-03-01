@@ -1,9 +1,11 @@
 install-nix:
 	sh <(curl -L https://nixos.org/nix/install)
 
-enable-experimental-features:
+nix-intial-setup:
 	mkdir -p ~/.config/nix
 	echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
+	rm ~/.bashrc
+	rm ~/.profile
 
 nix-install-wsl-jonathan:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
