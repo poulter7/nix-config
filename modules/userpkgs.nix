@@ -47,7 +47,8 @@
             zellij
             nix-search-cli
             just
-        ];# ++ (lib.mkIf pkgs.stdenv.isLinux strace );
+            (lib.mkIf pkgs.stdenv.isLinux pkgs.strace)
+        ];
     };
     homebrew = {
         brews = [
