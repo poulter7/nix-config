@@ -1,6 +1,5 @@
 {pkgs, lib, ...} :{ nix = {
         fishPlugins = with pkgs.fishPlugins; [
-            grc
             done
         ];
         shells = with pkgs; [
