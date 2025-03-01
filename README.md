@@ -19,3 +19,31 @@ darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac
 
 ## Other items
 Install Karabiner manually
+
+## Installing on Windows
+
+Install wsl
+wsl --set-default-version 2
+wsl --install
+wsl
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+. /home/$USER/.nix-profile/etc/profile.d/nix.sh
+
+install gh and just
+(type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+        && out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+        && cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
+sudo apt install just
+
+cd
+gh auth login
+mkdir -p ./Code/projects
+cd ~/Code/projects
+gh repo clone poulter7/nix-config
+cd nix-config
+

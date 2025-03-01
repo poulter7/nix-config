@@ -15,12 +15,12 @@ nix-install-mac:
 	nix run nix-darwin -- switch --flake ./flakes/darwin/.#mac
 
 
-[working-directory: 'flakes/darwin']
 nix-update-mac:
+	cd flakes/darwin
 	nix flake update
 
-[working-directory: 'flakes/linux-jonathan']
 nix-update-windows:
+	cd flakes/linux-jonathan
 	nix flake update
 
 windows-copy-wezterm-config:
