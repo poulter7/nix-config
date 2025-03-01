@@ -146,7 +146,7 @@
        recursive=true;
     };
     wezterm = {
-      target=if pkgs.stdenv.isDarwin then "./config/wezterm" else "C:\\Users\\${user}\\.config\\wezterm";
+      target=if pkgs.stdenv.isDarwin then ".config/wezterm" else "/mnt/c/Users/jonathan/.config/wezterm";
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/wezterm";
     };
     ".config/mutt" = {
