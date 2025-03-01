@@ -1,7 +1,7 @@
 install-nix:
 	sh <(curl -L https://nixos.org/nix/install)
 
-nix-intial-setup:
+nix-initial-setup:
 	mkdir -p ~/.config/nix
 	echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
 	rm ~/.bashrc
