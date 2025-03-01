@@ -6,6 +6,8 @@
             bash
         ];
         utils = with pkgs; [
+            bat
+            eza
             curl
             python312Full
             grc

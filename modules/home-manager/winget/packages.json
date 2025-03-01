@@ -9,6 +9,12 @@
 				{
 					"PackageIdentifier" : "wez.wezterm"
 				},
+				{
+					"PackageIdentifier" : "LGUG2Z.komorebi"
+				},
+				{
+					"PackageIdentifier" : "LGUG2Z.whkd"
+				}
 			],
 			"SourceDetails" : 
 			{

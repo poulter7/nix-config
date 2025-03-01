@@ -10,6 +10,7 @@ nix-initial-setup:
 nix-install-wsl-jonathan:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
 	just windows-copy-wezterm-config
+	winget.exe import modules/home-manager/winget/packages.json
 
 nix-install-linux-parallels:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-parallels

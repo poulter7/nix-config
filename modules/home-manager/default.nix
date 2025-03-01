@@ -49,9 +49,6 @@
       nix-up = "pushd ~/.config/snowflake; nix flake update; nixswitch; popd";
       nix-lint = "nix run --extra-experimental-features 'nix-command flakes' nixpkgs#statix -- check .";
       open-api-refresh = "npx @rtk-query/codegen-openapi src/rtk/api/openapi-config.json";
-      ls = "ls --color=auto";
-      ll = "ls -lahrts";
-      l = "ls -l";
       lg = "lazygit";
       v = "nvim";
       m = "neomutt";
@@ -64,6 +61,8 @@
       jjpush = "jj bookmark move main --to 'git_head()' && jj git push";
       jjdesc = "jj describe -m ";
       jjdiff = "jj diff";
+      cat = "bat";
+      ls = "eza";
     };
     shellInit= ''
       # if set -q ZELLIJ
