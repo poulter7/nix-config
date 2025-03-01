@@ -24,4 +24,4 @@ nix-update-windows:
 	nix flake update
 
 copy-wezterm-config:
-	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua C\\Users\\jonathan\\wezterm\\
+	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua /mnt/c/Users/jonathan/.config/wezterm/
