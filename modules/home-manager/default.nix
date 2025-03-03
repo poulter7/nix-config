@@ -29,7 +29,6 @@
       EDITOR = "nvim";
       NVIM_APPNAME="nvim-kickstart";
       SHELL = "fish";
-      ZELLIJ_CONFIG_DIR = "~/.config/zellij";
     };
   };
   programs.neomutt.enable = true;
@@ -160,6 +159,9 @@
     };
     ".config/zellij" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/zellij";
+    };
+    ".config/starship.toml" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/starship/starship.toml";
     };
   };
 }
