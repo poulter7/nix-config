@@ -9,9 +9,6 @@ nix-install-wsl:
 nix-install-ubuntu:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-parallels
 
-nix-install-mac:
-	nix run nix-darwin -- switch --flake ./flakes/darwin/.#mac
-
 nix-update-mac:
 	cd flakes/darwin
 	nix flake update
