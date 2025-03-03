@@ -1,0 +1,6 @@
+.shell pwsh
+win + enter           : komorebic promote
+win + k               : komorebic focus up
+win + j               : komorebic focus down
+win + h               : komorebic focus left
+win + l               : komorebic focus right
