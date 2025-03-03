@@ -168,5 +168,8 @@
     ".config/starship.toml" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/starship/starship.toml";
     };
+    ".jjconfig.toml" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/jj/.jjconfig.toml";
+    };
   };
 }
