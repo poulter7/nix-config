@@ -92,7 +92,7 @@
       set_color normal
     end
       function starship_transient_rprompt_func
-        starship module time
+        starship module duration; starship module time
       end
       starship init fish | source
       enable_transience
