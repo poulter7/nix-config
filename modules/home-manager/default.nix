@@ -91,6 +91,11 @@
       end
       set_color normal
     end
+      function starship_transient_rprompt_func
+        starship module time
+      end
+      starship init fish | source
+      enable_transience
       fish_vi_key_bindings
       set fish_greeting # Disable greeting
 	if test (uname) = "Darwin"
