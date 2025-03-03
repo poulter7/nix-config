@@ -1,12 +1,12 @@
 nix-install-mac:
 	nix run nix-darwin -- switch --flake ./flakes/darwin/.#mac
 
-nix-install-wsl-jonathan:
+nix-install-wsl:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
-	just windows-copy-wezterm-config
 	winget.exe import modules/home-manager/winget/packages.json
+	just windows-copy-configs
 
-nix-install-linux-parallels:
+nix-install-ubuntu:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-parallels
 
 nix-install-mac:
@@ -16,7 +16,7 @@ nix-update-mac:
 	cd flakes/darwin
 	nix flake update
 
-nix-update-windows:
+nix-update-wsl:
 	cd flakes/linux-jonathan
 	nix flake update
 

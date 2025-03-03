@@ -1,26 +1,7 @@
-# Mac Setup
+# nix-config 
 This repo is a place for me to hopefully solve a perpetual problem: make every macbook I work have a similar enough look, feel and tools that switching between machines isn't a hassle.
 
-## Getting started
-git clone git@github.com:poulter7/nix-config.git
-
-./init.sh
-
-## Activate the nix configuration
-nix run nix-darwin -- switch --flake .#mac
-
-## Build and Reactivate
-darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac
-
-## Todo
-[ ] Add Darwin Keyboard Shortcuts
-[ ] Fix vscode vim
-
-
-## Other items
-Install Karabiner manually
-
-## Installing on Windows
+## Windows Pre-requisite
 
 For twm - In an admin terminal
 ```
@@ -35,11 +16,8 @@ wsl --install
 wsl
 ```
 
-Install nix, gh and just
+Install gh and just
 ```
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
-
-. /home/$USER/.nix-profile/etc/profile.d/nix.sh
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
         && out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
@@ -49,6 +27,20 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 	&& sudo apt update \
 	&& sudo apt install gh -y
 sudo apt install just
+```
+
+## Mac Pre-requiste
+Install brew
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install gh
+brew install just
+```
+## Common install
+Install nix
+```
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
+. /home/$USER/.nix-profile/etc/profile.d/nix.sh
 
 cd
 gh auth login
@@ -62,9 +54,13 @@ echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
 rm ~/.bashrc
 rm ~/.profile
 
-just nix-install-wsl-jonathan
-just windows-copy-configs
+just nix-install-wsl
 
 komorebic.exe enable-autostart --whkd --bar
 komorebic.exe start --whkd --bar
 ```
+
+
+## Other items
+Install Karabiner manually
+
