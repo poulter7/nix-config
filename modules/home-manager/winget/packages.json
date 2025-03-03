@@ -13,6 +13,9 @@
 					"PackageIdentifier" : "LGUG2Z.komorebi"
 				},
 				{
+					"PackageIdentifier" : "sharkdp.bat"
+				},
+				{
 					"PackageIdentifier" : "LGUG2Z.whkd"
 				}
 			],
