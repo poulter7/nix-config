@@ -9,10 +9,12 @@ style = "bold bg:green fg:black"
 # Replace the '❯' symbol in the prompt with '➜'
 [character] # The name of the module we are configuring is 'character'
 success_symbol = '[ → ](bold bg:green fg:black)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[ ! ](bold bg:red fg:black)'
 vimcmd_symbol = '[ | ](bold bg:red fg:black)'
 vimcmd_replace_one_symbol = '[ r ](bold bg:purple fg:black)'
 vimcmd_replace_symbol = '[ r ](bold bg:purple fg:black)'
 vimcmd_visual_symbol = '[ v ](bold bg:yellow fg:black)'
 
 [time]
+format = '[$time]($style) '
 disabled = false
