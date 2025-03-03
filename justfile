@@ -27,5 +27,11 @@ nix-update-windows:
 	cd flakes/linux-jonathan
 	nix flake update
 
-windows-copy-wezterm-config:
+windows-copy-configs:
 	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua /mnt/c/Users/jonathan/.config/wezterm/
+	cp ~/Code/projects/nix-config/modules/home-manager/komorebi/*.json /mnt/c/Users/jonathan/
+	komorebic fetch-app-specific-configuration
+
+windows-enable-komorebi-autostart:
+	komorebic.exe enable-autostart --whkd --bar
+	
