@@ -1,11 +1,5 @@
-install-nix:
-	sh <(curl -L https://nixos.org/nix/install)
-
-nix-initial-setup:
-	mkdir -p ~/.config/nix
-	echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-	rm ~/.bashrc
-	rm ~/.profile
+nix-install-mac:
+	nix run nix-darwin -- switch --flake ./flakes/darwin/.#mac
 
 nix-install-wsl-jonathan:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
@@ -17,7 +11,6 @@ nix-install-linux-parallels:
 
 nix-install-mac:
 	nix run nix-darwin -- switch --flake ./flakes/darwin/.#mac
-
 
 nix-update-mac:
 	cd flakes/darwin
@@ -32,6 +25,3 @@ windows-copy-configs:
 	cp ~/Code/projects/nix-config/modules/home-manager/komorebi/*.json /mnt/c/Users/jonathan/
 	komorebic.exe fetch-app-specific-configuration
 
-windows-enable-komorebi-autostart:
-	komorebic.exe enable-autostart --whkd --bar
-	

@@ -38,6 +38,7 @@ wsl
 Install nix, gh and just
 ```
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
+
 . /home/$USER/.nix-profile/etc/profile.d/nix.sh
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
@@ -56,7 +57,14 @@ cd ~/Code/projects
 gh repo clone poulter7/nix-config
 cd nix-config
 
-just enable-experimental-features
+mkdir -p ~/.config/nix
+echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
+rm ~/.bashrc
+rm ~/.profile
+
 just nix-install-wsl-jonathan
-just windows-enable-komorebi-autostart
+just windows-copy-configs
+
+komorebic.exe enable-autostart --whkd --bar
+komorebic.exe start --whkd --bar
 ```
