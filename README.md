@@ -23,19 +23,22 @@ Install Karabiner manually
 ## Installing on Windows
 
 For twm - In an admin terminal
+```
 Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableLockWorkstation /t REG_DWORD /d 1 /f
-
-
+```
 
 Install wsl
+```
 wsl --set-default-version 2
 wsl --install
 wsl
+```
+
+Install nix, gh and just
+```
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 . /home/$USER/.nix-profile/etc/profile.d/nix.sh
-
-install gh and just
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
         && out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
@@ -56,4 +59,4 @@ cd nix-config
 just enable-experimental-features
 just nix-install-wsl-jonathan
 just windows-enable-komorebi-autostart
-
+```
