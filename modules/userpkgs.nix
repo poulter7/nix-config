@@ -6,6 +6,7 @@
             bash
         ];
         utils = with pkgs; [
+            delta
             bat
             eza
             curl
