@@ -55,7 +55,10 @@ rm ~/.bashrc
 rm ~/.profile
 
 just nix-install-wsl
+```
 
+## Windows Post Setup 
+```
 komorebic.exe enable-autostart --whkd --bar
 komorebic.exe start --whkd --bar
 ```
