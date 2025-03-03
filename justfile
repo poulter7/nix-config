@@ -30,7 +30,7 @@ nix-update-windows:
 windows-copy-configs:
 	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua /mnt/c/Users/jonathan/.config/wezterm/
 	cp ~/Code/projects/nix-config/modules/home-manager/komorebi/*.json /mnt/c/Users/jonathan/
-	komorebic fetch-app-specific-configuration
+	komorebic.exe fetch-app-specific-configuration
 
 windows-enable-komorebi-autostart:
 	komorebic.exe enable-autostart --whkd --bar
