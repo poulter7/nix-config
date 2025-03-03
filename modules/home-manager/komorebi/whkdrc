@@ -1,5 +1,5 @@
-.shell pwsh
-win + enter           : komorebic promote
+.shell powershell
+win + VK_RETURN       : komorebic promote
 win + k               : komorebic focus up
 win + j               : komorebic focus down
 win + h               : komorebic focus left
