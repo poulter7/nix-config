@@ -1,7 +1,7 @@
 .shell powershell
 # (1) Local Group Policy Editor -> User Configuration -> Administrative Templates -> Windows Components -> File Explorer -> Turn off Windows Key hotkeys
 win + VK_RETURN       : komorebic promote
-win + k               : komorebic focus up
-win + j               : komorebic focus down
-win + h               : komorebic focus left
-win + l               : komorebic focus right
+win + l               : komorebic resize-axis horizontal increase
+win + j               : komorebic cycle-focus next
+win + k               : komorebic cycle-focus previous
+win + h               : komorebic resize-axis horizontal decrease
