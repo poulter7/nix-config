@@ -66,8 +66,12 @@
             "llama.cpp"
             "huggingface-cli"
             "asitop"
+            "openblas"
+            "lapack"
         ];
         casks = [
+            "miniconda"
+            "gimp"
             "slack"
             "akiflow"
             "docker"
