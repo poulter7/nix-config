@@ -69,3 +69,10 @@ komorebic.exe start --whkd --bar
 ## Other items
 Install Karabiner manually
 
+## Setup up conda
+```
+micromamba config append channels conda-forge
+micromamba install pip
+micromamba run pip install -e
+```
+
