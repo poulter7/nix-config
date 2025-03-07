@@ -29,6 +29,10 @@ return {
     dependencies = { 'MunifTanjim/nui.nvim' },
     opts = {},
   },
+  {
+    'ggandor/leap.nvim',
+    opts = {},
+  },
   { 'echasnovski/mini.files', version = '*', opts = {} },
   {
     'swaits/zellij-nav.nvim',
@@ -243,10 +247,6 @@ return {
         },
       }
     end,
-  },
-  {
-    'smoka7/hop.nvim',
-    opts = {},
   },
   {
     'rebelot/heirline.nvim',

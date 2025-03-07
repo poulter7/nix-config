@@ -191,35 +191,21 @@ require('which-key').add {
   -- Hop
   {
     'f',
-    function()
-      require('hop').hint_words { multi_windows = true }
-    end,
-    mode = { 'n' },
-    desc = 'Hop hint words',
+    '<Plug>(leap-forward)',
+    mode = { 'n', 'v' },
+    desc = 'Leap forwards',
   },
   {
     '<S-f>',
-    function()
-      require('hop').hint_lines { multi_windows = true }
-    end,
+    '<Plug>(leap-backward)',
+    mode = { 'n', 'v' },
+    desc = 'Leap backwards',
+  },
+  {
+    'gf',
+    '<Plug>(leap-from-window)',
     mode = { 'n' },
-    desc = 'Hop hint lines',
-  },
-  {
-    'f',
-    function()
-      require('hop').hint_words { extend_visual = true }
-    end,
-    mode = { 'v' },
     desc = 'Hop hint words',
-  },
-  {
-    '<S-f>',
-    function()
-      require('hop').hint_lines { extend_visual = true }
-    end,
-    mode = { 'v' },
-    desc = 'Hop hint lines',
   },
 }
 
