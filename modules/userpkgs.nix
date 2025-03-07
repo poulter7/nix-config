@@ -89,7 +89,6 @@
             "skim"
             "bruno"
             "google-chrome"
-            "todoist"
             "karabiner-elements"
             "steam"
             "sublime-text"
