@@ -49,6 +49,7 @@
             zellij
             nix-search-cli
             just
+            micromamba
             (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm)
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace)
         ];

@@ -105,18 +105,10 @@
       ${pkgs.jump}/bin/jump shell fish | source
       ${pkgs.just}/bin/just --completions fish | source
       ${pkgs.starship}/bin/starship init fish | source
+      ${pkgs.micromamba}/bin/micromamba shell hook --shell fish | source
       export OLLAMA_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_KEY=key
-      if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
-          eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
-      else
-          if test -f "/opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish"
-              . "/opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish"
-          else
-              set -x PATH "/opt/homebrew/Caskroom/miniconda/base/bin" $PATH
-          end
-      end
     '';
     plugins = builtins.map (p: { name = p.name; src = p.src; }) userpkgs.nix.fishPlugins;
   };
