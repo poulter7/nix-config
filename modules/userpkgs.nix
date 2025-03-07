@@ -71,7 +71,6 @@
             "lapack"
         ];
         casks = [
-            "miniconda"
             "gimp"
             "slack"
             "akiflow"
