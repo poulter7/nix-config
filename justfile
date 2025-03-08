@@ -8,14 +8,17 @@ nix-install-wsl:
 
 nix-install-ubuntu:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-parallels
+	nix-collect-garbage
 
 nix-update-mac:
 	cd flakes/darwin
 	nix flake update
+	nix-collect-garbage
 
 nix-update-wsl:
 	cd flakes/linux-jonathan
 	nix flake update
+	nix-collect-garbage
 
 windows-copy-configs:
 	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua /mnt/c/Users/jonathan/.config/wezterm/
