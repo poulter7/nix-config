@@ -50,6 +50,7 @@
             nix-search-cli
             just
             micromamba
+            qpdf
             (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm)
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace)
         ];
