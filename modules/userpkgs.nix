@@ -53,7 +53,7 @@
             qpdf
             (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm) # installed via WinGet on Windows
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
-            (lib.mkIf pkgs.stdenv.isLinux pkgs.libgcc) # installed via brew on mac
+            (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
         ];
     };
     homebrew = {
