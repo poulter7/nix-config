@@ -51,12 +51,14 @@
             just
             micromamba
             qpdf
-            (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm)
-            (lib.mkIf pkgs.stdenv.isLinux pkgs.strace)
+            (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm) # installed via WinGet on Windows
+            (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
+            (lib.mkIf pkgs.stdenv.isLinux pkgs.libgcc) # installed via brew on mac
         ];
     };
     homebrew = {
         brews = [
+            "gcc"
             "graphviz"
             "swiftlint"
             "entr"
