@@ -12,6 +12,8 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
 outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }: 
