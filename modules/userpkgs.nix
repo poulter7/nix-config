@@ -49,7 +49,6 @@
             just
             micromamba
             qpdf
-            (lib.mkIf pkgs.stdenv.isDarwin pkgs.wezterm) # installed via WinGet on Windows
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc
             (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
@@ -73,6 +72,7 @@
             "lapack"
         ];
         casks = [
+            "wezterm"
             "gimp"
             "slack"
             "akiflow"
