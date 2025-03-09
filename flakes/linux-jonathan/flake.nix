@@ -25,7 +25,7 @@ homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
 	modules = [
 nixvim.homeManagerModules.nixvim
-(import ../../modules/home-manager {inputs=inputs; user=user; userroot=userroot; pkgs=pkgs})
+(import ../../modules/home-manager {inputs=inputs; user=user; userroot=userroot; pkgs=pkgs; })
 {
 home.username = user;
 home.homeDirectory = "${userroot}/${user}";
