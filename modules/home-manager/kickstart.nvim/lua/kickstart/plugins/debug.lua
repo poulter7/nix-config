@@ -30,10 +30,7 @@ return {
     'mfussenegger/nvim-dap-python',
     'theHamsta/nvim-dap-virtual-text',
     'Weissle/persistent-breakpoints.nvim',
-    {
-      'igorlfs/nvim-dap-view',
-      dir = get_folder_if_exists '/Users/jonathan/Code/projects/nvim-dap-view/',
-    },
+    'igorlfs/nvim-dap-view',
   },
   config = function()
     require('dap-view').setup {
