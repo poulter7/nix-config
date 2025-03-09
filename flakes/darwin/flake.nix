@@ -28,6 +28,7 @@
     mac-app-util.url = "github:hraban/mac-app-util";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
 outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew-core, homebrew-cask, mac-app-util, ... }: 
@@ -35,14 +36,15 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
       user = "jonathan";
       system = "aarch64-darwin";
       userroot = "/Users";
-    in {
-    darwinConfigurations.mac = darwin.lib.darwinSystem {
-      inherit system;
       pkgs = import nixpkgs { 
         inherit system;
         config.allowUnfree = true; 
         config.allowUnsupportedSystem = true;
       };
+    in {
+    darwinConfigurations.mac = darwin.lib.darwinSystem {
+      inherit system;
+      inherit pkgs;
       modules = [
         (import ../../modules/darwin {user=user; userroot=userroot; })
         home-manager.darwinModules.home-manager {
@@ -52,7 +54,7 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, darwin, nix-homebrew, homebrew
             users."${user}".imports = [ 
 	            # NixVim module
               nixvim.homeManagerModules.nixvim 
-              (import ../../modules/home-manager { user=user; userroot=userroot; })
+              (import ../../modules/home-manager { inputs=inputs; user=user; userroot=userroot; pkgs=pkgs; })
               mac-app-util.homeManagerModules.default
             ];
           };

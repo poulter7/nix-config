@@ -1,4 +1,4 @@
-{user, userroot}: { pkgs, config, osConfig, lib, ... }: 
+{inputs, user, userroot, pkgs}: { pkgs, config, osConfig, lib, ... }: 
   let
       root = "${userroot}/${user}/Code/projects/nix-config";
       userpkgs = import ../userpkgs.nix pkgs;
@@ -30,6 +30,10 @@
       NVIM_APPNAME="nvim-kickstart";
       SHELL = "fish";
     };
+  };
+  programs.neovim = {
+    enable = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
   programs.neomutt.enable = true;
 

@@ -18,13 +18,14 @@ outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }:
     let
       user = "parallels";
       system = "aarch64-linux";
-	userroot = "/home";
+      userroot = "/home";
+      pkgs = import nixpkgs { system = system;config.allowUnfree = true; };
     in {
 homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-	pkgs = import nixpkgs { system = system;config.allowUnfree = true; };
+	inherit pkgs;
 	modules = [
 nixvim.homeManagerModules.nixvim
-(import ../../modules/home-manager {user=user; userroot=userroot; })
+(import ../../modules/home-manager {inputs=inputs; user=user; userroot=userroot; pkgs=pkgs})
 {
 home.username = user;
 home.homeDirectory = "${userroot}/${user}";

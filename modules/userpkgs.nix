@@ -22,7 +22,6 @@
             duckdb
             shfmt
             jump
-            neovim-unwrapped
             terraform
             nodejs_20
             uv
