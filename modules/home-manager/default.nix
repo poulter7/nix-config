@@ -29,6 +29,7 @@
       EDITOR = "nvim";
       NVIM_APPNAME="nvim-kickstart";
       SHELL = "fish";
+      DEBUGPY_EXCEPTION_FILTER_USER_UNHANDLED = 1;
     };
   };
   programs.neovim = {
