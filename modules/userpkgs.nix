@@ -6,6 +6,7 @@
             bash
         ];
         utils = with pkgs; [
+            python312Packages.west
             delta
             bat
             eza
