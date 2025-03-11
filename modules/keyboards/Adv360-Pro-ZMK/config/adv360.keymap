@@ -40,7 +40,7 @@
 &none    &kp Q  &kp W  &kp E        &kp R           &kp T  &none                                                                                &none  &kp Y  &kp U           &kp I        &kp O    &kp P         &none
 &kp ESC  &kp A  &kp S  &hm LCTRL D  &hm LEFT_GUI F  &kp G  &none                        &none             &none    &none  &none                 &none  &kp H  &hm LEFT_GUI J  &hm LCTRL K  &kp L    &kp COLON     &none
 &none    &kp Z  &kp X  &kp C        &kp V           &kp B                                                 &none    &none                               &kp N  &kp M           &kp COMMA    &kp DOT  &kp QUESTION  &none
-&none    &none  &none  &none        &none                         &mt LEFT_SHIFT SPACE  &mt LCTRL RETURN  &none    &none  &kp BACKSPACE  &to 1                &none           &none        &none    &none         &none
+&none    &none  &none  &none        &none                         &mt LEFT_SHIFT SPACE  &kp ENTER &none    &none  &kp BACKSPACE  &to 1                &none           &none        &none    &none         &none
             >;
         };
 
