@@ -102,6 +102,7 @@ require('which-key').add {
   { '<leader>b', group = '[B]uffers' },
   { '<leader>bp', '<Cmd>BufferPick<CR>', desc = '[B]uffer [P]ick' },
   { '<leader>bx', '<Cmd>BufferPickDelete<CR>', desc = '[B]uffer to [x] close' },
+  { '<leader>bX', '<Cmd>BufferCloseAllButCurrent<CR>', desc = '[B]uffer to [X] close all but current' },
   { '<leader>f', group = '[F]ind' },
   { '<leader>fe', '<Cmd>lua MiniFiles.open()<CR>', desc = '[F]ile [E]xplorer', silent = true },
   {
