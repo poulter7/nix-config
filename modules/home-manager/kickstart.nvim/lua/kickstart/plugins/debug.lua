@@ -36,7 +36,7 @@ return {
     require('dap-view').setup {
       winbar = {
         show = true,
-        sections = { 'repl', 'watches', 'breakpoints', 'exceptions' },
+        sections = { 'repl', 'watches', 'breakpoints', 'exceptions', 'threads' },
         default_section = 'repl',
       },
       windows = {

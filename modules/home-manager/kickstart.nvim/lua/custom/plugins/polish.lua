@@ -173,7 +173,13 @@ require('which-key').add {
   -- Debug
   { '<leader>d', group = '[D]ebug' },
   -- Debug: Start/Stop
-  { '<leader>dm', '<Cmd>lua require("neotest").run.run { strategy = "dap" }<CR>', desc = '[D]ebug: [M]ethod (neotest)' },
+  {
+    '<leader>dm',
+    function()
+      require('neotest').run.run { strategy = 'dap', suite = false }
+    end,
+    desc = '[D]ebug: [M]ethod (neotest)',
+  },
   { '<leader>dc', '<Cmd>lua require("dap").continue()<CR>', desc = '[D]ebug: [C]ontinue' },
   { '<leader>dt', '<Cmd>lua require("dap").terminate()<CR>', desc = '[D]ebug: [T]erminate' },
   -- Debug: Breakpoints
@@ -364,5 +370,9 @@ if vim.fn.has 'wsl' == 1 then
       vim.fn.system('clip.exe', vim.fn.getreg '"')
     end,
   })
+end
+local dap = require 'dap'
+dap.listeners.after.event_initialized['dap_exception_breakpoint'] = function()
+  dap.set_exception_breakpoints { 'userUnhandled' }
 end
 return {}
