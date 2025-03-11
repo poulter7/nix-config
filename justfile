@@ -36,8 +36,8 @@ zmk-build:
 
 zmk-copy-left:
 	cd modules/keyboards/Adv360-Pro-ZMK/firmware
-	cp $(fd -I 'left' | tail -1) /Volumes/ADV360PRO/CURRENT.UF2    
+	cat $(fd -I 'left' | tail -1) > /Volumes/ADV360PRO/CURRENT.UF2    
 
 zmk-copy-right:
 	cd modules/keyboards/Adv360-Pro-ZMK/firmware
-	cp $(fd -I 'right' | tail -1) /Volumes/ADV360PRO/CURRENT.UF2    
+	cat $(fd -I 'right' | tail -1) > /Volumes/ADV360PRO/CURRENT.UF2    
