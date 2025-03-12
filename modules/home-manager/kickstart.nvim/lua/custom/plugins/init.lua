@@ -25,6 +25,11 @@ end
 
 return {
   {
+    'nvim-treesitter/nvim-treesitter-context',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
+  {
     'm4xshen/hardtime.nvim',
     dependencies = { 'MunifTanjim/nui.nvim' },
     opts = {},
