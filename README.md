@@ -31,12 +31,6 @@ Install gh and just
 sudo apt install just
 ```
 
-## Mac Pre-requiste
-Install brew
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install gh
-brew install just
 ```
 ## Common install
 Install nix
@@ -48,7 +42,8 @@ cd
 gh auth login
 mkdir -p ./Code/projects
 cd ~/Code/projects
-gh repo clone poulter7/nix-config
+nix-shell -p gh --run 'gh auth'
+nix-shell -p gh --run 'gh repo clone poulter7/nix-config'
 cd nix-config
 
 mkdir -p ~/.config/nix
@@ -56,7 +51,7 @@ echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
 rm ~/.bashrc
 rm ~/.profile
 
-just nix-install-wsl
+nix-shell -p just --run 'just nix-install-wsl'
 ```
 
 ## Windows Post Setup 
