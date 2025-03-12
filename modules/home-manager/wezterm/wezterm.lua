@@ -24,6 +24,11 @@ if is_windows() then
 	config.default_domain = "WSL:Ubuntu"
 end
 config.font = wezterm.font("CommitMono Nerd Font")
+
+config.enable_wayland = false
+config.front_end = "WebGpu"
+config.webgpu_power_preference = "HighPerformance"
+
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
 config.window_frame = {
