@@ -75,17 +75,22 @@ require('which-key').add {
   { '<leader>tp', '<Cmd>TypstPreview<CR>' },
   { '<leader>to', '<Cmd>TypstOpenPdf<CR>' },
   -- Trouble
-  { '<leader>x', group = '[X]Trouble', mode = nx },
+  { '<leader>x', group = '[x]Trouble', mode = nx },
   {
     '<leader>xx',
     '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
     desc = 'Diagnostics',
   },
-  { '<leader>xq', '<Cmd>Trouble qflist toggle<Cr>', desc = '[X]Trouble Quickfix' },
+  { '<leader>xq', '<Cmd>Trouble qflist toggle<Cr>', desc = '[x]Trouble Quickfix' },
   {
     '<leader>xX',
     '<cmd>Trouble diagnostics toggle<cr>',
     desc = 'Diagnostics (Workspace)',
+  },
+  {
+    '<leader>xt',
+    '<CMD>TodoTrouble<CR>',
+    desc = '[x]Trouble [t]odo list',
   },
   --- toggle term
   { '}', '<Cmd>execute v:count . "ToggleTerm"<CR>' },
