@@ -55,3 +55,5 @@ micromamba activate <env>
 micromamba install -e .[dev]
 ```
 
+## Neorg?
+https://github.com/nvim-neorg/neorg/issues/74#issuecomment-1484104199
