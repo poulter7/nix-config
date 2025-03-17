@@ -33,7 +33,6 @@ return {
         ['core.defaults'] = {},
         ['core.concealer'] = {},
         ['core.summary'] = {},
-        ['core.latex.renderer'] = {},
       },
     },
   },
