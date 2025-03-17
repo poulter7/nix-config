@@ -50,6 +50,7 @@
             just
             micromamba
             qpdf
+            texliveSmall
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc
             (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
@@ -57,7 +58,7 @@
     };
     homebrew = {
         brews = [
-            "gcc"
+            "gcc@11"
             "graphviz"
             "swiftlint"
             "entr"

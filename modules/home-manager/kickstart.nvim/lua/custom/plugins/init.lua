@@ -25,6 +25,19 @@ end
 
 return {
   {
+    'nvim-neorg/neorg',
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = '*', -- Pin Neorg to the latest stable release
+    config = {
+      load = {
+        ['core.defaults'] = {},
+        ['core.concealer'] = {},
+        ['core.summary'] = {},
+        ['core.latex.renderer'] = {},
+      },
+    },
+  },
+  {
     'nvim-treesitter/nvim-treesitter-context',
     opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
