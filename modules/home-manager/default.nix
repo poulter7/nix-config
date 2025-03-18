@@ -35,6 +35,7 @@
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+    extraLuaPackages = p:[p.mimetypes p.luarocks p.xml2lua];
   };
   programs.neomutt.enable = true;
 

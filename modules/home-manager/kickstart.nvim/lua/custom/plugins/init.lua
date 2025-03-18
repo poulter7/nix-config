@@ -42,11 +42,6 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
   {
-    'm4xshen/hardtime.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    opts = {},
-  },
-  {
     'ggandor/leap.nvim',
     opts = {},
   },
@@ -515,7 +510,6 @@ return {
   },
   {
     'rest-nvim/rest.nvim',
-    enabled = false,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       opts = function(_, opts)
