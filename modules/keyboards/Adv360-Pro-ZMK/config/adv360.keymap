@@ -19,6 +19,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -42,11 +43,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&none    &none  &none  &none        &none           &none  &none                                                                         &mo 3  &none  &none           &none        &none    &none         &none
-&none    &kp Q  &kp W  &kp E        &kp R           &kp T  &none                                                                         &none  &kp Y  &kp U           &kp I        &kp O    &kp P         &none
-&kp ESC  &kp A  &kp S  &hm LCTRL D  &hm LEFT_GUI F  &kp G  &none                        &none      &none    &none  &none                 &none  &kp H  &hm LEFT_GUI J  &hm LCTRL K  &kp L    &kp APOS      &none
-&none    &kp Z  &kp X  &kp C        &kp V           &kp B                                          &none    &none                               &kp N  &kp M           &kp COMMA    &kp DOT  &kp QUESTION  &none
-&none    &none  &none  &none        &none                         &mt LEFT_SHIFT SPACE  &td2 &none    &none  &kp BACKSPACE  &to 6                &none           &none        &none    &none         &none
+&none    &none  &none  &none        &none           &none  &none                                                                                &mo 3  &none  &none           &none        &none    &none         &none
+&none    &kp Q  &kp W  &kp F        &kp P           &kp B  &none                                                                                &none  &kp J  &kp L           &kp U        &kp Y    &kp SQT       &none
+&kp ESC  &kp A  &kp R  &hm LCTRL S  &hm LEFT_GUI T  &kp G  &none              &none                 &none    &none  &none                       &none  &kp M  &hm LEFT_GUI N  &hm LCTRL E  &kp I    &kp O         &none
+&none    &kp Z  &kp X  &kp C        &kp D           &kp V                                           &none    &none                                     &kp K  &kp H           &kp COMMA    &kp DOT  &kp QUESTION  &none
+&none    &none  &none  &none        &none                         &kp ESCAPE  &mt LEFT_SHIFT SPACE  &none    &none  &lt 4 RET  &lt 6 BACKSPACE                &none           &none        &none    &none         &none
             >;
         };
 
@@ -86,11 +87,11 @@
         extra1 {
             display-name = "Red";
             bindings = <
-&none   &none          &none           &none                   &none                      &none            &none                                                       &none   &none         &none                  &none              &none            &none             &none
-&none   &kp EXCL       &kp AT          &kp LS(POUND)           &kp LS(DOLLAR)             &kp LS(PERCENT)  &none                                                       &none   &kp CARET     &kp AMPS               &kp LS(ASTRK)      &none            &none             &none
-&trans  &kp GRAVE  &kp LESS_THAN  &hm LCTRL LEFT_BRACKET  &hm LGUI LEFT_PARENTHESIS  &kp LEFT_BRACE          &trans         &trans      &trans    &trans  &trans         &trans  &kp RIGHT_BRACE &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp GREATER_THAN  &kp DQT &trans
-&trans  &kp TILDE      &kp SEMI        &kp COLON               &kp UNDER                  &kp MINUS                                   &trans    &trans                         &kp RS(PLUS)  &kp EQUAL              &kp BACKSLASH      &kp PIPE         &kp SLASH         &trans
-&trans  &trans         &trans          &trans                  &trans                                              &to 0  &trans &trans    &trans  &trans  &to 6                        &trans                 &trans             &trans           &trans            &trans
+&none  &none          &none           &none             &none                 &none            &none                                                &none  &none         &none                  &none              &none            &none             &none
+&none  &kp EXCL       &kp AT          &kp LS(POUND)     &kp LS(DOLLAR)        &kp LS(PERCENT)  &none                                                &none  &kp CARET     &kp AMPS               &kp LS(ASTRK)      &none            &kp DQT           &none
+&none  &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp SEMI         &none          &none   &none    &none  &none         &none  &kp COLON     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &none
+&none  &none          &kp GRAVE       &kp TILDE         &kp UNDER             &kp MINUS                               &none    &none                       &kp RS(PLUS)  &kp EQUAL              &kp BACKSLASH      &kp PIPE         &kp SLASH         &none
+&none  &none          &none           &none             &none                                         &trans  &trans  &none    &none  &none  &none                       &none                  &none              &none            &none             &none
             >;
         };
 
@@ -108,11 +109,11 @@
         extra3 {
             display-name = "Cyan";
             bindings = <
-&none  &none  &none   &none         &none        &none   &none                                                    &none  &none     &none        &none         &none      &none  &none
-&none  &none  &kp N7  &kp N8        &kp N9       &none   &none                                                    &none  &none     &kp LS(TAB)  &kp TAB       &none      &none  &none
-&none  &none  &kp N4  &hm LCTRL N5  &hm LGUI N6  &none   &none         &none       &none    &none  &none          &none  &kp LEFT  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none  &none
-&none  &none  &kp N1  &kp N2        &kp N3       &kp N0                            &none    &none                        &none     &none        &none         &none      &none  &none
-&none  &none  &none   &none         &none                       &to 0  &trans &none    &none  &trans  &to 4                   &none        &none         &none      &none  &none
+&none  &none  &none   &none         &none        &none  &none                                                   &none  &none     &none        &none         &none      &none  &none
+&none  &none  &kp N7  &kp N8        &kp N9       &none  &none                                                   &none  &none     &kp LS(TAB)  &kp TAB       &none      &none  &none
+&none  &none  &kp N4  &hm LCTRL N5  &hm LGUI N6  &none  &none           &none   &none    &none  &none           &none  &kp LEFT  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none  &none
+&none  &none  &kp N1  &kp N2        &kp N3       &none                          &none    &none                         &none     &none        &none         &none      &none  &none
+&none  &none  &none   &none         &none                      &kp DOT  &kp N0  &none    &none  &trans  &trans                   &none        &none         &none      &none  &none
             >;
         };
 
