@@ -53,6 +53,39 @@ config.window_padding = {
 	left = 0,
 	right = 0,
 }
+config.keys = {
+	{
+		key = "x",
+		mods = "SUPER",
+		action = "ActivateCopyMode",
+	},
+	{
+		key = "v",
+		mods = "SUPER",
+		action = wezterm.action({ PasteFrom = "Clipboard" }),
+	},
+	{
+		key = "c",
+		mods = "SUPER",
+		action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
+	},
+	{
+		key = "x",
+		mods = "CTRL",
+		action = "ActivateCopyMode",
+	},
+	{
+		key = "v",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action({ PasteFrom = "Clipboard" }),
+	},
+	{
+		key = "c",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
+	},
+}
+
 wezterm.on("update-status", function(window)
 	-- Grab the utf8 character for the "powerline" left facing
 	-- solid arrow.
