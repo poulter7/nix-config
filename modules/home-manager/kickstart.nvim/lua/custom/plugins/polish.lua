@@ -244,6 +244,17 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
+-- Copilot setup
+local lspkind = require 'lspkind'
+lspkind.init {
+  symbol_map = {
+    Copilot = '',
+  },
+}
+
+vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', { bg = '#6CC644' })
+-- add a keyboard shortcut for repeating a paste
+
 -- set resession to work within a directory
 local resession = require 'resession'
 vim.api.nvim_create_autocmd('VimEnter', {
