@@ -170,14 +170,13 @@ return {
       end,
     },
   },
-  -- co-pilot will rot your brain
-  -- {
-  --   'zbirenbaum/copilot.lua',
-  --   opts = {
-  --     suggestion = { enabled = true, auto_trigger = true, keymap = { accept = '<C-Enter>' } },
-  --     panel = { enabled = false },
-  --   },
-  -- },
+  {
+    'zbirenbaum/copilot.lua',
+    opts = {
+      suggestion = { enabled = true, auto_trigger = true, keymap = { accept = '<C-Enter>' } },
+      panel = { enabled = false },
+    },
+  },
   {
     'nvim-neotest/neotest',
     dependencies = {

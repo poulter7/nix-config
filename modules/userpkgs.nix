@@ -53,6 +53,8 @@
             texliveFull
             lua51Packages.lua
             lua51Packages.luarocks
+            lua51Packages.mimetypes
+            lua51Packages.xml2lua
             lua-language-server
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc
