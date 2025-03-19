@@ -79,7 +79,7 @@
   "vimade": { "branch": "master", "commit": "f63ca5cb9cf811b2c526694e820b87fe2238deb6" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
   "windows.nvim": { "branch": "main", "commit": "c7492552b23d0ab30325e90b56066ec51242adc8" },
-  "yazi.nvim": { "branch": "main", "commit": "160c105972910c278f023db5e1b34cab478942c4" },
+  "yazi.nvim": { "branch": "main", "commit": "ccf6d3247392075e8d2617086d351db3fddc6f1b" },
   "zellij-nav.nvim": { "branch": "main", "commit": "91cc2a642d8927ebde50ced5bf71ba470a0fc116" },
   "zendiagram.nvim": { "branch": "main", "commit": "e43eabe18de634c69d9a567a8a36d403b9d3a69d" }
 }
