@@ -11,13 +11,11 @@ nix-install-ubuntu:
 	nix-collect-garbage
 
 nix-update-mac:
-	cd flakes/darwin
-	nix flake update
+	cd flakes/darwin; nix flake update
 	nix-collect-garbage
 
 nix-update-wsl:
-	cd flakes/linux-jonathan
-	nix flake update
+	cd flakes/linux-jonathan; nix flake update
 	nix-collect-garbage
 
 windows-copy-configs:
@@ -31,13 +29,13 @@ windows-bounce-komorebi:
 	komorebic.exe start --whkd --bar
 
 zmk-build:
-	cd modules/keyboards/Adv360-Pro-ZMK/
-	make
+	cd modules/keyboards/Adv360-Pro-ZMK/; make
+
+zmk-clean:
+	cd modules/keyboards/Adv360-Pro-ZMK/; make clean
 
 zmk-copy-left:
-	cd modules/keyboards/Adv360-Pro-ZMK/firmware
-	cat $(fd -I 'left' | tail -1) > /Volumes/ADV360PRO/LEFT.UF2    
+	cd modules/keyboards/Adv360-Pro-ZMK/firmware; cat $(fd -I 'left' | tail -1) > /Volumes/ADV360PRO/LEFT.UF2    
 
 zmk-copy-right:
-	cd modules/keyboards/Adv360-Pro-ZMK/firmware
-	cat $(fd -I 'right' | tail -1) > /Volumes/ADV360PRO/RIGHT.UF2    
+	cd modules/keyboards/Adv360-Pro-ZMK/firmware; cat $(fd -I 'right' | tail -1) > /Volumes/ADV360PRO/RIGHT.UF2    
