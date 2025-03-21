@@ -205,6 +205,7 @@ require('which-key').add {
   { '<leader>dv', '<Cmd>DapViewToggle!<CR>', desc = 'dap-view toggle' },
   -- Debug: Step
   { '<leader>ds', group = '[D]ebug: [S]tep' },
+  { '<leader>dsc', '<Cmd>lua require("dap").run_to_cursor()<CR>', desc = '[D]ebug: [S]tep to [C]ursor' },
   { '<leader>dsi', '<Cmd>lua require("dap").step_into()<CR>', desc = '[D]ebug: [S]tep [I]nto' },
   { '<leader>dso', '<Cmd>lua require("dap").step_over()<CR>', desc = '[D]ebug: [S]tep [O]ver' },
   { '<leader>dsO', '<Cmd>lua require("dap").step_out()<CR>', desc = '[D]ebug: [S]tep [O]ut' },
