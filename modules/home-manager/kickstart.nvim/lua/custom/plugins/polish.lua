@@ -95,6 +95,15 @@ require('which-key').add {
   --- toggle term
   { '}', '<Cmd>execute v:count . "ToggleTerm"<CR>' },
   { '}', '<Cmd>ToggleTerm<CR>', mode = 't' },
+  --
+  { 'z', group = '[Z]fold' },
+  {
+    'zp',
+    function()
+      require('ufo').peekFoldedLinesUnderCursor()
+    end,
+    desc = '[Z]fold [P]eek',
+  },
   -- code
   { '<leader>c', group = '[C]ode', mode = nx },
   { '<Leader>cv', '<cmd>VenvSelect<cr>' },
@@ -192,6 +201,7 @@ require('which-key').add {
   { '<leader>dX', '<Cmd>lua require("persistent-breakpoints.api").clear_all_breakpoints()<CR>', desc = '[D]ebug: [X]clear all breakpoints' },
   -- Debug: UIs
   { '<leader>du', '<Cmd>lua require("dapui").toggle()<CR>', desc = '[D]ebug: UI' },
+  { '<leader>df', '<Cmd>lua require("dapui").focus_frame()<CR>', desc = '[D]ebug: [F]ocus Frame' },
   { '<leader>dv', '<Cmd>DapViewToggle!<CR>', desc = 'dap-view toggle' },
   -- Debug: Step
   { '<leader>ds', group = '[D]ebug: [S]tep' },
@@ -391,4 +401,10 @@ local dap = require 'dap'
 dap.listeners.after.event_initialized['dap_exception_breakpoint'] = function()
   dap.set_exception_breakpoints { 'userUnhandled' }
 end
+
+vim.o.foldcolumn = '0' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 return {}
