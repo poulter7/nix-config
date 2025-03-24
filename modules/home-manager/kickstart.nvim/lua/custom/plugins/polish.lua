@@ -315,6 +315,20 @@ vim.api.nvim_create_autocmd('User', {
     end)
   end,
 })
+-- Disable copilot for Typst files
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = { 'typst' },
+  callback = function(event)
+    local cmp = require 'cmp'
+    local sources = cmp.get_config().sources
+    for i = #sources, 1, -1 do
+      if sources[i].name == 'copilot' then
+        table.remove(sources, i)
+      end
+    end
+    cmp.setup.buffer { sources = sources }
+  end,
+})
 
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = { 'dap-view', 'dap-view-term', 'dap-repl', 'rest_nvim_result' }, -- dap-repl is set by `nvim-dap`
