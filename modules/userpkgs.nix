@@ -57,6 +57,7 @@
             lua51Packages.xml2lua
             lua-language-server
             tree-sitter
+            zotero
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc
             (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
