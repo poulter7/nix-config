@@ -27,15 +27,3 @@ windows-copy-configs:
 windows-bounce-komorebi:
 	komorebic.exe stop
 	komorebic.exe start --whkd --bar
-
-zmk-build:
-	cd modules/keyboards/Adv360-Pro-ZMK/; make
-
-zmk-clean:
-	cd modules/keyboards/Adv360-Pro-ZMK/; make clean
-
-zmk-copy-left:
-	cd modules/keyboards/Adv360-Pro-ZMK/firmware; cat $(fd -I 'left' | tail -1) > /Volumes/ADV360PRO/LEFT.UF2    
-
-zmk-copy-right:
-	cd modules/keyboards/Adv360-Pro-ZMK/firmware; cat $(fd -I 'right' | tail -1) > /Volumes/ADV360PRO/RIGHT.UF2    
