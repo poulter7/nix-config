@@ -176,6 +176,7 @@ return {
     opts = {
       overrides = function() -- add/modify highlights
         return {
+          LineNr = { fg = '#808080' },
           BufferCurrent = { bg = '#e98a00', fg = '#000000' },
           BufferCurrentMod = { link = 'BufferCurrent' },
         }
