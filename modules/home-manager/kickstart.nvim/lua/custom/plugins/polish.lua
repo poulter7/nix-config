@@ -267,19 +267,9 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
--- Copilot setup
-local lspkind = require 'lspkind'
-lspkind.init {
-  symbol_map = {
-    Copilot = '',
-  },
-}
-
-vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', { bg = '#6CC644' })
--- add a keyboard shortcut for repeating a paste
-
 -- set resession to work within a directory
 local resession = require 'resession'
+
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     -- Only load the session if nvim was started with no args and without reading from stdin
@@ -301,6 +291,21 @@ vim.api.nvim_create_autocmd('StdinReadPre', {
     vim.g.using_stdin = true
   end,
 })
+-- Disable copilot for Typst files
+-- This currently only works for cmp, not blink.cmp
+-- vim.api.nvim_create_autocmd({ 'FileType' }, {
+--   pattern = { 'typst' },
+--   callback = function(event)
+--     local cmp = require 'cmp'
+--     local sources = cmp.get_config().sources
+--     for i = #sources, 1, -1 do
+--       if sources[i].name == 'copilot' then
+--         table.remove(sources, i)
+--       end
+--     end
+--     cmp.setup.buffer { sources = sources }
+--   end,
+-- })
 
 -- Arrow handlers to get buffer -> line -> hop functionality
 vim.api.nvim_create_autocmd('User', {
@@ -313,20 +318,6 @@ vim.api.nvim_create_autocmd('User', {
         require('arrow.buffer_ui').openMenu(bfr)
       end
     end)
-  end,
-})
--- Disable copilot for Typst files
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'typst' },
-  callback = function(event)
-    local cmp = require 'cmp'
-    local sources = cmp.get_config().sources
-    for i = #sources, 1, -1 do
-      if sources[i].name == 'copilot' then
-        table.remove(sources, i)
-      end
-    end
-    cmp.setup.buffer { sources = sources }
   end,
 })
 
