@@ -82,7 +82,7 @@
             "lapack"
         ];
         casks = [
-            "whisky"
+            "focus"
             "wezterm"
             "gimp"
             "slack"

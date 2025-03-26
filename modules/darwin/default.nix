@@ -20,6 +20,12 @@
       "homebrew/cask"
     ];
   };
+  networking.knownNetworkServices = [
+    "Wi-Fi"
+  ];
+  networking.dns = [
+    "1.1.1.3"
+  ];
   environment = {
     shells = userpkgs.nix.shells; # permissible login shells
     systemPackages = [ pkgs.coreutils ];
