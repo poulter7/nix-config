@@ -6,6 +6,7 @@
             bash
         ];
         utils = with pkgs; [
+            btop
             python312Packages.west
             delta
             bat
@@ -81,6 +82,7 @@
             "lapack"
         ];
         casks = [
+            "whisky"
             "wezterm"
             "gimp"
             "slack"
