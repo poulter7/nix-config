@@ -46,7 +46,8 @@ komorebic.exe start --whkd --bar
 
 
 ## Other items
-Install Karabiner manually
+Install Karabiner driver manually
+https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/tree/main
 
 ## Setup up conda
 ```

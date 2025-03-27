@@ -32,6 +32,19 @@
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
   };
+  launchd = {
+    daemons = {
+      karabiner = {
+        command = "'/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon'";
+        serviceConfig = {
+          KeepAlive = true;
+          RunAtLoad = true;
+          StandardOutPath = "/tmp/karabiner.out.log";
+          StandardErrorPath = "/tmp/karabiner.err.log";
+        };
+      };
+    };
+  };
   system = {
     defaults = {  
       screencapture.location = "~/Screenshots";
