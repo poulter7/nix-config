@@ -1,6 +1,8 @@
 {user, userroot} :{ pkgs, ... }: 
   let 
     userpkgs = import ../userpkgs.nix pkgs;
+    karabinerDaemon = "/Library/Application\\ Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon";
+    kanataTray = "/Users/jonathan/Applications/kanata-tray-macos";
   in
   {
   users.users.${user}.home = "${userroot}/${user}";
@@ -32,15 +34,33 @@
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
   };
+  environment.etc."sudoers.d/kanata-tray".source = pkgs.runCommand "sudoers-kanata-tray" {} ''
+    cat <<EOF >"$out"
+    ALL ALL=(ALL) NOPASSWD: ${kanataTray}
+    ALL ALL=(ALL) NOPASSWD: ${karabinerDaemon}
+    EOF
+  '';
   launchd = {
-    daemons = {
-      karabiner = {
-        command = "'/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon'";
+    user.agents = {
+      kanata-tray = {
+        script = "sudo " + kanataTray;
+        serviceConfig = {
+          KeepAlive = true;
+          RunAtLoad = true;
+          StandardOutPath = "/tmp/kanata-tray.out.log";
+          StandardErrorPath = "/tmp/kanata-tray.err.log";
+          Nice = -19;
+        };
+      };
+      karabiner-daemon = {
+        script = "sudo " + karabinerDaemon;
         serviceConfig = {
           KeepAlive = true;
           RunAtLoad = true;
           StandardOutPath = "/tmp/karabiner.out.log";
           StandardErrorPath = "/tmp/karabiner.err.log";
+          ProcessType = "Interactive";
+          Nice = -19;
         };
       };
     };

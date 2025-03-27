@@ -48,6 +48,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
+      kanata-tray = "sudo env KANATA_TRAY_CONFIG_DIR=/Users/jonathan/.config/kanata /Users/jonathan/Applications/kanata-tray-macos";
       kanata-mbp = "sudo kanata -c /Users/jonathan/.config/kanata/kanata-mbp.lsp -n";
       kanata-hhkb = "sudo kanata -c /Users/jonathan/.config/kanata/kanata-hhkb.lsp -n";
       sp = "spotify_player";
@@ -146,6 +147,10 @@
       target="./Applications/BetterDisplay.app";
       recursive = true;
     };
+    kanata-tray = {
+      source=../darwin/apps/kanata-tray-macos;
+      target="./Applications/kanata-tray-macos";
+    };
     ideavimrc = {
       source=./idea/.ideavimrc;
       target=".ideavimrc";
@@ -162,8 +167,11 @@
     ".config/mutt" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/mutt";
     };
-    ".config/kanata" = {
+    ".config/kanata" = { 
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kanata";
+    };
+    "Library/Application Support/kanata-tray" = { 
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kanata-tray";
     };
     ".config/neomutt" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/neomutt";

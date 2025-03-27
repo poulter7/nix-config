@@ -1,0 +1,17 @@
+'$schema' = 'https://raw.githubusercontent.com/rszyma/kanata-tray/main/doc/config_schema.json'
+
+[general]
+allow_concurrent_presets = false
+
+[defaults]
+kanata_executable = "/etc/profiles/per-user/jonathan/bin/kanata"
+
+
+[presets.'hhkb']
+kanata_config = '/Users/jonathan/.config/kanata/kanata-hhkb.kbd'
+
+[presets.'mbp-dvorak']
+kanata_config = '/Users/jonathan/.config/kanata/kanata-mbp-dvorak.kbd'
+
+[presets.'mbp-qwerty']
+kanata_config = '/Users/jonathan/.config/kanata/kanata-mbp-qwerty.kbd'
