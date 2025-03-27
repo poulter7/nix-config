@@ -48,7 +48,8 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      kanata-home = "sudo kanata -c /Users/jonathan/.config/kanata/kanata.lsp -n";
+      kanata-mbp = "sudo kanata -c /Users/jonathan/.config/kanata/kanata-mbp.lsp -n";
+      kanata-hhkb = "sudo kanata -c /Users/jonathan/.config/kanata/kanata-hhkb.lsp -n";
       sp = "spotify_player";
       ns = "darwin-rebuild switch --flake ~/Code/projects/nix-config/.#mac";
       nb = "darwin-rebuild build --flake ~/Code/projects/nix-config/.#mac";
