@@ -34,6 +34,8 @@ vim.api.nvim_create_user_command('TypstOpenPdf', function()
 end, {})
 
 Snacks = Snacks
+local hop = require 'hop'
+local directions = require('hop.hint').HintDirection
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd [[cab cc CodeCompanion]]
@@ -226,21 +228,35 @@ require('which-key').add {
   -- Hop
   {
     'f',
-    '<Plug>(leap-forward)',
-    mode = { 'n', 'v' },
-    desc = 'Leap forwards',
+    function()
+      require('hop').hint_words { multi_windows = true }
+    end,
+    mode = { 'n' },
+    desc = 'Hop hint words',
   },
   {
     '<S-f>',
-    '<Plug>(leap-backward)',
-    mode = { 'n', 'v' },
-    desc = 'Leap backwards',
+    function()
+      require('hop').hint_lines { multi_windows = true }
+    end,
+    mode = { 'n' },
+    desc = 'Hop hint lines',
   },
   {
-    'gf',
-    '<Plug>(leap-from-window)',
-    mode = { 'n' },
+    'f',
+    function()
+      require('hop').hint_words { extend_visual = true }
+    end,
+    mode = { 'v' },
     desc = 'Hop hint words',
+  },
+  {
+    '<S-f>',
+    function()
+      require('hop').hint_lines { extend_visual = true }
+    end,
+    mode = { 'v' },
+    desc = 'Hop hint lines',
   },
 }
 

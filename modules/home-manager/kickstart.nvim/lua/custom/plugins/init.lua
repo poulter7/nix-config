@@ -67,7 +67,7 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
           copilot = {
             name = 'copilot',
@@ -124,9 +124,18 @@ return {
     opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
+  -- {
+  --   'ggandor/leap.nvim',
+  --
+  --
+  --   opts = {},
+  -- },
   {
-    'ggandor/leap.nvim',
-    opts = {},
+    'smoka7/hop.nvim',
+    version = '*',
+    opts = {
+      keys = 'arstgoienmwfpluykd',
+    },
   },
   { 'echasnovski/mini.files', version = '*', opts = {} },
   {
@@ -257,6 +266,7 @@ return {
   },
   {
     'zbirenbaum/copilot.lua',
+    enabled = false,
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
