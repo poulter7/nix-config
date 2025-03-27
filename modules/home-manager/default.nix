@@ -126,10 +126,6 @@
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "24.11";
   home.file = {
-     karabiner = {
-      source=./karabiner/karabiner.json;
-      target=".config/karabiner/karabiner.json";
-    };
     amethyst = {
       source=./amethyst/amethyst.yml;
       target=".config/amethyst/amethyst.yml";
