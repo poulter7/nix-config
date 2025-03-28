@@ -4,6 +4,7 @@ nix-install-mac:
 nix-install-wsl-jonathan:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
 	winget.exe import modules/home-manager/winget/packages.json
+	scoop install kanata
 	just windows-copy-configs
 
 nix-install-wsl-jpoulter:
