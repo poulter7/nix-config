@@ -8,6 +8,12 @@ Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'Long
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableLockWorkstation /t REG_DWORD /d 1 /f
 ```
 
+Install scoop
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
 Install wsl
 ```
 # (1) Local Group Policy Editor -> User Configuration -> Administrative Templates -> Windows Components -> File Explorer -> Turn off Windows Key hotkeys
@@ -42,6 +48,8 @@ nix-shell -p just --run 'just nix-install-wsl'
 ```
 komorebic.exe enable-autostart --whkd --bar
 komorebic.exe start --whkd --bar
+scoop install git
+scoop bucket add extras
 ```
 
 
