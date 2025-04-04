@@ -35,7 +35,16 @@
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-    extraLuaPackages = p:[p.mimetypes p.luarocks p.xml2lua];
+    extraLuaPackages = p:[p.mimetypes p.luarocks p.xml2lua p.magick];
+    extraPython3Packages = ps: with ps; [
+        # ... other python packages
+        pynvim
+        jupyter-client
+        # cairosvg # for image rendering
+        # pnglatex # for image rendering
+        # plotly # for image rendering
+        # pyperclip
+      ];
   };
   programs.neomutt.enable = true;
 
