@@ -258,6 +258,28 @@ require('which-key').add {
     mode = { 'v' },
     desc = 'Hop hint lines',
   },
+  { '<leader>m', group = '[M]olten' },
+  {
+    '<leader>mi',
+    '<Cmd>MoltenInit<CR>',
+    desc = 'Initialize',
+  },
+  {
+    '<leader>ml',
+    '<Cmd>MoltenEvaluateLine<CR>',
+    desc = '[M]olten [L]ine eval',
+  },
+  {
+    '<leader>M',
+    '<Cmd>MoltenEvaluateOperator<CR>',
+    desc = '[M]olten [O]perator eval',
+  },
+  {
+    '<leader>mv',
+    ':<C-u>MoltenEvaluateVisual<CR>gv',
+    mode = { 'v' },
+    desc = '[M]olten [V]isual eval',
+  },
 }
 
 local Terminal = require('toggleterm.terminal').Terminal
