@@ -270,14 +270,24 @@ require('which-key').add {
     desc = '[M]olten [L]ine eval',
   },
   {
-    '<leader>M',
+    '<leader>mo',
     '<Cmd>MoltenEvaluateOperator<CR>',
     desc = '[M]olten [O]perator eval',
+  },
+  {
+    '<leader>me',
+    '<Cmd>noautocmd MoltenEnterOutput<CR>',
+    desc = '[M]olten [E]nter output',
   },
   {
     '<leader>mr',
     '<Cmd>MoltenReevaluateCell<CR>',
     desc = '[M]olten [R]eevaluate Cell',
+  },
+  {
+    '<leader>mi',
+    'MoltenInterrupt',
+    desc = '[M]olten [I]nterrupt eval',
   },
   {
     '<leader>mv',
