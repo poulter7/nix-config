@@ -275,6 +275,11 @@ require('which-key').add {
     desc = '[M]olten [O]perator eval',
   },
   {
+    '<leader>mr',
+    '<Cmd>MoltenReevaluateCell<CR>',
+    desc = '[M]olten [R]eevaluate Cell',
+  },
+  {
     '<leader>mv',
     ':<C-u>MoltenEvaluateVisual<CR>gv',
     mode = { 'v' },

@@ -3,8 +3,9 @@
    hold-time 200
 )
 
+
 (defalias
-    esc       (tap-hold $tap-time $hold-time esc lctl)
+    esc       (tap-hold-press $tap-time $hold-time esc lctl)
     nav       (layer-while-held nav)
     blank_nav (tap-hold $tap-time $hold-time XX @nav)
 )

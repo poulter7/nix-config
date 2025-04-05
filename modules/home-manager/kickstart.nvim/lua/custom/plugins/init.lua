@@ -27,11 +27,26 @@ return {
   {
     'benlubas/molten-nvim',
     version = '^1.0.0', -- use version <2.0.0 to avoid breaking changes
+    dependencies = { '3rd/image.nvim' },
     build = ':UpdateRemotePlugins',
     init = function()
       -- this is an example, not a default. Please see the readme for more configuration options
-      vim.g.molten_output_win_max_height = 12
+      vim.g.molten_output_win_max_height = 100
+      vim.g.molten_image_provider = 'image.nvim'
     end,
+  },
+  {
+    -- see the image.nvim readme for more information about configuring this plugin
+    '3rd/image.nvim',
+    opts = {
+      backend = 'kitty', -- whatever backend you would like to use
+      max_width = 500,
+      max_height = 40,
+      max_height_window_percentage = math.huge,
+      max_width_window_percentage = math.huge,
+      window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
+      window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
+    },
   },
   {
     'saghen/blink.cmp',
@@ -62,7 +77,7 @@ return {
       -- C-k: Toggle signature help (if signature.enabled = true)
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      keymap = { preset = 'default' },
+      keymap = { preset = 'default', ['<C-enter>'] = { 'select_and_accept' } },
 
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
