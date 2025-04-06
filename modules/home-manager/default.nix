@@ -113,6 +113,7 @@
       function starship_transient_rprompt_func
         starship module cmd_duration; starship module time
       end
+      git config --global init.defaultBranch main
       starship init fish | source
       enable_transience
       fish_vi_key_bindings
