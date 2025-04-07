@@ -129,6 +129,9 @@
       export OLLAMA_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_BASE=http://127.0.0.1:8080
       export OPENAI_API_KEY=key
+      if test -f ~/private-tokens.fish
+          source ~/private-tokens.fish
+      end
     '';
     plugins = builtins.map (p: { name = p.name; src = p.src; }) userpkgs.nix.fishPlugins;
   };

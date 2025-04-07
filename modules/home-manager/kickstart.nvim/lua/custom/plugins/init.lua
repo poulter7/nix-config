@@ -395,14 +395,14 @@ return {
   },
   { 'sQVe/sort.nvim' },
   { 'mistweaverco/kulala.nvim', opts = {} },
-  {
-    '0x00-ketsu/autosave.nvim',
-    -- lazy-loading on events
-    event = { 'InsertLeave', 'TextChanged' },
-    config = function()
-      require('autosave').setup {}
-    end,
-  },
+  -- {
+  --   '0x00-ketsu/autosave.nvim',
+  --   -- lazy-loading on events
+  --   event = { 'InsertLeave', 'TextChanged' },
+  --   config = function()
+  --     require('autosave').setup {}
+  --   end,
+  -- },
   {
     'mfussenegger/nvim-dap-python',
     config = function()
