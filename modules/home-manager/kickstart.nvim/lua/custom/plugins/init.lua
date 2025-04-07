@@ -508,7 +508,7 @@ return {
       show_icons = true,
       leader_key = '\t', -- Recommended to be a single key
       buffer_leader_key = '<S-\t>', -- Per Buffer Mappings
-      index_keys = 'fjdksla;zxcvnm,.',
+      index_keys = 'fjkslazxcvnm',
       mappings = {
         edit = 'E',
         delete_mode = 'D',
