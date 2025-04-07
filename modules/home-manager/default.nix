@@ -75,7 +75,8 @@
       docker-clean = "docker rmi $(docker images -f 'dangling=true' -q)";
       jump = "${pkgs.jump}/bin/jump";
       rename-tab = "${pkgs.wezterm}/bin/wezterm cli set-tab-title";
-      jjpush = "jj bookmark move main --to 'git_head()' && jj git push";
+      jjpush-main = "jj bookmark move main --to 'git_head()' && jj git push";
+      jjpush-master = "jj bookmark move master --to 'git_head()' && jj git push";
       jjdesc = "jj describe -m ";
       jjdiff = "jj diff";
       cat = "bat";
