@@ -60,6 +60,7 @@
             tree-sitter
             zotero
             kanata
+            (lib.mkIf pkgs.stdenv.isLinux pkgs.panoply) # only available on Linux
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc
             (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
@@ -83,6 +84,9 @@
             "lapack"
         ];
         casks = [
+            "shortcat"
+            "temurin"
+            "panoply"
             "focus"
             "wezterm"
             "gimp"
