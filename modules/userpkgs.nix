@@ -59,7 +59,7 @@
             lua-language-server
             tree-sitter
             zotero
-            kanata
+            kanata-with-cmd
             (lib.mkIf pkgs.stdenv.isLinux pkgs.panoply) # only available on Linux
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc

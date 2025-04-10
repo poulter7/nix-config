@@ -146,11 +146,6 @@
       target=".config/amethyst/amethyst.yml";
       onChange="/usr/bin/pkill Amethyst; /usr/bin/open -a Amethyst";
     };
-    vimac = {
-      source=../darwin/apps/Vimac.app;
-      target="./Applications/Vimac.app";
-      recursive = true;
-    };
     opal = {
       source=../darwin/apps/Opal.app;
       target="./Applications/Opal.app";
