@@ -6,6 +6,8 @@
             bash
         ];
         utils = with pkgs; [
+            ffmpeg
+            lowfi
             btop
             python312Packages.west
             delta
