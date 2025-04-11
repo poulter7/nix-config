@@ -15,25 +15,25 @@
 )
 
 (defsrc 
-  caps h j k l lalt
+  caps h j k l lalt tab
   f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12
   f
 )
 
 (deflayer base
-@esc h j k l @nav
+@esc h j k l @nav tab
 🔅    🔆    XX   XX  XX  XX  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
 f
 )
 
 (deflayer nav
-_ left down up right lalt
+_ left down up right lalt tab
 🔅    🔆    XX   XX  XX  XX  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
 f
 )
 
 (deflayer lctrl
-@esc h j k l @nav
+@esc h j k l @nav C-tab
 🔅    🔆    XX   XX  XX  XX  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
   (cmd open -a Shortcat) 
 )
