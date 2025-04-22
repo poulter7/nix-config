@@ -6,8 +6,19 @@
             bash
         ];
         utils = with pkgs; [
+            (
+                lowfi.override (old:{
+                    rustPlatform = old.rustPlatform // {
+                        buildRustPackage = args: old.rustPlatform.buildRustPackage (args // {
+                          buildFeatures = [ ];
+                        });
+                    };
+                })
+            )
             ffmpeg
-            lowfi
+        cargo
+        smassh
+        nixfmt-rfc-style
             btop
             python312Packages.west
             delta
@@ -62,6 +73,8 @@
             tree-sitter
             zotero
             kanata-with-cmd
+        taskwarrior3
+        taskwarrior-tui
             (lib.mkIf pkgs.stdenv.isLinux pkgs.panoply) # only available on Linux
             (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
             (hiPrio clang) # high priority as c++ bin collides with gcc

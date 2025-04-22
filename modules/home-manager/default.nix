@@ -47,6 +47,19 @@
         # pyperclip
       ];
   };
+  imports = [
+    # home manager module for dooit
+    inputs.dooit.homeManagerModules.default
+  ];
+  # adds dooit-extras to pkgs
+  nixpkgs.overlays = [inputs.dooit-extras.overlay];
+
+  programs.dooit = {
+    enable = true;
+    extraPackages = [pkgs.dooit-extras];
+  };
+
+
   programs.neomutt.enable = true;
 
   programs.bash.enable = true;
@@ -58,6 +71,8 @@
   programs.fish = {
     enable = true;
     shellAliases = {
+      t = "task";
+      tu = "taskwarrior-tui";
       kanata-tray = "sudo env KANATA_TRAY_CONFIG_DIR=/Users/jonathan/.config/kanata /Users/jonathan/Applications/kanata-tray-macos";
       kanata-mbp = "sudo kanata -c /Users/jonathan/.config/kanata/kanata-mbp.lsp -n";
       kanata-hhkb = "sudo kanata -c /Users/jonathan/.config/kanata/kanata-hhkb.lsp -n";
@@ -173,6 +188,9 @@
     wezterm = {
       target=if pkgs.stdenv.isDarwin then ".config/wezterm" else "/mnt/c/Users/jonathan/.config/wezterm";
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/wezterm";
+    };
+    ".config/task" = {
+      source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/taskwarrior";
     };
     ".config/mutt" = {
       source=config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/mutt";
