@@ -25,6 +25,11 @@ end
 
 return {
   {
+    'Aasim-A/scrollEOF.nvim',
+    event = { 'CursorMoved', 'WinScrolled' },
+    opts = {},
+  },
+  {
     'benlubas/molten-nvim',
     version = '^1.0.0', -- use version <2.0.0 to avoid breaking changes
     dependencies = { '3rd/image.nvim' },
