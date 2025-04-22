@@ -16,25 +16,39 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }: 
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }:
     let
       user = "jonathan";
       system = "aarch64-linux";
       userroot = "/home";
-      pkgs = import nixpkgs { system = system;config.allowUnfree = true; };
-    in {
-homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
-	modules = [
-nixvim.homeManagerModules.nixvim
-(import ../../modules/home-manager {inputs=inputs; user=user; userroot=userroot; pkgs=pkgs; })
-{
-home.username = user;
-home.homeDirectory = "${userroot}/${user}";
-home.stateVersion = "24.11";
+      pkgs = import nixpkgs {
+        system = system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          nixvim.homeManagerModules.nixvim
+          (import ../../modules/home-manager {
+            inputs = inputs;
+            user = user;
+            userroot = userroot;
+            pkgs = pkgs;
+          })
+          {
+            home.username = user;
+            home.homeDirectory = "${userroot}/${user}";
+            home.stateVersion = "24.11";
+          }
+        ];
+      };
+    };
 }
-	];
-  };
-};
-}
-

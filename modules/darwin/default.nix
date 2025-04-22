@@ -1,10 +1,11 @@
-{user, userroot} :{ pkgs, ... }: 
-  let 
-    userpkgs = import ../userpkgs.nix pkgs;
-    karabinerDaemon = "/Library/Application\\ Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon";
-    kanataTray = "/Users/jonathan/Applications/kanata-tray-macos";
-  in
-  {
+{ user, userroot }:
+{ pkgs, ... }:
+let
+  userpkgs = import ../userpkgs.nix pkgs;
+  karabinerDaemon = "/Library/Application\\ Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon";
+  kanataTray = "/Users/jonathan/Applications/kanata-tray-macos";
+in
+{
   users.users.${user}.home = "${userroot}/${user}";
   nix.extraOptions = ''
     experimental-features = nix-command flakes
@@ -34,7 +35,7 @@
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
   };
-  environment.etc."sudoers.d/kanata-tray".source = pkgs.runCommand "sudoers-kanata-tray" {} ''
+  environment.etc."sudoers.d/kanata-tray".source = pkgs.runCommand "sudoers-kanata-tray" { } ''
     cat <<EOF >"$out"
     ALL ALL=(ALL) NOPASSWD: ${kanataTray}
     ALL ALL=(ALL) NOPASSWD: ${karabinerDaemon}
@@ -66,12 +67,12 @@
     };
   };
   system = {
-    defaults = {  
+    defaults = {
       screencapture.location = "~/Screenshots";
       NSGlobalDomain = {
         # Dark mode
         AppleInterfaceStyle = "Dark";
-        
+
         # Show all file extensions
         AppleShowAllExtensions = true;
 
@@ -82,7 +83,7 @@
       dock = {
         # Automatically hide and show the Dock
         autohide = true;
-        
+
         # Style options
         orientation = "bottom";
         show-recents = false;
