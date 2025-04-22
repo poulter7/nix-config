@@ -77,6 +77,7 @@
       lua-language-server
       tree-sitter
       zotero
+      treefmt
       kanata-with-cmd
       taskwarrior3
       taskwarrior-tui
