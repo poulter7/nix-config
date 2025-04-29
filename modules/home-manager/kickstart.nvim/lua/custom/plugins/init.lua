@@ -27,26 +27,29 @@ return {
   {
     'benlubas/molten-nvim',
     version = '^1.0.0', -- use version <2.0.0 to avoid breaking changes
-    dependencies = { '3rd/image.nvim' },
+    lazy = true,
+    event = 'VeryLazy',
+    ft = { 'python' },
+    -- dependencies = {
+    --   '3rd/image.nvim',
+    --   lazy = true,
+    --   event = 'VeryLazy',
+    --   opts = {
+    --     backend = 'kitty', -- whatever backend you would like to use
+    --     max_width = 500,
+    --     max_height = 40,
+    --     max_height_window_percentage = math.huge,
+    --     max_width_window_percentage = math.huge,
+    --     window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
+    --     window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
+    --   },
+    -- },
     build = ':UpdateRemotePlugins',
     init = function()
       -- this is an example, not a default. Please see the readme for more configuration options
       vim.g.molten_output_win_max_height = 100
       vim.g.molten_image_provider = 'image.nvim'
     end,
-  },
-  {
-    -- see the image.nvim readme for more information about configuring this plugin
-    '3rd/image.nvim',
-    opts = {
-      backend = 'kitty', -- whatever backend you would like to use
-      max_width = 500,
-      max_height = 40,
-      max_height_window_percentage = math.huge,
-      max_width_window_percentage = math.huge,
-      window_overlap_clear_enabled = true, -- toggles images when windows are overlapped
-      window_overlap_clear_ft_ignore = { 'cmp_menu', 'cmp_docs', '' },
-    },
   },
   {
     'saghen/blink.cmp',
@@ -131,18 +134,19 @@ return {
       }
     end,
   },
-  {
-    'nvim-neorg/neorg',
-    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-    version = '*', -- Pin Neorg to the latest stable release
-    config = {
-      load = {
-        ['core.defaults'] = {},
-        ['core.concealer'] = {},
-        ['core.summary'] = {},
-      },
-    },
-  },
+  -- {
+  --   'nvim-neorg/neorg',
+  --   lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+  --   version = '*', -- Pin Neorg to the latest stable release
+  --   ft = { 'neorg' },
+  --   config = {
+  --     load = {
+  --       ['core.defaults'] = {},
+  --       ['core.concealer'] = {},
+  --       ['core.summary'] = {},
+  --     },
+  --   },
+  -- },
   {
     'nvim-treesitter/nvim-treesitter-context',
     opts = {},
@@ -210,7 +214,8 @@ return {
   },
   {
     'chomosuke/typst-preview.nvim',
-    lazy = false, -- or ft = 'typst'
+    event = 'VeryLazy',
+    ft = 'typst',
     opts = {}, -- lazy.nvim will implicitly calls `setup {}`
   },
   {
@@ -227,14 +232,6 @@ return {
       on_open = function()
         vim.cmd 'startinsert'
       end,
-    },
-  },
-  {
-    'tadaa/vimade',
-    enabled = false,
-    -- default opts (you can partially set these or configure them however you like)
-    opts = {
-      fadelevel = 0.7, -- any value between 0 and 1. 0 is hidden and 1 is opaque.
     },
   },
   {
@@ -339,6 +336,7 @@ return {
   {
     'nvim-zh/colorful-winsep.nvim',
     config = true,
+    lazy = true,
     event = { 'BufEnter' },
     opts = {
       smooth = false,
@@ -392,17 +390,10 @@ return {
   {
     'jsongerber/thanks.nvim',
     config = true,
+    event = 'VeryLazy',
   },
-  { 'sQVe/sort.nvim' },
+  { 'sQVe/sort.nvim', event = 'VeryLazy' },
   { 'mistweaverco/kulala.nvim', opts = {} },
-  -- {
-  --   '0x00-ketsu/autosave.nvim',
-  --   -- lazy-loading on events
-  --   event = { 'InsertLeave', 'TextChanged' },
-  --   config = function()
-  --     require('autosave').setup {}
-  --   end,
-  -- },
   {
     'mfussenegger/nvim-dap-python',
     config = function()
@@ -473,7 +464,8 @@ return {
       'mfussenegger/nvim-dap-python', --optional
       { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
     },
-    lazy = false,
+    lazy = true,
+    event = 'VeryLazy',
     branch = 'regexp', -- This is the regexp branch, use this for the new version
     config = function()
       require('venv-selector').setup {
@@ -501,8 +493,6 @@ return {
     dir = get_folder_if_exists '/Users/jonathan/Code/projects/arrow.nvim/',
     dependencies = {
       { 'nvim-tree/nvim-web-devicons' },
-      -- or if using `mini.icons`
-      -- { "echasnovski/mini.icons" },
     },
     opts = {
       show_icons = true,
@@ -605,6 +595,7 @@ return {
   },
   {
     'rest-nvim/rest.nvim',
+    event = { 'VeryLazy' },
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       opts = function(_, opts)
@@ -613,36 +604,36 @@ return {
       end,
     },
   },
-  {
-    'olimorris/codecompanion.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-    },
-    opts = {
-      adapters = {
-        hosted = function()
-          return require('codecompanion.adapters').extend('openai_compatible', {
-            env = {
-              url = 'http://127.0.0.1:8080',
-              api_key = 'key',
-              chat_url = '/v1/chat/completions',
-            },
-          })
-        end,
-      },
-      strategies = {
-        -- Change the default chat adapter
-        chat = {
-          adapter = 'hosted',
-        },
-      },
-      opts = {
-        -- Set debug logging
-        log_level = 'DEBUG',
-      },
-    },
-  },
+  -- {
+  --   'olimorris/codecompanion.nvim',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-treesitter/nvim-treesitter',
+  --   },
+  --   opts = {
+  --     adapters = {
+  --       hosted = function()
+  --         return require('codecompanion.adapters').extend('openai_compatible', {
+  --           env = {
+  --             url = 'http://127.0.0.1:8080',
+  --             api_key = 'key',
+  --             chat_url = '/v1/chat/completions',
+  --           },
+  --         })
+  --       end,
+  --     },
+  --     strategies = {
+  --       -- Change the default chat adapter
+  --       chat = {
+  --         adapter = 'hosted',
+  --       },
+  --     },
+  --     opts = {
+  --       -- Set debug logging
+  --       log_level = 'DEBUG',
+  --     },
+  --   },
+  -- },
   {
     'folke/trouble.nvim',
     opts = {},
