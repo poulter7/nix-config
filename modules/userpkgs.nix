@@ -20,7 +20,9 @@
             );
         };
       }))
+      openai-whisper
       ffmpeg
+      thokr
       cargo
       smassh
       nixfmt-rfc-style
@@ -139,6 +141,7 @@
       "caffeine"
       "font-hack-nerd-font"
       "virtual-desktop-streamer"
+      "vlc"
     ];
   };
 }
