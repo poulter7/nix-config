@@ -115,7 +115,7 @@ in
       jjdiff = "jj diff";
       cat = "bat";
       ls = "eza";
-      y = "yazi";
+      f = "yazi";
     };
     shellInit = ''
             # if set -q ZELLIJ
