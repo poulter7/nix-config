@@ -540,9 +540,20 @@ return {
             end,
             'filename',
           },
-          lualine_x = { { require('gitblame').get_current_blame_text, cond = require('gitblame').is_blame_text_available } },
+          lualine_x = {
+            {
+              require('gitblame').get_current_blame_text,
+              cond = require('gitblame').is_blame_text_available,
+            },
+          },
           lualine_y = {},
-          lualine_z = {},
+          lualine_z = {
+            {
+              function()
+                return os.date '%H:%M'
+              end,
+            },
+          },
         },
       }
     end,
