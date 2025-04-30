@@ -20,128 +20,128 @@
             );
         };
       }))
-      openai-whisper
-      ffmpeg
-      thokr
-      cargo
-      smassh
-      nixfmt-rfc-style
-      btop
-      python312Packages.west
-      delta
+      (hiPrio clang) # high priority as c++ bin collides with gcc
+      (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
+      (lib.mkIf pkgs.stdenv.isLinux pkgs.panoply) # only available on Linux
+      (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
       bat
-      eza
+      btop
+      cargo
       curl
-      python312Full
-      grc
-      starship
-      ripgrep
-      tree
-      lazygit
-      jump
-      fzf
-      git
+      delta
       duckdb
-      shfmt
-      jump
-      terraform
-      nodejs_20
-      uv
-      yarn
-      typescript
-      gh
+      eza
       fd
-      jujutsu
-      ollama
-      unzip
-      go
-      lynx
-      pass
+      ffmpeg
+      fzf
+      gh
+      git
       gnupg
-      mutt-wizard
-      isync
       gnused
-      markdownlint-cli
-      nerd-fonts.commit-mono
-      ruff
-      typst
-      typstyle
-      zellij
-      nix-search-cli
+      go
+      grc
+      isync
+      jujutsu
+      jump
+      jump
       just
-      micromamba
-      qpdf
-      texliveFull
+      kanata-with-cmd
+      lazygit
+      lua-language-server
       lua51Packages.lua
       lua51Packages.luarocks
       lua51Packages.mimetypes
       lua51Packages.xml2lua
-      lua-language-server
-      tree-sitter
-      zotero
-      treefmt
-      kanata-with-cmd
-      taskwarrior3
+      lynx
+      markdownlint-cli
+      micromamba
+      mutt-wizard
+      nerd-fonts.commit-mono
+      nix-search-cli
+      nixfmt-rfc-style
+      nodejs_20
+      ollama
+      openai-whisper
+      pass
+      python312Full
+      python312Packages.west
+      qpdf
+      ripgrep
+      ruff
+      shfmt
+      smassh
+      starship
       taskwarrior-tui
-      (lib.mkIf pkgs.stdenv.isLinux pkgs.panoply) # only available on Linux
-      (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
-      (hiPrio clang) # high priority as c++ bin collides with gcc
-      (lib.mkIf pkgs.stdenv.isLinux pkgs.gcc) # installed via brew on mac
+      taskwarrior3
+      terraform
+      texliveFull
+      thokr
+      tree
+      tree-sitter
+      treefmt
+      typescript
+      typst
+      typstyle
+      unzip
+      uv
+      yarn
+      zellij
+      zotero
     ];
   };
   homebrew = {
     brews = [
+      "asitop"
+      "awscli"
+      "entr"
       "gcc@11"
       "graphviz"
-      "swiftlint"
-      "entr"
-      "zoxide"
-      "zig"
-      "awscli"
-      "spotify_player"
-      "yazi"
-      "llama.cpp"
       "huggingface-cli"
-      "asitop"
-      "openblas"
       "lapack"
+      "llama.cpp"
+      "openblas"
+      "spotify_player"
+      "swiftlint"
+      "yazi"
+      "zig"
+      "zoxide"
     ];
     casks = [
-      "shortcat"
-      "temurin"
-      "panoply"
-      "focus"
-      "wezterm"
-      "gimp"
-      "slack"
+      "active-trader-pro"
       "akiflow"
-      "docker"
-      "spotify"
-      "postman"
-      "zoom"
-      "whatsapp"
       "amethyst"
-      "dash"
-      "texshop"
-      "trader-workstation"
-      "ibkr"
-      "raycast"
-      "visual-studio-code"
-      "skim"
       "bruno"
+      "caffeine"
+      "chatgpt"
+      "cursor"
+      "dash"
+      "docker"
+      "focus"
+      "font-hack-nerd-font"
+      "gimp"
       "google-chrome"
+      "ibkr"
+      "jetbrains-toolbox"
+      "logi-options+"
+      "panoply"
+      "postman"
+      "qgis"
+      "raycast"
+      "shortcat"
+      "skim"
+      "slack"
+      "spotify"
       "steam"
       "sublime-text"
-      "logi-options+"
-      "cursor"
-      "jetbrains-toolbox"
-      "chatgpt"
-      "qgis"
-      "active-trader-pro"
-      "caffeine"
-      "font-hack-nerd-font"
+      "temurin"
+      "texshop"
+      "trader-workstation"
       "virtual-desktop-streamer"
+      "visual-studio-code"
       "vlc"
+      "wezterm"
+      "whatsapp"
+      "zoom"
     ];
   };
 }

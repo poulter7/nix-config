@@ -108,6 +108,7 @@ require('which-key').add {
   },
   -- code
   { '<leader>c', group = '[C]ode', mode = nx },
+  { '<leader>cs', ':%!sort<CR>', desc = '[C]ode [S]ort', mode = 'v' },
   { '<Leader>cv', '<cmd>VenvSelect<cr>' },
   { '<Leader>cp', '<cmd>CccPick<cr>', desc = '[C]ode color [P]icker' },
   { '<leader>r', group = '[R]est', mode = nx },
