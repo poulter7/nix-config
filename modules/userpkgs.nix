@@ -43,7 +43,6 @@
       isync
       jujutsu
       jump
-      jump
       just
       kanata-with-cmd
       lazygit
