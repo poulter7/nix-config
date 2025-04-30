@@ -17,6 +17,9 @@
 				},
 				{
 					"PackageIdentifier" : "LGUG2Z.whkd"
+				},
+				{
+					"PackageIdentifier" : "ojdkbuild.openjdk.11.jre"
 				}
 			],
 			"SourceDetails" : 
