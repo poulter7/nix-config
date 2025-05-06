@@ -133,7 +133,7 @@ in
             set_color normal
           end
             function starship_transient_rprompt_func
-              ${pkgs.starship}/bin/starship module cmd_duration; ${pkgs.starship} module time
+              ${pkgs.starship}/bin/starship module cmd_duration; ${pkgs.starship}/bin/starship module time
             end
             git config --global init.defaultBranch main
             ${pkgs.starship}/bin/starship init fish | source
