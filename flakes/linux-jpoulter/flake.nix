@@ -25,7 +25,7 @@
     }:
     let
       user = "jpoulter";
-      system = "aarch64-linux";
+      system = "x86_64-linux";
       userroot = "/home";
       pkgs = import nixpkgs {
         system = system;
