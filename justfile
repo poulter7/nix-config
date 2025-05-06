@@ -1,8 +1,13 @@
 nix-install-mac:
 	nix run nix-darwin -- switch --flake ./flakes/darwin/.#mac
 
-nix-install-wsl:
+nix-install-wsl-jonathan:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jonathan
+	winget.exe import modules/home-manager/winget/packages.json
+	just windows-copy-configs
+
+nix-install-wsl-jpoulter:
+	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jpoulter
 	winget.exe import modules/home-manager/winget/packages.json
 	just windows-copy-configs
 
