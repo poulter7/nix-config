@@ -25,6 +25,7 @@
       (lib.mkIf pkgs.stdenv.isDarwin pkgs.panoply) # only available on Linux
       (lib.mkIf pkgs.stdenv.isLinux pkgs.strace) # only available on Linux
       (lib.mkIf pkgs.stdenv.isDarwin pkgs.zotero) # only available on Mac
+      (lib.mkIf pkgs.stdenv.isDarwin pkgs.tree-sitter) # doesn't build on x86_64 WSL
       bat
       btop
       cargo
@@ -77,7 +78,6 @@
       texliveFull
       thokr
       tree
-      tree-sitter
       treefmt
       typescript
       typst
