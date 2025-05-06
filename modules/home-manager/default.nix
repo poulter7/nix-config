@@ -134,10 +134,10 @@ in
             set_color normal
           end
             function starship_transient_rprompt_func
-              starship module cmd_duration; starship module time
+              ${pkgs.starship}/bin/starship module cmd_duration; ${pkgs.starship} module time
             end
             git config --global init.defaultBranch main
-            starship init fish | source
+            ${pkgs.starship}/bin/starship init fish | source
             enable_transience
             fish_vi_key_bindings
             set fish_greeting # Disable greeting
