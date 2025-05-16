@@ -86,6 +86,7 @@
       uv
       yarn
       zellij
+      zk
     ];
   };
   homebrew = {
