@@ -56,7 +56,6 @@
       lynx
       markdownlint-cli
       micromamba
-      mutt-wizard
       nerd-fonts.commit-mono
       nix-search-cli
       nixfmt-rfc-style
