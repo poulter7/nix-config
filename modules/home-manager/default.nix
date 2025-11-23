@@ -65,8 +65,6 @@ in
         # pyperclip
       ];
   };
-  programs.neomutt.enable = true;
-
   programs.bash.enable = true;
   programs.bash.initExtra = shellSwitch;
   programs.zsh.enable = true;
@@ -89,7 +87,6 @@ in
       open-api-refresh = "npx @rtk-query/codegen-openapi src/rtk/api/openapi-config.json";
       lg = "lazygit";
       v = "nvim";
-      m = "neomutt";
       python = "python3";
       k = "kubectl";
       tf = "terraform";
@@ -201,17 +198,11 @@ in
     ".config/task" = {
       source = config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/taskwarrior";
     };
-    ".config/mutt" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/mutt";
-    };
     ".config/kanata" = {
       source = config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kanata";
     };
     "Library/Application Support/kanata-tray" = {
       source = config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kanata-tray";
-    };
-    ".config/neomutt" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/neomutt";
     };
     ".config/nvim-kickstart" = {
       source = config.lib.file.mkOutOfStoreSymlink "${root}/modules/home-manager/kickstart.nvim";
