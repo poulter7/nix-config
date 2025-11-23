@@ -60,7 +60,7 @@ let
         success_count=0
         total_count=${builtins.toString (builtins.length packages)}
         
-        for pkg in ${builtins.concatStringsSep " " (map (p: "${p}") packages)}; do
+        for pkg in ${builtins.concatStringsSep " " packages}; do
           if [ -e "$pkg" ]; then
             success_count=$((success_count + 1))
           fi
@@ -113,21 +113,23 @@ in
   userpkgs-loads = pkgs.runCommand "test-userpkgs-loads" { } ''
     echo "Testing userpkgs module loading..."
     
-    # Try to import the userpkgs module
+    # Try to import the userpkgs module and check its structure
     ${pkgs.nix}/bin/nix-instantiate --eval -E '
       let
         pkgs = import ${pkgs.path} {};
-        userpkgs = import ${../modules/userpkgs.nix} pkgs;
+        userpkgs = import ${../modules/userpkgs.nix} { inherit pkgs; lib = pkgs.lib; };
       in
-        builtins.hasAttr "nix" userpkgs
+        builtins.hasAttr "nix" userpkgs && 
+        builtins.hasAttr "utils" userpkgs.nix &&
+        builtins.hasAttr "shells" userpkgs.nix
     ' > /dev/null
     
     if [ $? -eq 0 ]; then
-      echo "✓ userpkgs module loads successfully"
+      echo "✓ userpkgs module loads successfully with correct structure"
       mkdir -p $out
       echo "success" > $out/result
     else
-      echo "✗ userpkgs module failed to load"
+      echo "✗ userpkgs module failed to load or has incorrect structure"
       exit 1
     fi
   '';

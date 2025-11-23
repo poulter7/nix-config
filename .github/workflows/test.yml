@@ -38,12 +38,10 @@ jobs:
         run: |
           cd flakes/linux-jpoulter
           nix flake check --show-trace
-        continue-on-error: true
 
       - name: Build jpoulter configuration
         run: |
           nix build --no-link ./flakes/linux-jpoulter#homeConfigurations.jpoulter.activationPackage
-        continue-on-error: true
 
   test-linux-aarch64:
     name: Test Linux aarch64 Configuration
@@ -70,13 +68,11 @@ jobs:
         run: |
           cd flakes/linux-jonathan
           nix flake check --show-trace --system aarch64-linux
-        continue-on-error: true
 
       - name: Run flake checks for parallels
         run: |
           cd flakes/linux-parallels
           nix flake check --show-trace --system aarch64-linux
-        continue-on-error: true
 
   test-coder:
     name: Test Coder Configuration
@@ -101,8 +97,10 @@ jobs:
 
       - name: Build coder configuration
         run: |
-          # Use a test user since USER env var might not be set
-          nix build --no-link "./flakes/coder#homeConfigurations.runner.activationPackage"
+          # The coder flake uses builtins.getEnv "USER", so we need to ensure USER is set
+          # In GitHub Actions, the default user is 'runner'
+          export USER=${USER:-runner}
+          nix build --no-link "./flakes/coder#homeConfigurations.$USER.activationPackage"
 
   test-darwin:
     name: Test Darwin (macOS) Configuration
@@ -145,7 +143,6 @@ jobs:
       - name: Check Nix formatting
         run: |
           nix-shell -p nixfmt-rfc-style --run 'nixfmt --check .'
-        continue-on-error: true
 
       - name: Validate flakes
         run: |
