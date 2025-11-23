@@ -54,7 +54,7 @@
       checks.${system} =
         let
           tests = import ../../tests {
-            inherit pkgs lib system;
+            inherit pkgs system;
             inherit (pkgs) lib;
           };
         in
