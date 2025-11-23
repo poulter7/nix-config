@@ -187,17 +187,26 @@ If tests fail:
    just test-all
    ```
 
-2. **Test on target platform** - If possible, test on the actual platform where you'll deploy
+2. **Format Nix files** - Keep code consistent
+   ```bash
+   # Format all Nix files
+   nix-shell -p treefmt --run 'treefmt'
+   
+   # Or format specific file
+   nix-shell -p nixfmt-rfc-style --run 'nixfmt file.nix'
+   ```
 
-3. **Add tests for new packages** - When adding packages to userpkgs.nix, consider adding tests
+3. **Test on target platform** - If possible, test on the actual platform where you'll deploy
 
-4. **Use build-test before install** - Validate configurations before applying them:
+4. **Add tests for new packages** - When adding packages to userpkgs.nix, consider adding tests
+
+5. **Use build-test before install** - Validate configurations before applying them:
    ```bash
    just build-test-coder
    just nix-install-coder
    ```
 
-5. **Keep tests fast** - Smoke tests should complete quickly. Reserve longer tests for CI/CD.
+6. **Keep tests fast** - Smoke tests should complete quickly. Reserve longer tests for CI/CD.
 
 ## Test Architecture
 
