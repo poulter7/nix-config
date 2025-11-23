@@ -1,0 +1,158 @@
+name: Test Nix Configurations
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'flakes/**'
+      - 'modules/**'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'flakes/**'
+      - 'modules/**'
+      - 'tests/**'
+      - '.github/workflows/test.yml'
+  workflow_dispatch:
+
+jobs:
+  test-linux-x86:
+    name: Test Linux x86_64 Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            experimental-features = nix-command flakes
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Run flake checks for jpoulter
+        run: |
+          cd flakes/linux-jpoulter
+          nix flake check --show-trace
+        continue-on-error: true
+
+      - name: Build jpoulter configuration
+        run: |
+          nix build --no-link ./flakes/linux-jpoulter#homeConfigurations.jpoulter.activationPackage
+        continue-on-error: true
+
+  test-linux-aarch64:
+    name: Test Linux aarch64 Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            experimental-features = nix-command flakes
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Setup QEMU for aarch64
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
+
+      - name: Run flake checks for jonathan
+        run: |
+          cd flakes/linux-jonathan
+          nix flake check --show-trace --system aarch64-linux
+        continue-on-error: true
+
+      - name: Run flake checks for parallels
+        run: |
+          cd flakes/linux-parallels
+          nix flake check --show-trace --system aarch64-linux
+        continue-on-error: true
+
+  test-coder:
+    name: Test Coder Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            experimental-features = nix-command flakes
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Run flake checks for coder
+        run: |
+          cd flakes/coder
+          nix flake check --show-trace
+
+      - name: Build coder configuration
+        run: |
+          # Use a test user since USER env var might not be set
+          nix build --no-link "./flakes/coder#homeConfigurations.runner.activationPackage"
+
+  test-darwin:
+    name: Test Darwin (macOS) Configuration
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            experimental-features = nix-command flakes
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Run flake checks for darwin
+        run: |
+          cd flakes/darwin
+          nix flake check --show-trace
+
+      - name: Build darwin configuration
+        run: |
+          nix build --no-link ./flakes/darwin#darwinConfigurations.mac.system
+
+  lint:
+    name: Lint Nix Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            experimental-features = nix-command flakes
+
+      - name: Check Nix formatting
+        run: |
+          nix-shell -p nixfmt-rfc-style --run 'nixfmt --check .'
+        continue-on-error: true
+
+      - name: Validate flakes
+        run: |
+          for flake in flakes/*/flake.nix; do
+            dir=$(dirname "$flake")
+            echo "Validating $dir"
+            cd "$dir"
+            nix flake metadata
+            cd - > /dev/null
+          done

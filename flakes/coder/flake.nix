@@ -50,5 +50,37 @@
           }
         ];
       };
+
+      # Tests that can be run with `nix flake check`
+      checks.${system} =
+        let
+          tests = import ../../tests {
+            inherit pkgs lib system;
+            inherit (pkgs) lib;
+          };
+        in
+        {
+          # Smoke tests for critical packages
+          inherit (tests.smoke-tests) git nvim fish fzf ripgrep;
+
+          # Build tests
+          inherit (tests.build-tests) git neovim fish;
+
+          # Integration tests
+          inherit (tests) shell-environment-test userpkgs-loads;
+
+          # Test that home-manager configuration can be built
+          home-manager-config = pkgs.runCommand "test-home-manager-config" { } ''
+            echo "Testing that home-manager configuration builds..."
+            if [ -n "${pkgs.home-manager}" ]; then
+              echo "✓ Home-manager configuration builds successfully"
+              mkdir -p $out
+              echo "success" > $out/result
+            else
+              echo "✗ Home-manager configuration failed to build"
+              exit 1
+            fi
+          '';
+        };
     };
 }

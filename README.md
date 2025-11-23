@@ -1,6 +1,21 @@
 # nix-config 
 This repo is a place for me to hopefully solve a perpetual problem: make every macbook I work have a similar enough look, feel and tools that switching between machines isn't a hassle.
 
+## Testing
+
+This repository includes comprehensive testing infrastructure to validate that packages and configurations work as expected. See [TESTING.md](TESTING.md) for detailed information.
+
+Quick test commands:
+```bash
+# Test all configurations
+just test-all
+
+# Test specific platform
+just test-mac       # macOS
+just test-coder     # Coder/Linux
+just test-jonathan  # WSL/Linux
+```
+
 ## Using as Coder Dotfiles
 
 This repository can be used as a dotfiles repository for [Coder](https://coder.com/) workspaces. Coder will automatically execute the `install.sh` script to bootstrap your development environment with your preferred tools and configurations.
