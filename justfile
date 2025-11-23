@@ -75,7 +75,7 @@ fmt:
 
 # Check formatting without making changes
 fmt-check:
-	nix-shell -p nixfmt-rfc-style --run 'nixfmt --check .'
+	nix-shell -p treefmt --run 'treefmt --fail-on-change'
 
 windows-copy-configs:
 	cp ~/Code/projects/nix-config/modules/home-manager/wezterm/*.lua /mnt/c/Users/jonathan/.config/wezterm/

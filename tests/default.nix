@@ -70,12 +70,12 @@ let
         
         if [ $success_count -eq $total_count ]; then
           echo "✓ All packages built successfully"
+          mkdir -p $out
+          echo "$success_count/$total_count packages built" > $out/result
         else
-          echo "⚠ Some packages may have failed"
+          echo "✗ Some packages failed to build"
+          exit 1
         fi
-        
-        mkdir -p $out
-        echo "$success_count/$total_count packages built" > $out/result
       '';
 in
 {
