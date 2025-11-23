@@ -8,6 +8,9 @@ nix-install-jonathan:
 nix-install-jpoulter:
 	nix run nixpkgs#home-manager -- switch --flake ./flakes/linux-jpoulter
 
+nix-install-coder:
+	nix run nixpkgs#home-manager -- switch --flake ./flakes/coder
+
 nix-install-wsl:
 	winget.exe import modules/home-manager/winget/packages.json
 	scoop install kanata

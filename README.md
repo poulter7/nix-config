@@ -1,6 +1,32 @@
 # nix-config 
 This repo is a place for me to hopefully solve a perpetual problem: make every macbook I work have a similar enough look, feel and tools that switching between machines isn't a hassle.
 
+## Using as Coder Dotfiles
+
+This repository can be used as a dotfiles repository for [Coder](https://coder.com/) workspaces. Coder will automatically execute the `install.sh` script to bootstrap your development environment with your preferred tools and configurations.
+
+### Setup in Coder
+
+1. Go to your Coder deployment and navigate to your user settings
+2. Set the Dotfiles Repository URL to: `https://github.com/poulter7/nix-config`
+3. Create a new workspace - the dotfiles will be automatically applied
+
+### Manual Installation
+
+You can also run the installation script manually in any Linux environment:
+
+```bash
+git clone https://github.com/poulter7/nix-config.git
+cd nix-config
+./install.sh
+```
+
+The script will:
+- Install Nix if not already present
+- Configure Nix with flakes support
+- Apply the home-manager configuration using the Coder-specific flake
+- Backup any existing shell configuration files
+
 ## Windows Pre-requisites
 For twm - In an admin terminal
 ```
