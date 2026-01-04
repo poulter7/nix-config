@@ -18,14 +18,14 @@ resource "aws_s3_bucket_versioning" "opengrid" {
   }
 }
 
-# S3 bucket public access settings
+# S3 bucket public access settings - block public access since CloudFront uses OAC
 resource "aws_s3_bucket_public_access_block" "opengrid" {
   bucket = aws_s3_bucket.opengrid.id
 
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 # S3 bucket policy for CloudFront access
@@ -53,8 +53,7 @@ resource "aws_s3_bucket_policy" "opengrid" {
   })
 
   depends_on = [
-    aws_s3_bucket_public_access_block.opengrid,
-    aws_cloudfront_distribution.opengrid
+    aws_s3_bucket_public_access_block.opengrid
   ]
 }
 
@@ -101,17 +100,9 @@ resource "aws_cloudfront_distribution" "opengrid" {
     target_origin_id       = "S3-${var.bucket_name}"
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-
-    min_ttl     = 0
-    default_ttl = 3600
-    max_ttl     = 86400
+    
+    # Use AWS managed cache policy for caching optimized content
+    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # CachingOptimized
   }
 
   # Cache behavior for /opengrid path
@@ -122,17 +113,9 @@ resource "aws_cloudfront_distribution" "opengrid" {
     target_origin_id       = "S3-${var.bucket_name}"
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-
-    min_ttl     = 0
-    default_ttl = 3600
-    max_ttl     = 86400
+    
+    # Use AWS managed cache policy for caching optimized content
+    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # CachingOptimized
   }
 
   restrictions {
