@@ -2,14 +2,27 @@
 
 This directory contains the configuration and website files for deploying a website to `jonathanpoulter.com/opengrid`.
 
+📖 **For complete setup and deployment instructions, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)**
+
+## Quick Start
+
+1. Configure ACM certificate ARN in `terraform/terraform.tfvars`
+2. Run `cd terraform && terraform init && terraform apply`
+3. Run `./deploy.sh` to deploy the website
+
 ## Directory Structure
 
 ```
 aws-opengrid/
 ├── website/           # Static website files
-│   └── index.html    # Main page
+│   └── index.html    # Main page (placeholder - replace with your content)
 ├── terraform/        # AWS infrastructure configuration
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── terraform.tfvars.example
 ├── deploy.sh         # Deployment script
+├── DEPLOYMENT_GUIDE.md  # Complete deployment instructions
 └── README.md         # This file
 ```
 
