@@ -1,4 +1,6 @@
 # Lambda@Edge function for Basic Authentication
+# Note: For production use with highly sensitive data, consider using AWS Secrets Manager
+# instead of environment variables. This implementation is suitable for personal/development sites.
 resource "aws_lambda_function" "auth" {
   count            = var.enable_password_protection ? 1 : 0
   provider         = aws.us_east_1  # Lambda@Edge must be in us-east-1

@@ -45,4 +45,9 @@ variable "auth_password" {
   description = "Password for HTTP Basic Authentication"
   type        = string
   sensitive   = true
+  
+  validation {
+    condition     = length(var.auth_password) >= 8
+    error_message = "Password must be at least 8 characters long for security."
+  }
 }

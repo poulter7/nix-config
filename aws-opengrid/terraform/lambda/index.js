@@ -18,7 +18,9 @@ exports.handler = (event, context, callback) => {
     const authString = 'Basic ' + Buffer.from(authUser + ':' + authPass).toString('base64');
 
     // Check if Authorization header exists and matches
-    if (typeof headers.authorization === 'undefined' || headers.authorization[0].value !== authString) {
+    if (typeof headers.authorization === 'undefined' || 
+        headers.authorization.length === 0 || 
+        headers.authorization[0].value !== authString) {
         // Authentication failed - return 401 response
         const response = {
             status: '401',
