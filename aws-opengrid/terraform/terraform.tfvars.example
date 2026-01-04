@@ -1,0 +1,10 @@
+# Example terraform.tfvars file
+# Copy this to terraform.tfvars and fill in your values
+
+aws_region = "us-east-1"
+domain_name = "jonathanpoulter.com"
+subdomain = "opengrid"
+bucket_name = "jonathanpoulter-opengrid"
+
+# Get your certificate ARN from AWS Certificate Manager (ACM) in us-east-1
+# acm_certificate_arn = "arn:aws:acm:us-east-1:ACCOUNT_ID:certificate/CERTIFICATE_ID"

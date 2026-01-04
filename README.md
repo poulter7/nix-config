@@ -92,3 +92,9 @@ micromamba install -e .[dev]
 
 ## Neorg?
 https://github.com/nvim-neorg/neorg/issues/74#issuecomment-1484104199
+
+## OpenGrid Website Deployment
+
+This repository includes AWS infrastructure configuration to deploy a static website to `jonathanpoulter.com/opengrid`.
+
+See [`aws-opengrid/README.md`](aws-opengrid/README.md) for deployment instructions.
