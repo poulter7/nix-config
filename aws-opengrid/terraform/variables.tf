@@ -27,3 +27,22 @@ variable "acm_certificate_arn" {
   type        = string
   # This should be provided or looked up
 }
+
+variable "enable_password_protection" {
+  description = "Enable HTTP Basic Authentication for the website"
+  type        = bool
+  default     = true
+}
+
+variable "auth_username" {
+  description = "Username for HTTP Basic Authentication"
+  type        = string
+  default     = "admin"
+  sensitive   = true
+}
+
+variable "auth_password" {
+  description = "Password for HTTP Basic Authentication"
+  type        = string
+  sensitive   = true
+}

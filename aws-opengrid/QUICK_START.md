@@ -27,10 +27,17 @@ cd aws-opengrid/terraform
 cp terraform.tfvars.example terraform.tfvars
 ```
 
-Edit `terraform.tfvars` and add your certificate ARN:
+Edit `terraform.tfvars` and configure:
 ```hcl
 acm_certificate_arn = "arn:aws:acm:us-east-1:YOUR_ACCOUNT:certificate/YOUR_CERT_ID"
+
+# Password protection (enabled by default)
+enable_password_protection = true
+auth_username = "admin"
+auth_password = "your-secure-password"  # Change this!
 ```
+
+🔒 **Important**: The website is password-protected by default. Choose a strong password!
 
 ### Step 3: Create AWS Infrastructure
 

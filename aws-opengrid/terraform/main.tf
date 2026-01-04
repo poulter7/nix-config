@@ -103,6 +103,16 @@ resource "aws_cloudfront_distribution" "opengrid" {
     
     # Use AWS managed cache policy for caching optimized content
     cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # CachingOptimized
+
+    # Attach Lambda@Edge for authentication if enabled
+    dynamic "lambda_function_association" {
+      for_each = var.enable_password_protection ? [1] : []
+      content {
+        event_type   = "viewer-request"
+        lambda_arn   = aws_lambda_function.auth[0].qualified_arn
+        include_body = false
+      }
+    }
   }
 
   # Cache behavior for /opengrid path
@@ -116,6 +126,16 @@ resource "aws_cloudfront_distribution" "opengrid" {
     
     # Use AWS managed cache policy for caching optimized content
     cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # CachingOptimized
+
+    # Attach Lambda@Edge for authentication if enabled
+    dynamic "lambda_function_association" {
+      for_each = var.enable_password_protection ? [1] : []
+      content {
+        event_type   = "viewer-request"
+        lambda_arn   = aws_lambda_function.auth[0].qualified_arn
+        include_body = false
+      }
+    }
   }
 
   restrictions {

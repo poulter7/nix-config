@@ -6,10 +6,11 @@ Complete guide for deploying the OpenGrid website to jonathanpoulter.com/opengri
 
 1. [Prerequisites](#prerequisites)
 2. [Initial Setup](#initial-setup)
-3. [Manual Deployment](#manual-deployment)
-4. [Automated Deployment with GitHub Actions](#automated-deployment-with-github-actions)
-5. [Updating the Website](#updating-the-website)
-6. [Troubleshooting](#troubleshooting)
+3. [Password Protection](#password-protection)
+4. [Manual Deployment](#manual-deployment)
+5. [Automated Deployment with GitHub Actions](#automated-deployment-with-github-actions)
+6. [Updating the Website](#updating-the-website)
+7. [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 
@@ -74,14 +75,21 @@ If you don't already have an SSL certificate for `jonathanpoulter.com`:
    cp terraform.tfvars.example terraform.tfvars
    ```
 
-3. Edit `terraform.tfvars` and add your ACM certificate ARN:
+3. Edit `terraform.tfvars` and configure your settings:
    ```hcl
    aws_region = "us-east-1"
    domain_name = "jonathanpoulter.com"
    subdomain = "opengrid"
    bucket_name = "jonathanpoulter-opengrid"
    acm_certificate_arn = "arn:aws:acm:us-east-1:ACCOUNT_ID:certificate/CERTIFICATE_ID"
+   
+   # Password protection settings
+   enable_password_protection = true
+   auth_username = "admin"
+   auth_password = "your-secure-password-here"  # Change this!
    ```
+
+   🔒 **Security Note**: The website is protected by HTTP Basic Authentication by default. Choose a strong password!
 
 ### Step 3: Initialize and Apply Terraform
 
@@ -100,6 +108,7 @@ Terraform will create:
 - S3 bucket for website hosting
 - CloudFront distribution for CDN
 - Route53 DNS records
+- Lambda@Edge function for HTTP Basic Authentication (if enabled)
 
 **Note:** CloudFront distribution creation can take 15-20 minutes.
 
@@ -113,6 +122,56 @@ cd ..  # Return to aws-opengrid directory
 ```
 
 The website should now be available at: https://jonathanpoulter.com/opengrid
+
+🔒 When you visit the site, you'll be prompted to enter the username and password you configured.
+
+## Password Protection
+
+The website uses **HTTP Basic Authentication** via Lambda@Edge to restrict access.
+
+### How It Works
+
+1. A Lambda@Edge function intercepts all requests to your CloudFront distribution
+2. The function checks for valid authentication credentials
+3. If credentials are missing or incorrect, visitors see a browser login prompt
+4. Only authenticated users can access the website
+
+### Configuration
+
+Password protection is controlled by three variables in `terraform.tfvars`:
+
+```hcl
+enable_password_protection = true  # Set to false to disable authentication
+auth_username = "admin"             # Username for login
+auth_password = "secure-password"   # Password for login (keep this secret!)
+```
+
+### Changing Credentials
+
+To update username or password:
+
+1. Edit `terraform.tfvars` with new credentials
+2. Run `terraform apply` to update the Lambda function
+3. Wait 5-10 minutes for CloudFront to deploy the updated Lambda@Edge function globally
+
+**Note**: Lambda@Edge functions are replicated to AWS edge locations worldwide, so updates take a few minutes to propagate.
+
+### Disabling Password Protection
+
+To make the website publicly accessible:
+
+1. Set `enable_password_protection = false` in `terraform.tfvars`
+2. Run `terraform apply`
+3. The Lambda@Edge function will be removed and the site will be accessible without authentication
+
+### Security Considerations
+
+- HTTP Basic Authentication sends credentials with every request (over HTTPS)
+- Credentials are configured in Terraform variables (marked as sensitive)
+- For production use with sensitive data, consider:
+  - Using AWS Secrets Manager to store credentials
+  - Implementing more robust authentication (OAuth, SAML, etc.)
+  - Adding IP allowlisting via CloudFront or AWS WAF
 
 ## Manual Deployment
 

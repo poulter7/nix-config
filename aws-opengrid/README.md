@@ -6,9 +6,20 @@ This directory contains the configuration and website files for deploying a webs
 
 ## Quick Start
 
-1. Configure ACM certificate ARN in `terraform/terraform.tfvars`
+1. Configure ACM certificate ARN and authentication credentials in `terraform/terraform.tfvars`
 2. Run `cd terraform && terraform init && terraform apply`
 3. Run `./deploy.sh` to deploy the website
+
+## 🔒 Password Protection
+
+The website is **protected by HTTP Basic Authentication** by default. Visitors will be prompted for a username and password before accessing the site.
+
+To configure authentication:
+1. Edit `terraform/terraform.tfvars` 
+2. Set `auth_username` and `auth_password` to your desired credentials
+3. Run `terraform apply` to update the configuration
+
+To disable password protection, set `enable_password_protection = false` in `terraform.tfvars`.
 
 ## Directory Structure
 
@@ -41,6 +52,7 @@ The Terraform configuration creates:
 - S3 bucket for static website hosting
 - CloudFront distribution for CDN and HTTPS
 - Route53 DNS records
+- Lambda@Edge function for HTTP Basic Authentication (optional)
 
 ### 2. Deploy
 

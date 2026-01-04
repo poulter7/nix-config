@@ -8,3 +8,8 @@ bucket_name = "jonathanpoulter-opengrid"
 
 # Get your certificate ARN from AWS Certificate Manager (ACM) in us-east-1
 # acm_certificate_arn = "arn:aws:acm:us-east-1:ACCOUNT_ID:certificate/CERTIFICATE_ID"
+
+# Password protection settings
+enable_password_protection = true
+auth_username = "admin"
+auth_password = "your-secure-password-here"  # Change this to a strong password!

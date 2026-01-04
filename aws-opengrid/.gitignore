@@ -6,6 +6,9 @@
 .terraform/
 .terraform.lock.hcl
 
+# Lambda build artifacts
+terraform/lambda/*.zip
+
 # OS files
 .DS_Store
 Thumbs.db
