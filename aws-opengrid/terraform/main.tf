@@ -86,7 +86,7 @@ resource "aws_cloudfront_distribution" "opengrid" {
   comment             = "OpenGrid CDN"
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
-  aliases             = [var.domain_name]
+  aliases             = ["opengrid.${var.domain_name}"]
 
   origin {
     domain_name              = aws_s3_bucket.opengrid.bucket_regional_domain_name
