@@ -18,9 +18,9 @@ exports.handler = (event, context, callback) => {
     if (!authUser || !authPass) {
         console.error('Authentication misconfigured: AUTH_USER or AUTH_PASS not set');
         const response = {
-            status: '500',
-            statusDescription: 'Internal Server Error',
-            body: 'Authentication is not properly configured',
+            status: '503',
+            statusDescription: 'Service Unavailable',
+            body: 'Service temporarily unavailable',
             headers: {
                 'content-type': [{
                     key: 'Content-Type',
