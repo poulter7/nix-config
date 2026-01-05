@@ -1,6 +1,20 @@
+# Fetch credentials from AWS Secrets Manager if secret name is provided
+data "aws_secretsmanager_secret_version" "auth_credentials" {
+  count     = var.enable_password_protection && var.secrets_manager_secret_name != "" ? 1 : 0
+  secret_id = var.secrets_manager_secret_name
+}
+
+locals {
+  # Parse credentials from Secrets Manager or use variables
+  auth_credentials = var.secrets_manager_secret_name != "" && var.enable_password_protection ? jsondecode(data.aws_secretsmanager_secret_version.auth_credentials[0].secret_string) : null
+  
+  final_auth_username = var.secrets_manager_secret_name != "" && var.enable_password_protection ? local.auth_credentials.username : var.auth_username
+  final_auth_password = var.secrets_manager_secret_name != "" && var.enable_password_protection ? local.auth_credentials.password : var.auth_password
+}
+
 # Lambda@Edge function for Basic Authentication
-# Note: For production use with highly sensitive data, consider using AWS Secrets Manager
-# instead of environment variables. This implementation is suitable for personal/development sites.
+# Credentials are fetched from AWS Secrets Manager during terraform apply if configured,
+# or from terraform variables. Lambda@Edge cannot access Secrets Manager at runtime.
 resource "aws_lambda_function" "auth" {
   count            = var.enable_password_protection ? 1 : 0
   provider         = aws.us_east_1  # Lambda@Edge must be in us-east-1
@@ -14,8 +28,8 @@ resource "aws_lambda_function" "auth" {
 
   environment {
     variables = {
-      AUTH_USER = var.auth_username
-      AUTH_PASS = var.auth_password
+      AUTH_USER = local.final_auth_username
+      AUTH_PASS = local.final_auth_password
     }
   }
 
@@ -58,6 +72,26 @@ resource "aws_iam_role_policy_attachment" "lambda_edge_policy" {
   count      = var.enable_password_protection ? 1 : 0
   role       = aws_iam_role.lambda_edge[0].name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+# IAM policy for reading from Secrets Manager (only needed during terraform apply)
+resource "aws_iam_role_policy" "secrets_manager_read" {
+  count = var.enable_password_protection && var.secrets_manager_secret_name != "" ? 1 : 0
+  name  = "SecretsManagerRead"
+  role  = aws_iam_role.lambda_edge[0].id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "secretsmanager:GetSecretValue"
+        ]
+        Resource = data.aws_secretsmanager_secret_version.auth_credentials[0].arn
+      }
+    ]
+  })
 }
 
 # Create the Lambda deployment package

@@ -11,5 +11,12 @@ bucket_name = "jonathanpoulter-opengrid"
 
 # Password protection settings
 enable_password_protection = true
-auth_username = "admin"
-auth_password = "your-secure-password-here"  # Change this to a strong password!
+
+# Option 1: Use AWS Secrets Manager (recommended for production)
+# Store credentials in Secrets Manager as JSON: {"username": "your-user", "password": "your-pass"}
+secrets_manager_secret_name = "prod/login"
+
+# Option 2: Use Terraform variables (simpler, but less secure)
+# Uncomment these and comment out secrets_manager_secret_name to use variables instead
+# auth_username = "admin"
+# auth_password = "your-secure-password-here"  # Min 8 characters

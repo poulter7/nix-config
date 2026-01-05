@@ -33,11 +33,16 @@ acm_certificate_arn = "arn:aws:acm:us-east-1:YOUR_ACCOUNT:certificate/YOUR_CERT_
 
 # Password protection (enabled by default)
 enable_password_protection = true
-auth_username = "admin"
-auth_password = "your-secure-password"  # Change this!
+
+# Option 1: Use AWS Secrets Manager (recommended)
+secrets_manager_secret_name = "prod/login"
+
+# Option 2: Use variables (comment out secrets_manager_secret_name)
+# auth_username = "admin"
+# auth_password = "your-secure-password"  # Min 8 characters
 ```
 
-🔒 **Important**: The website is password-protected by default. Choose a strong password!
+🔒 **Important**: The website is password-protected by default. Use AWS Secrets Manager for production or set credentials directly.
 
 ### Step 3: Create AWS Infrastructure
 

@@ -85,11 +85,16 @@ If you don't already have an SSL certificate for `jonathanpoulter.com`:
    
    # Password protection settings
    enable_password_protection = true
-   auth_username = "admin"
-   auth_password = "your-secure-password-here"  # Change this!
+   
+   # Option 1: Use AWS Secrets Manager (recommended)
+   secrets_manager_secret_name = "prod/login"
+   
+   # Option 2: Use variables (comment out secrets_manager_secret_name)
+   # auth_username = "admin"
+   # auth_password = "your-secure-password-here"
    ```
 
-   🔒 **Security Note**: The website is protected by HTTP Basic Authentication by default. Choose a strong password!
+   🔒 **Security Note**: The website is protected by HTTP Basic Authentication by default. Using AWS Secrets Manager is recommended for production.
 
 ### Step 3: Initialize and Apply Terraform
 
@@ -138,18 +143,42 @@ The website uses **HTTP Basic Authentication** via Lambda@Edge to restrict acces
 
 ### Configuration
 
-Password protection is controlled by three variables in `terraform.tfvars`:
+Password protection can be configured in two ways:
+
+**Option 1: AWS Secrets Manager (Recommended for Production)**
+
+1. Create a secret in AWS Secrets Manager with JSON format:
+   ```json
+   {
+     "username": "your-username",
+     "password": "your-secure-password"
+   }
+   ```
+
+2. In `terraform.tfvars`:
+   ```hcl
+   enable_password_protection = true
+   secrets_manager_secret_name = "prod/login"
+   ```
+
+**Option 2: Terraform Variables (Simpler, for Development)**
 
 ```hcl
-enable_password_protection = true  # Set to false to disable authentication
-auth_username = "admin"             # Username for login
-auth_password = "secure-password"   # Password for login (keep this secret!)
+enable_password_protection = true
+auth_username = "admin"
+auth_password = "secure-password"  # Min 8 characters
 ```
+
+**Note**: Terraform fetches credentials from Secrets Manager during `terraform apply` and embeds them in the Lambda@Edge function. Lambda@Edge cannot access Secrets Manager at runtime since it runs at CloudFront edge locations globally.
 
 ### Changing Credentials
 
-To update username or password:
+**If using Secrets Manager:**
+1. Update the secret value in AWS Secrets Manager
+2. Run `terraform apply` to redeploy the Lambda function with new credentials
+3. Wait 5-10 minutes for CloudFront to propagate changes
 
+**If using Terraform variables:**
 1. Edit `terraform.tfvars` with new credentials
 2. Run `terraform apply` to update the Lambda function
 3. Wait 5-10 minutes for CloudFront to deploy the updated Lambda@Edge function globally
@@ -167,11 +196,14 @@ To make the website publicly accessible:
 ### Security Considerations
 
 - HTTP Basic Authentication sends credentials with every request (over HTTPS)
-- Credentials are configured in Terraform variables (marked as sensitive)
-- For production use with sensitive data, consider:
-  - Using AWS Secrets Manager to store credentials
+- **AWS Secrets Manager integration**: Credentials can be stored in Secrets Manager and fetched during deployment
+- Credentials are marked as sensitive in Terraform (not shown in logs)
+- Lambda@Edge embeds credentials in the function (retrieved during `terraform apply`)
+- For production use with highly sensitive data, consider:
+  - Using AWS Secrets Manager (now supported via `secrets_manager_secret_name`)
   - Implementing more robust authentication (OAuth, SAML, etc.)
   - Adding IP allowlisting via CloudFront or AWS WAF
+  - Rotating credentials regularly
 
 ## Manual Deployment
 

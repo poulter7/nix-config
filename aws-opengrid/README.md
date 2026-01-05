@@ -15,6 +15,16 @@ This directory contains the configuration and website files for deploying a webs
 The website is **protected by HTTP Basic Authentication** by default. Visitors will be prompted for a username and password before accessing the site.
 
 To configure authentication:
+
+**Option 1: AWS Secrets Manager (Recommended)**
+1. Store credentials in AWS Secrets Manager as JSON:
+   ```json
+   {"username": "your-user", "password": "your-pass"}
+   ```
+2. Set `secrets_manager_secret_name = "prod/login"` in `terraform/terraform.tfvars`
+3. Run `terraform apply`
+
+**Option 2: Terraform Variables**
 1. Edit `terraform/terraform.tfvars` 
 2. Set `auth_username` and `auth_password` to your desired credentials
 3. Run `terraform apply` to update the configuration

@@ -34,20 +34,27 @@ variable "enable_password_protection" {
   default     = true
 }
 
+variable "secrets_manager_secret_name" {
+  description = "Name of the AWS Secrets Manager secret containing authentication credentials (optional)"
+  type        = string
+  default     = ""
+}
+
 variable "auth_username" {
-  description = "Username for HTTP Basic Authentication"
+  description = "Username for HTTP Basic Authentication (ignored if using Secrets Manager)"
   type        = string
   default     = "admin"
   sensitive   = true
 }
 
 variable "auth_password" {
-  description = "Password for HTTP Basic Authentication"
+  description = "Password for HTTP Basic Authentication (ignored if using Secrets Manager)"
   type        = string
+  default     = ""
   sensitive   = true
   
   validation {
-    condition     = length(var.auth_password) >= 8
-    error_message = "Password must be at least 8 characters long for security."
+    condition     = var.secrets_manager_secret_name != "" || length(var.auth_password) >= 8
+    error_message = "Password must be at least 8 characters long, or use secrets_manager_secret_name to fetch from AWS Secrets Manager."
   }
 }
