@@ -9,6 +9,13 @@ resource "aws_s3_bucket" "opengrid" {
   }
 }
 
+# Local values
+locals {
+  # AWS Managed Cache Policy: CachingOptimized
+  # This policy is optimized for caching static content with support for compression
+  cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"
+}
+
 # S3 bucket versioning
 resource "aws_s3_bucket_versioning" "opengrid" {
   bucket = aws_s3_bucket.opengrid.id
@@ -101,8 +108,7 @@ resource "aws_cloudfront_distribution" "opengrid" {
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
     
-    # Use AWS managed cache policy for caching optimized content
-    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # CachingOptimized
+    cache_policy_id = local.cache_policy_id
 
     # Attach Lambda@Edge for authentication if enabled
     dynamic "lambda_function_association" {
@@ -124,8 +130,7 @@ resource "aws_cloudfront_distribution" "opengrid" {
     compress               = true
     viewer_protocol_policy = "redirect-to-https"
     
-    # Use AWS managed cache policy for caching optimized content
-    cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"  # CachingOptimized
+    cache_policy_id = local.cache_policy_id
 
     # Attach Lambda@Edge for authentication if enabled
     dynamic "lambda_function_association" {
@@ -163,10 +168,10 @@ data "aws_route53_zone" "main" {
   private_zone = false
 }
 
-# Route53 A record for domain
+# Route53 A record for subdomain
 resource "aws_route53_record" "opengrid" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = var.domain_name
+  name    = "opengrid.${var.domain_name}"
   type    = "A"
 
   alias {
@@ -176,10 +181,10 @@ resource "aws_route53_record" "opengrid" {
   }
 }
 
-# Route53 AAAA record for IPv6
+# Route53 AAAA record for IPv6 subdomain
 resource "aws_route53_record" "opengrid_ipv6" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name    = var.domain_name
+  name    = "opengrid.${var.domain_name}"
   type    = "AAAA"
 
   alias {

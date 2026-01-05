@@ -54,7 +54,11 @@ variable "auth_password" {
   sensitive   = true
   
   validation {
-    condition     = var.secrets_manager_secret_name != "" || length(var.auth_password) >= 8
-    error_message = "Password must be at least 8 characters long, or use secrets_manager_secret_name to fetch from AWS Secrets Manager."
+    condition = (
+      !var.enable_password_protection ||
+      var.secrets_manager_secret_name != "" ||
+      length(var.auth_password) >= 8
+    )
+    error_message = "When password protection is enabled, provide either a secrets_manager_secret_name or a password of at least 8 characters."
   }
 }

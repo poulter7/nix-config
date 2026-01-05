@@ -79,28 +79,11 @@ resource "aws_iam_role_policy_attachment" "lambda_edge_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-# IAM policy for reading from Secrets Manager during Terraform deployment
-# Note: Lambda@Edge doesn't access Secrets Manager at runtime - credentials are
-# embedded in the function during terraform apply. This policy allows the Terraform
-# data source to fetch the secret during deployment.
-resource "aws_iam_role_policy" "secrets_manager_read" {
-  count = var.enable_password_protection && var.secrets_manager_secret_name != "" ? 1 : 0
-  name  = "SecretsManagerRead"
-  role  = aws_iam_role.lambda_edge[0].id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Action = [
-          "secretsmanager:GetSecretValue"
-        ]
-        Resource = data.aws_secretsmanager_secret.auth_credentials[0].arn
-      }
-    ]
-  })
-}
+# Note: No Secrets Manager permissions are attached to the Lambda@Edge role.
+# Lambda@Edge runs at CloudFront edge locations and cannot access AWS services at runtime.
+# Secrets are read at deploy time via Terraform's data sources using the AWS credentials
+# of whoever runs terraform apply, and the credentials are then embedded in the Lambda
+# function's environment variables.
 
 # Create the Lambda deployment package
 data "archive_file" "auth_lambda" {

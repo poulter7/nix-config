@@ -51,12 +51,7 @@ aws s3 sync ./website/ s3://${BUCKET_NAME}/opengrid/ \
     --exclude ".DS_Store" \
     --exclude "*.swp"
 
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✓ Files uploaded successfully${NC}"
-else
-    echo -e "${RED}✗ Failed to upload files${NC}"
-    exit 1
-fi
+echo -e "${GREEN}✓ Files uploaded successfully${NC}"
 
 echo -e "${GREEN}Creating CloudFront invalidation...${NC}"
 
@@ -67,17 +62,12 @@ INVALIDATION_ID=$(aws cloudfront create-invalidation \
     --query 'Invalidation.Id' \
     --output text)
 
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✓ CloudFront invalidation created: ${INVALIDATION_ID}${NC}"
-    echo -e "${YELLOW}Note: It may take a few minutes for the invalidation to complete${NC}"
-else
-    echo -e "${RED}✗ Failed to create invalidation${NC}"
-    exit 1
-fi
+echo -e "${GREEN}✓ CloudFront invalidation created: ${INVALIDATION_ID}${NC}"
+echo -e "${YELLOW}Note: It may take a few minutes for the invalidation to complete${NC}"
 
 echo ""
 echo -e "${GREEN}Deployment complete!${NC}"
-echo -e "Your website should be available at: ${GREEN}https://jonathanpoulter.com/opengrid${NC}"
+echo -e "Your website should be available at: ${GREEN}https://opengrid.jonathanpoulter.com${NC}"
 echo ""
 echo "To check invalidation status, run:"
 echo "  aws cloudfront get-invalidation --distribution-id ${DISTRIBUTION_ID} --id ${INVALIDATION_ID}"

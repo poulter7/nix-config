@@ -1,6 +1,6 @@
 # OpenGrid Website Deployment
 
-This directory contains the configuration and website files for deploying a website to `jonathanpoulter.com/opengrid`.
+This directory contains the configuration and website files for deploying a website to `opengrid.jonathanpoulter.com`.
 
 📖 **For complete setup and deployment instructions, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)**
 
@@ -106,7 +106,7 @@ aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --path
 
 ## Notes
 
-- The website will be accessible at `https://jonathanpoulter.com/opengrid`
+- The website will be accessible at `https://opengrid.jonathanpoulter.com`
 - CloudFront caching is configured with a 1-hour default TTL
 - SSL certificate must be in us-east-1 region for CloudFront
 

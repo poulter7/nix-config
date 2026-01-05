@@ -1,6 +1,6 @@
 # Quick Start Guide for OpenGrid Deployment
 
-This guide will help you deploy your website to `https://jonathanpoulter.com/opengrid` in just a few steps.
+This guide will help you deploy your website to `https://opengrid.jonathanpoulter.com` in just a few steps.
 
 ## Prerequisites Check
 
@@ -65,7 +65,7 @@ cd ..  # Back to aws-opengrid directory
 
 ### Step 5: Verify
 
-Open your browser to: https://jonathanpoulter.com/opengrid
+Open your browser to: https://opengrid.jonathanpoulter.com
 
 🎉 Done!
 

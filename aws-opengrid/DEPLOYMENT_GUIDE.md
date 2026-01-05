@@ -1,6 +1,6 @@
 # OpenGrid Deployment Guide
 
-Complete guide for deploying the OpenGrid website to jonathanpoulter.com/opengrid using AWS infrastructure.
+Complete guide for deploying the OpenGrid website to opengrid.jonathanpoulter.com using AWS infrastructure.
 
 ## Table of Contents
 
@@ -126,7 +126,7 @@ cd ..  # Return to aws-opengrid directory
 ./deploy.sh
 ```
 
-The website should now be available at: https://jonathanpoulter.com/opengrid
+The website should now be available at: https://opengrid.jonathanpoulter.com
 
 🔒 When you visit the site, you'll be prompted to enter the username and password you configured.
 
