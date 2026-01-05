@@ -1,7 +1,12 @@
 # Fetch credentials from AWS Secrets Manager if secret name is provided
+data "aws_secretsmanager_secret" "auth_credentials" {
+  count = var.enable_password_protection && var.secrets_manager_secret_name != "" ? 1 : 0
+  name  = var.secrets_manager_secret_name
+}
+
 data "aws_secretsmanager_secret_version" "auth_credentials" {
   count     = var.enable_password_protection && var.secrets_manager_secret_name != "" ? 1 : 0
-  secret_id = var.secrets_manager_secret_name
+  secret_id = data.aws_secretsmanager_secret.auth_credentials[0].id
 }
 
 locals {
@@ -74,7 +79,10 @@ resource "aws_iam_role_policy_attachment" "lambda_edge_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-# IAM policy for reading from Secrets Manager (only needed during terraform apply)
+# IAM policy for reading from Secrets Manager during Terraform deployment
+# Note: Lambda@Edge doesn't access Secrets Manager at runtime - credentials are
+# embedded in the function during terraform apply. This policy allows the Terraform
+# data source to fetch the secret during deployment.
 resource "aws_iam_role_policy" "secrets_manager_read" {
   count = var.enable_password_protection && var.secrets_manager_secret_name != "" ? 1 : 0
   name  = "SecretsManagerRead"
@@ -88,7 +96,7 @@ resource "aws_iam_role_policy" "secrets_manager_read" {
         Action = [
           "secretsmanager:GetSecretValue"
         ]
-        Resource = data.aws_secretsmanager_secret_version.auth_credentials[0].arn
+        Resource = data.aws_secretsmanager_secret.auth_credentials[0].arn
       }
     ]
   })
